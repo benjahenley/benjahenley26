@@ -1,6 +1,6 @@
 "use client";
 
-import { useAudio } from "@/presentation/components/providers/audio";
+import { useAudio } from "@/presentation/components/providers/Audio";
 import { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 

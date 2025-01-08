@@ -8,7 +8,7 @@
         "followButtonClicked": "Siguiendo"
       },
       "about": {
-        "title": "Hablemos sobre mí...",
+        "title": "Sobre mí...",
         "texts": [
           "Soy Benja, un programador de Buenos Aires, Argentina. Mi viaje en la programación comenzó en mayo de 2021 cuando comencé un curso en APX School, una plataforma interactiva que permite a los estudiantes progresar a su propio ritmo.",
           "Antes de eso, ya estaba interesado en la programación y aprendí Python a través de tutoriales en YouTube de Mosh Hamedi.",
@@ -18,41 +18,26 @@
         ],
         "link": "aquí"
       },
-      "feed": {
-        "tweets": [
-          "¡Hola! Mi nombre es Benjamin Henley Saubidet, y bienvenido a mi página de developer. Soy un desarrollador full-stack de JavaScript con 3 años de experiencia en desarrollo full-stack, backend y frontend. Estoy profundamente apasionado por mi oficio y siempre me esfuerzo por la excelencia en mi trabajo. Actualmente, estoy ampliando mis habilidades estudiando React Native para el desarrollo de aplicaciones móviles.",
-          "He sido desarrollador freelance durante 3 años y actualmente estoy buscando una oportunidad para unirme a un equipo de desarrollo dinámico que valore las metodologías ágiles.",
-          [
-            "📚 EDUCACIÓN 📚",
-            "Escuela: St. Matthews College (2006-2018) ",
-            "Universidad: Universidad de Buenos Aires (Bioquímica) (2018-2020) ",
-            "Terciario: APX School (2021-2023) ",
-            "Terciario: Udemy - Next.js: El marco de trabajo React para producción (03/2024 - 06/2024) ",
-            "Terciario: Udemy - React Native: Aplicaciones nativas para IOS y Android (06/2024 - ahora) "
-          ],
-          "¡Si deseas ponerte en contacto conmigo, por favor completa el formulario a continuación!"
-        ]
-      },
-      "projects": {
-        "tweets": [
-          "Consulta mi backend de comercio electrónico, completo con documentación integral de Postman.",
-          "¿Quieres divertirte en Ibiza? Te recomiendo alquilar una moto de agua para explorar los hermosos paisajes que esta isla tiene para ofrecer. Diseñé un potente algoritmo que verifica la disponibilidad tanto de guías como de motos de agua, junto con un backend robusto usando Firebase. Esto asegura que puedas alquilar una moto de agua y disfrutar de una experiencia sin problemas.",
-          "He tenido una gran experiencia trabajando con Panorama Minero, una empresa a la vanguardia de la industria minera. Ellos han estado contentos de trabajar conmigo en múltiples ocasiones. Esta vez, mejoré la interfaz de usuario internacionalizando la página, haciéndola accesible tanto en inglés como en español. Además, colaboré con un equipo de diseño para agregar nuevas secciones a la página.",
-          "International Women in Mining (IWiM) es una organización internacional dirigida por voluntarios comprometidos con el avance de las mujeres en el sector minero. Me alegró desarrollar esta página dedicada a la inclusión y visibilidad de la fuerza laboral femenina.",
-          "Tuve el privilegio de contribuir a la creación de la página de Oro, Plata y Cobre de Panorama Minero. Este proyecto involucró una amplia colaboración para desarrollar un recurso integral y visualmente atractivo para los usuarios interesados en estos sectores clave de la minería. Internacionalicé la página, haciéndola accesible tanto en inglés como en español, lo que amplió su alcance a una audiencia más amplia. Además, optimicé la interfaz de usuario para asegurar una experiencia fluida e interactiva, integrando elementos de navegación intuitivos. Mi trabajo mejoró la usabilidad y accesibilidad de la página, agregando un valor significativo a Panorama Minero al atraer una audiencia más diversa y global.",
-          "Mi primer proyecto en solitario fue un gran éxito. Diseñé una página web para Buenos Aires Vision, una empresa de turismo conocida por ofrecer la mejor selección de tours en Buenos Aires. Sus ofertas van desde experiencias gastronómicas exquisitas hasta exploraciones fluviales, asegurando una estancia memorable para los visitantes. Mi papel implicó mostrar estos tours de manera elegante y atractiva, lo que efectivamente atrajo clientes e incrementó los ingresos de la empresa.",
-          "Mi proyecto más ambicioso hasta ahora es diseñar una aplicación web con React Native. Tuki se usará para obtener comida de diferentes lugares. Estos lugares ofrecen cajas especiales con artículos aleatorios elegidos por la tienda."
-        ]
-      },
       "skillset": {
         "title": "Mis Habilidades",
         "texts": [
-          "Soy muy habilidoso en JavaScript y TypeScript, con un sólido conocimiento de bases de datos SQL y NoSQL, incluyendo Firebase Cloud Firestore, Firebase Realtime Database y PostgreSQL. Disfruto trabajando en proyectos basados en React con Next.js y tengo experiencia desplegando aplicaciones en Heroku y Vercel. Desde el diseño inicial y la arquitectura hasta una aplicación web completamente funcional, puedo manejar todo el proceso de desarrollo. Además, soy bilingüe, fluido en inglés y español, lo que mejora mi capacidad para colaborar en equipos diversos.",
-          "En mi tiempo en Panorama Minero, trabajé en equipo con otros profesionales dedicados, colaborando estrechamente en proyectos que buscaban mejorar la interfaz de usuario y la internacionalización de las páginas web. Juntos, implementamos nuevas secciones y optimizamos la accesibilidad en inglés y español, lo cual amplió significativamente el alcance y la audiencia de la plataforma. Esta experiencia enriquecedora no solo mejoró mis habilidades técnicas, sino que también fortaleció mi capacidad para trabajar en un entorno colaborativo y dinámico.",
-          "En ibijetrent, trabajé de manera estrecha con un programador frontend, fortaleciendo mis habilidades de trabajo en equipo. Colaboramos en la integración de funcionalidades complejas, asegurándonos de mantener una comunicación constante y efectiva para alinear nuestras metas y solucionar problemas en tiempo real. Este proyecto no solo me permitió aplicar mis conocimientos técnicos en JavaScript, TypeScript, React y Next.js, sino también mejorar mi capacidad para coordinarme y colaborar con otros profesionales, potenciando así la calidad del producto final y optimizando la experiencia del usuario. A través de reuniones regulares, intercambio de ideas y retroalimentación continua, logramos desarrollar una aplicación robusta y eficiente que cumplió con los requisitos y expectativas de nuestros usuarios.",
-          "Tengo amplia experiencia con Postman, lo que me ha dotado de habilidades para construir backends robustos con operaciones CRUD. Consulta la pestaña de Proyectos para ver mis aplicaciones junto con su respectiva documentación. Mi experiencia se extiende a configurar y mantener APIs RESTful, asegurando un intercambio de datos seguro y eficiente entre el frontend y el backend.",
-          "Además, soy experto en el uso de herramientas poderosas como Airtable y Algolia para mejorar la funcionalidad y la experiencia del usuario en mis aplicaciones. También estoy familiarizado con el despliegue de aplicaciones en GitHub Pages, Vercel y Heroku. Lamentablemente, la reciente eliminación de dynos gratuitos de Heroku ha dejado muchas de mis aplicaciones sin un host. A pesar de esto, he continuado explorando soluciones de alojamiento alternativas para asegurar la accesibilidad y fiabilidad de mis proyectos."
+          "💻 Soy experto en JavaScript y TypeScript, con una sólida base en bases de datos SQL (PostgreSQL) y NoSQL como Firebase. Me especializo en construir aplicaciones web escalables y eficientes utilizando React y Next.js, manejando todo, desde el diseño inicial y la arquitectura hasta el despliegue. Para el alojamiento, he trabajado extensamente con Vercel, Heroku y GitHub Pages 🚀, asegurando una entrega fluida y accesibilidad.",
+          "🌍 Mis habilidades bilingües en inglés 🇬🇧 y español 🇪🇸 me han permitido colaborar eficazmente en equipos diversos. En Panorama Minero, trabajé en la internacionalización de páginas web, mejorando la UI/UX y ampliando el alcance de la plataforma al optimizar la accesibilidad en varios idiomas.",
+          "🚤 Durante mi tiempo en ibijetrent, colaboré con un desarrollador frontend para integrar funcionalidades complejas, entregando una aplicación robusta que superó las expectativas de los usuarios. Las sesiones regulares de brainstorming y la resolución de problemas en tiempo real nos ayudaron a crear una experiencia de usuario fluida.",
+          "🚧 Con una sólida experiencia en la gestión de bases de datos, he trabajado extensamente con SQL (PostgreSQL) y NoSQL (Firebase) para construir aplicaciones confiables y escalables. Mi experiencia incluye la creación de operaciones CRUD eficientes, la implementación de APIs GraphQL y el uso de Apollo Client para la gestión de datos y el estado de forma fluida. Esta combinación de habilidades me permite diseñar aplicaciones sólidas y orientadas a datos, asegurando un rendimiento óptimo y una experiencia de usuario excepcional. 🚀"
         ]
+      },
+      "login": {
+        "title": "Login",
+        "description": "Ingresa tu email para loguearte a tu cuenta",
+        "inputs": {
+          "email": "Email",
+          "password": "Contraseña"
+        },
+        "forgotPass": "Olvidaste tu contraseña?",
+        "button": "Login",
+        "noAccount": "No tenes una cuenta?",
+        "signup": "Registrate"
       }
     },
     "soundcloud": {
@@ -81,6 +66,7 @@
         "LINKEDIN",
         "GITHUB",
         "INSTAGRAM",
+        "WHATSAPP",
         "MUSICA",
         "IDIOMA"
       ],
@@ -107,7 +93,8 @@
           }
         ],
         "posts": "publicaciones",
-        "more": "Mostrar más"
+        "more": "Mostrar más",
+        "less": "Mostrar menos"
       }
     },
     "optionsMenu": {
@@ -115,7 +102,7 @@
         { "option": "Feed", "id": "feed" },
         { "option": "Sobre Mí", "id": "about" },
         { "option": "Proyectos", "id": "projects" },
-        { "option": "Habilidades", "id": "skills" }
+        { "option": "Maestría", "id": "skills" }
       ]
     },
     "twitter": {
@@ -160,7 +147,8 @@
             "url": "https://www.engadget.com/metas-next-hardware-project-might-be-ai-infused-headphones-with-cameras-204741102.html"
           }
         ],
-        "more": "Mostrar más"
+        "more": "Mostrar más",
+        "less": "Mostrar menos"
       },
       "people": {
         "title": "Personas Relevantes",

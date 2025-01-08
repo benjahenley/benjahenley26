@@ -3,10 +3,12 @@ import {
   FaLinkedin,
   FaSoundcloud,
   FaGithub,
+  FaWhatsapp,
 } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { Locales } from "@/infraestructure/interfaces";
 import { contents } from "@/data/contents/content";
+import { IoLanguage } from "react-icons/io5";
 
 function getOptions(locale: Locales) {
   const { items } = contents[locale].ui.leftbar;
@@ -14,7 +16,7 @@ function getOptions(locale: Locales) {
     {
       logo: <CgProfile />,
       text: items[0],
-      href: "/",
+      href: `/${locale}`,
     },
     {
       logo: <FaLinkedin />,
@@ -32,8 +34,13 @@ function getOptions(locale: Locales) {
       href: "https://www.instagram.com/benjahenley/",
     },
     {
-      logo: <FaSoundcloud />,
+      logo: <FaWhatsapp />,
       text: items[4],
+      href: "https://www.instagram.com/benjahenley/",
+    },
+    {
+      logo: <FaSoundcloud />,
+      text: items[5],
       href: "/soundcloud",
     },
   ];

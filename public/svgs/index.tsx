@@ -11,6 +11,7 @@ import LinkedinSVG from "./linkedin.svg";
 import DisplayArrowSVG from "./displayArrow.svg";
 import DeskSVG from "./desk.svg";
 import LogoSVG from "./logo.svg";
+import AvatarSVG from "./avatar.svg";
 
 function MenuIcon(props: any): any {
   return <MenuSVG onClick={props.onClick} className={props.className} />;
@@ -58,8 +59,18 @@ function LogoIcon(props: any): any {
   return <LogoSVG onClick={props.onClick} className={props.className} />;
 }
 
+function AvatarIcon(props: any): any {
+  return (
+    <AvatarSVG
+      onClick={props.onClick}
+      className={props.className + " dark:text-white"}
+    />
+  );
+}
+
 export {
   MenuIcon,
+  AvatarIcon,
   CircleIcon,
   LinksIcon,
   CakeIcon,

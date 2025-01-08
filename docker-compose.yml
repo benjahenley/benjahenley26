@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: benjahenley123
+      POSTGRES_PASSWORD: Miserablemadge123
+      POSTGRES_DB: portfolio24
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5500:5432"
+
+volumes:
+  postgres_data:

@@ -6,7 +6,7 @@ import benjaSC from "@/media/benjaSC.jpg";
 import { FaChevronDown } from "react-icons/fa";
 
 import Image from "next/image";
-import { DarkModeToggle } from "../../../ui/darkmode-btn/page";
+import { DarkModeToggle } from "../../../ui/Darkmode";
 type Props = {
   setClicked: (name: string) => void;
   clicked: string;

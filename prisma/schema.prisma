@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  name         String   @db.VarChar(255)
+  email        String   @unique @db.VarChar(255)
+  profileImage String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  tweets       Tweet[]
+  TweetComment TweetComment[]
+}
+
+model Tweet {
+  id           Int            @id @default(autoincrement())
+  date         DateTime?      @default(now())
+  techStack    String[]
+  trendingInfo TrendingTweet?
+  comments     TweetComment[]
+  reposts      TweetRepost[]
+  likes        TweetLike[]
+  category     TweetCategory  @default(FEED)
+  pinned       Boolean        @default(false)
+  link         String?
+  userId       Int
+  user         User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  translations TweetTranslation[]
+  images       TweetImage[]
+}
+
+model TweetComment {
+  id        Int      @id @default(autoincrement())
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tweetId   Int
+  userId    Int
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tweet Tweet @relation(fields: [tweetId], references: [id], onDelete: Cascade)
+}
+
+model TweetLike {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tweetId   Int
+  tweet     Tweet    @relation(fields: [tweetId], references: [id], onDelete: Cascade)
+}
+
+model TweetRepost {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tweetId   Int
+  tweet     Tweet    @relation(fields: [tweetId], references: [id], onDelete: Cascade)
+}
+
+model TweetImage {
+  id      Int    @id @default(autoincrement())
+  src     String
+  alt     String
+  tweetId Int
+  tweet   Tweet  @relation(fields: [tweetId], references: [id], onDelete: Cascade)
+}
+
+model TweetTranslation {
+  id       Int    @id @default(autoincrement())
+  tweetId  Int
+  language String
+  content  String
+
+  tweet Tweet @relation(fields: [tweetId], references: [id], onDelete: Cascade)
+
+  @@unique([tweetId, language])
+}
+
+enum TweetCategory {
+  PROJECT
+  FEED
+}
+
+model TrendingTweet {
+  id        Int      @id @default(autoincrement())
+  trending  Boolean  @default(false)
+  category  String   @db.VarChar(255)
+  hashtag   String   @db.VarChar(100)
+  tweets    Int
+  tweetId   Int      @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tweet     Tweet    @relation(fields: [tweetId], references: [id])
+}

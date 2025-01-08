@@ -5,11 +5,46 @@ const config: Config = {
   darkMode: "class",
   content: [
     "./src/presentation/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/infraestructure/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     flowbite.content(),
   ],
   theme: {
     extend: {
+      colors: {
+        pink: {
+          200: "#fbcfe8",
+        },
+        purple: {
+          300: "#c4b5fd",
+        },
+        blue: {
+          200: "#bfdbfe",
+          300: "#93c5fd",
+        },
+        yellow: {
+          200: "#fde68a",
+        },
+        orange: {
+          300: "#fdba74",
+        },
+        red: {
+          200: "#fecaca",
+        },
+        cyan: {
+          200: "#a5f3fc",
+        },
+        green: {
+          200: "#bbf7d0",
+          300: "#6ee7b7",
+        },
+        lime: {
+          200: "#d9f99d",
+        },
+        emerald: {
+          200: "#a7f3d0",
+        },
+      },
       scale: {
         "110": "1.1",
       },
@@ -39,6 +74,12 @@ const config: Config = {
     flowbite.plugin(),
     function ({ addUtilities }: any) {
       const newUtilities = {
+        ".hover-props:hover": {
+          backgroundColor: "var(--tw-bg-opacity, #f3f4f6)",
+        },
+        ".dark .hover-props:hover": {
+          backgroundColor: "var(--tw-bg-opacity, #374151)",
+        },
         ".text-gradient": {
           background:
             "linear-gradient(45deg, #FFFFFF, #F8F8FF, #FFFAFA, #FFFFF0, #FFF5EE)",

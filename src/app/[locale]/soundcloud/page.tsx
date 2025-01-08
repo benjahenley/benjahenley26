@@ -4,7 +4,6 @@ import Image from "next/image";
 import { MiniNavSoundCloud } from "@/presentation/components/pages/soundcloud/mininavbar/page";
 import { MusicCard } from "@/presentation/components/pages/soundcloud/ui/musicCard/page";
 import { RightBarSC } from "@/presentation/components/pages/soundcloud/rightbar/page";
-import AudioPlayer from "@/presentation/components/pages/soundcloud/ui/audio-player/page";
 import { Locales } from "@/infraestructure/interfaces";
 
 const TRACKS = [
@@ -57,6 +56,10 @@ export default function SoundCloud({
 }: Readonly<{
   params: { locale: Locales };
 }>) {
+  if (!Array.isArray(TRACKS)) {
+    throw new Error("TRACKS is not an array");
+  }
+
   return (
     <header className="bg-white dark:bg-[#1f2937] dark:text-white w-full relative mx-auto h-full">
       <div className="relative mx-auto">
@@ -87,9 +90,9 @@ export default function SoundCloud({
             </div>
           </div>
         </div>
-        <MiniNavSoundCloud locale={locale}></MiniNavSoundCloud>
+        <MiniNavSoundCloud locale={locale || "es"}></MiniNavSoundCloud>
         <div className="lg:hidden">
-          <RightBarSC locale={locale}></RightBarSC>
+          <RightBarSC locale={locale || "es"}></RightBarSC>
         </div>
 
         {/* TRACKS */}

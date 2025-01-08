@@ -2,25 +2,31 @@
 
 import { contents } from "@/data/contents/content";
 import { Locales } from "@/infraestructure/interfaces";
+import { useState } from "react";
 
 type Props = {
   locale: Locales;
 };
 
-export function RightBar({ locale }: Props) {
+export default function RightBar({ locale }: Props) {
   const { trends, people } = contents[locale].ui.twitter;
+  const [trendsBox, setTrendsBox] = useState(false);
+
+  // Determine the number of trends to display based on trendsBox state
+  const displayedTrends = trendsBox ? trends.list : trends.list.slice(0, 4);
 
   return (
     <>
       <div
         style={{ width: "inherit" }}
-        className=" h-[100%] xl:max-w-[230px] 2xl:max-w-[280px] fixed dark:text-white  flex flex-col gap-5">
+        className="h-[100%] pr-10 max-w-[300px] xl:max-w-[320px] 2xl:max-w-[260px] fixed dark:text-white flex flex-col gap-5">
         <div className="border border-gray-300 dark:border-slate-600 rounded-xl top-2 pt-4 ">
           <div className="dark:text-white font-bold w-full text-xl px-4 border-b border-gray-300 dark:border-slate-600 pb-4">
             {trends.title}
           </div>
-          <ul className="flex flex-col w-full border-b border-gray-300 dark:border-slate-600">
-            {trends.list.map(({ title, posts, tag, url }, index) => (
+          <ul
+            className={`flex flex-col w-full border-b border-gray-300 dark:border-slate-600 overflow-hidden`}>
+            {displayedTrends.map(({ title, posts, tag, url }, index) => (
               <li
                 key={index}
                 className="px-4 py-2 w-full hover:bg-gray-100 dark:hover:bg-slate-700">
@@ -42,15 +48,19 @@ export function RightBar({ locale }: Props) {
               </li>
             ))}
           </ul>
-          <div className="px-4 bottom-2 w-full py-2 text-blue-500 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-600">
-            <p>{trends.more}</p>
+          <div
+            onClick={() => setTrendsBox(!trendsBox)}
+            className="px-4 bottom-2 w-full py-2 text-blue-500 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-600 rounded-b-xl group">
+            <p className="group-hover:font-semibold tracking-wide">
+              {trendsBox ? trends.less : trends.more}
+            </p>
           </div>
         </div>
         <div className="border hidden lg:initial border-gray-300 dark:border-slate-600 rounded-xl top-2 pt-4">
           <div className="dark:text-white font-bold w-full text-xl px-4 border-b border-gray-300 dark:border-slate-600 pb-4">
             {people.title}
           </div>
-          <ul className="flex flex-col w-full  max-h-[250px]">
+          <ul className="flex flex-col w-full max-h-[250px]">
             {people.list.map(({ at, name, url }, index) => (
               <li
                 key={index}

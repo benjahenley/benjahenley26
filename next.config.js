@@ -3,7 +3,6 @@ const withSvgr = require("next-svgr");
 /** @type {import('next').NextConfig} */
 const nextConfig = withSvgr({
   darkMode: "class",
-  reactStrictMode: true,
   compiler: {
     styledComponents: true,
   },

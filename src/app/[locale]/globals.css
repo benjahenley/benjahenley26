@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -10,26 +14,52 @@
   --border-dark: #64748b;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-} */
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.line {
+  position: absolute;
+  width: 2px; /* Line thickness */
+  height: 100%; /* Full height */
+  background-color: #556c82; /* Line color */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.line-1 {
+  transform: rotate(0deg);
+}
+.line-2 {
+  transform: rotate(60deg);
+}
+.line-3 {
+  transform: rotate(120deg);
+}
+.line-4 {
+  transform: rotate(180deg);
+}
+.line-5 {
+  transform: rotate(240deg);
+}
+.line-6 {
+  transform: rotate(300deg);
 }

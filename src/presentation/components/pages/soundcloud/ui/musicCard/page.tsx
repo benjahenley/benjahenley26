@@ -3,7 +3,7 @@
 import { FC } from "react";
 import { FaPlay, FaPause } from "react-icons/fa6";
 import Waveform from "../waveform/page";
-import { useAudio } from "@/presentation/components/providers/audio";
+import { useAudio } from "@/presentation/components/providers/Audio";
 
 type Props = {
   className?: string;
