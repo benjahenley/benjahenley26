@@ -15,41 +15,70 @@ type InteractionProps = {
 export function LikeButton({ projectId, likeCount }: InteractionProps) {
   const [liked, setLiked] = useState(false);
   const [count, setCount] = useState(likeCount);
+  const [loading, setLoading] = useState(false); // Prevents double clicks
+
   const userAtom = useAtomValue(userSession);
   const modal = useModal();
 
+  // Sync likeCount if it changes from props
+  useEffect(() => {
+    setCount(likeCount);
+  }, [likeCount]);
+
+  // Fetch initial liked state when user is logged in
+  useEffect(() => {
+    const fetchUserLikeStatus = async () => {
+      if (!userAtom.userId) return;
+
+      try {
+        // const res = await axios.get(`/api/project/${projectId}/isLiked`, {
+        //   params: { userId: userAtom.userId },
+        // });
+
+        // setLiked(res.data.liked);
+        setLiked(!liked);
+      } catch (err) {
+        console.error("Error fetching like status", err);
+      }
+    };
+
+    fetchUserLikeStatus();
+  }, [userAtom.userId, projectId]);
+
   const handleLike = async () => {
+    if (loading) return; // Prevent double taps
+
     try {
       if (!userAtom.userId) {
         return modal.openModal("SIGN_IN");
       }
 
+      setLoading(true);
+
       const data = await toggleLike(projectId, userAtom.userId);
 
       if (data.like) {
-        setCount(count + 1);
+        setCount((prev) => prev + 1);
       } else {
-        setCount(count - 1);
+        setCount((prev) => prev - 1);
       }
 
       setLiked(data.like);
     } catch (err: any) {
-      // todo: status of the api call when user not logged in: return unauthorized error code
       console.error("Error toggling like", err);
+    } finally {
+      setLoading(false);
     }
   };
 
-  useEffect(() => {
-    setCount(likeCount);
-  }, []);
-
   return (
-    <li className="flex items-center gap-1 cursor-pointer" onClick={handleLike}>
-      <p className="p-2 rounded-full hover:bg-pink-100">
+    <li className="flex items-center gap-1 cursor-pointer">
+      <p className={`p-2 rounded-full hover:bg-pink-100`} onClick={handleLike}>
         {liked ? <FaHeart className="text-pink-500" /> : <FaRegHeart />}
       </p>
       <span>{count}</span>
     </li>
   );
 }
+
 export default LikeButton;

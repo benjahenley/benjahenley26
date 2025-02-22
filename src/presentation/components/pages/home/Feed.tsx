@@ -1,10 +1,6 @@
 "use client";
 
-import Tweet from "../../ui/interactions/comments/ProjectComment";
-import { Locales, TweetApiResponse } from "@/infraestructure/interfaces";
-import { Spinner } from "../../ui/Spinner";
-import { GET_TWEETS_BY_CATEGORY } from "@/graphql/queries/getTweets";
-import { TweetCategory } from "@/graphql/types";
+import { Locales } from "@/infraestructure/interfaces";
 
 type Props = {
   locale: Locales;

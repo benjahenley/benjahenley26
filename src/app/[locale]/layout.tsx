@@ -4,7 +4,6 @@ import { Provider as JotaiProvider } from "jotai";
 import { Source_Sans_3 } from "next/font/google";
 import { ThemeProvider } from "../../presentation/components/providers/Theme";
 import { Locales } from "@/infraestructure/interfaces";
-import { AudioProvider } from "@/presentation/components/providers/Audio";
 import Script from "next/script";
 import { locales } from "@/middleware";
 import { Metadata } from "next";
@@ -43,14 +42,8 @@ export default function RootLayout({
         className={`${sourceSansPro.className} dark:bg-slate-800 h-full min-h-screen z`}>
         <JotaiProvider>
           <ThemeProvider>
-            <AudioProvider>
-              <Script
-                src="https://unpkg.com/wavesurfer.js"
-                strategy="lazyOnload"
-              />
-              <ModalContainer locale={locale ? locale : "es"}></ModalContainer>
-              <div className="h-full min-h-screen relative">{children}</div>
-            </AudioProvider>
+            <ModalContainer locale={locale ? locale : "es"}></ModalContainer>
+            <div className="h-full min-h-screen relative">{children}</div>
           </ThemeProvider>
         </JotaiProvider>
       </body>
