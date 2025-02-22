@@ -9,17 +9,15 @@ type Props = {
 };
 
 export default function RightBar({ locale }: Props) {
-  const { trends, people } = contents[locale].ui.twitter;
+  const { trends, people } =
+    contents[locale]?.ui?.twitter || contents["es"].ui.twitter;
   const [trendsBox, setTrendsBox] = useState(false);
 
-  // Determine the number of trends to display based on trendsBox state
   const displayedTrends = trendsBox ? trends.list : trends.list.slice(0, 4);
 
   return (
     <>
-      <div
-        style={{ width: "inherit" }}
-        className="h-[100%] pr-10 max-w-[300px] xl:max-w-[320px] 2xl:max-w-[260px] fixed dark:text-white flex flex-col gap-5">
+      <div className="h-[100%] pr-10 fixed dark:text-white flex flex-col gap-5 w-[inherit] max-w-[300px]">
         <div className="border border-gray-300 dark:border-slate-600 rounded-xl top-2 pt-4 ">
           <div className="dark:text-white font-bold w-full text-xl px-4 border-b border-gray-300 dark:border-slate-600 pb-4">
             {trends.title}

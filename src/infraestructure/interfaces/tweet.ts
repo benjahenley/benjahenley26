@@ -1,8 +1,10 @@
 import { Locales } from "./locales";
+import { IconType } from "react-icons";
 
-export type TweetContentProps = {
+export type TweetLocalContentProps = {
   className?: string;
   pinned?: boolean;
+  description: string | string[];
   date: string;
   likes: any[];
   comments: any[];
@@ -10,17 +12,31 @@ export type TweetContentProps = {
   saves: any[];
   locale: Locales;
   techStack: string[];
-  images: {
-    src: string;
-    alt: string;
-  }[];
-  translations: Array<{
-    content: string;
-    language: string;
-  }>;
+  link: string;
 };
 
+export interface TweetApiResponse {
+  id: number;
+  date: string;
+  techStack: string[];
+  category: string;
+  pinned: boolean;
+  link: string;
+  userId: number;
+  createdAt: Date;
+  updatedAt: Date;
+  locale: Locales;
+  description: string;
+  // TODO: CHANGE TYPES:
+  images: any;
+  likes: any;
+  comments: any;
+  reposts: any;
+  saves: any;
+}
+
 export type InteractionItemProps = {
+  function?: Function;
   icon: React.ReactNode;
   clicked: React.ReactNode;
   text: string;

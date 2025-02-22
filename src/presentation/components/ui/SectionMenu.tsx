@@ -11,7 +11,7 @@ export function OptionsMenu({ locale, section, setSection }: Props) {
   const options = contents[locale]?.ui?.optionsMenu?.options || [];
 
   return (
-    <ul className="relative top-0 bg-white dark:bg-gray-800 z-10 border-t border-b border-gray-300 dark:border-gray-600 font-bold flex justify-between items-center h-12 mt-2 text-center">
+    <ul className="sticky top-0 bg-white dark:bg-gray-800 z-20 border-t border-b border-gray-300 dark:border-gray-600 font-bold flex justify-between items-center h-12 mt-2 text-center">
       {options.map(({ option, id }) => (
         <li
           key={id}

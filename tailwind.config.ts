@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 const flowbite = require("flowbite-react/tailwind");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config: Config = {
   darkMode: "class",
@@ -13,36 +16,39 @@ const config: Config = {
     extend: {
       colors: {
         pink: {
-          200: "#fbcfe8",
+          "200": "#fbcfe8",
         },
         purple: {
-          300: "#c4b5fd",
+          "300": "#c4b5fd",
         },
         blue: {
-          200: "#bfdbfe",
-          300: "#93c5fd",
+          "200": "#bfdbfe",
+          "300": "#93c5fd",
         },
         yellow: {
-          200: "#fde68a",
+          "200": "#fde68a",
         },
         orange: {
-          300: "#fdba74",
+          "300": "#fdba74",
         },
         red: {
-          200: "#fecaca",
+          "200": "#fecaca",
         },
         cyan: {
-          200: "#a5f3fc",
+          "200": "#a5f3fc",
+        },
+        teal: {
+          "200": "#99f6e4",
         },
         green: {
-          200: "#bbf7d0",
-          300: "#6ee7b7",
+          "200": "#bbf7d0",
+          "300": "#6ee7b7",
         },
         lime: {
-          200: "#d9f99d",
+          "200": "#d9f99d",
         },
         emerald: {
-          200: "#a7f3d0",
+          "200": "#a7f3d0",
         },
       },
       scale: {
@@ -63,15 +69,23 @@ const config: Config = {
       backgroundClip: {
         text: "text",
       },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
     },
   },
   variants: {
     extend: {
       scale: ["hover", "focus"],
+      transform: ["group-hover"],
     },
   },
   plugins: [
+    addVariablesForColors,
     flowbite.plugin(),
+    // require("daisyui"),
     function ({ addUtilities }: any) {
       const newUtilities = {
         ".hover-props:hover": {
@@ -89,7 +103,19 @@ const config: Config = {
       };
       addUtilities(newUtilities, ["responsive", "hover"]);
     },
+    require("tailwindcss-animate"),
   ],
 };
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
 
 export default config;

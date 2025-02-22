@@ -1,7 +1,8 @@
 import { Locales } from "@/infraestructure/interfaces";
-import { WifiIcon } from "../../../../public/svgs";
-import { useState } from "react";
+import { useAtom } from "jotai";
+import { FaWifi } from "react-icons/fa";
 import { contents } from "@/data/contents/content";
+import { isFollowingAtom } from "@/atoms/following";
 
 type Props = {
   locale: Locales;
@@ -9,21 +10,21 @@ type Props = {
 };
 
 export function FollowButtonHome({ className, locale }: Props) {
-  const [display, setDisplay] = useState(false);
-  const { followButton, followButtonClicked } = contents[locale].pages.home.bio;
+  const [isFollowing, setIsFollowing] = useAtom(isFollowingAtom);
+
+  const { followButton, followButtonClicked } =
+    contents[locale]?.pages?.home?.bio || contents["es"].pages.home.bio;
 
   return (
     <button
-      onClick={() => {
-        setDisplay(!display);
-      }}
+      onClick={() => setIsFollowing(!isFollowing)}
       className={`${className} flex gap-2 items-center rounded-full ${
-        display
+        isFollowing
           ? "bg-gray-400 text-white dark:bg-gray-500"
-          : "bg-[#4B6E82] text-white dark:bg-gray-700 "
+          : "bg-[#4B6E82] text-white dark:bg-gray-700"
       }`}>
-      <h5>{display ? followButtonClicked : followButton}</h5>
-      <WifiIcon className="w-4 h-4" />
+      <h5>{isFollowing ? followButtonClicked : followButton}</h5>
+      <FaWifi className="text-sm rotate-45" />
     </button>
   );
 }

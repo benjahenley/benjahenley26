@@ -1,10 +1,9 @@
 "use client";
 
 import { FaGripLinesVertical } from "react-icons/fa";
-import { DarkModeToggle } from "@/presentation/components/ui/Darkmode";
 import Link from "next/link";
 import TwitterSession from "../auth/UserSession";
-import { LanguageButton } from "../LanguageSelect";
+import { LanguageButton } from "../selects/Language";
 import { Locales } from "@/infraestructure/interfaces";
 import getOptions from "@/infraestructure/data/menu/page";
 
@@ -30,7 +29,7 @@ export function LeftbarMobile({ locale, className, handleClose }: Props) {
               <span className="dark:text-white text-5xl xl:text-7xl cursor-pointer">
                 <a href="/">BH</a>
               </span>
-              <DarkModeToggle />
+              {/* <ThemeSelect /> */}
             </div>
 
             <div className="flex h-full">

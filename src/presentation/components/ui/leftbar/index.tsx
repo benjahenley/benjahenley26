@@ -1,7 +1,7 @@
-import { DarkModeToggle } from "@/presentation/components/ui/Darkmode";
+import ThemeSelect from "@/presentation/components/ui/selects/Theme";
 import Link from "next/link";
 import TwitterSession from "../auth/UserSession";
-import { LanguageButton } from "../LanguageSelect";
+import { LanguageButton } from "../selects/Language";
 import { Locales } from "@/infraestructure/interfaces";
 
 import OPTIONS from "@/infraestructure/data/menu/page";
@@ -20,28 +20,27 @@ export default function Leftbar({ locale }: Props) {
 
   return (
     <>
-      <div
-        className="fixed max-w-[256px] h-full pt-4 overflow-auto  hide-scrollbar"
-        style={{ width: "inherit" }}>
+      <div className="fixed md:w-[10vw] xl:w-[20vw] 2xl:w-[15vw] h-full w-full max-w-full pt-4 overflow-auto hide-scrollbar">
         <div className="relative flex flex-col justify-between h-full">
           <div>
             <div
-              className="border-b xl:border-none lg:px-2 border-gray-300 dark:border-slate-600 md:flex-col xl:flex-row flex items-center gap-2 xl:gap-14 justify-start md:py-4 md:pb-8 xl:py-2"
+              className="border-b xl:border-none px-6 2xl:px-4 border-gray-300 dark:border-slate-600 md:flex-col xl:flex-row flex items-center gap-2 xl:gap-14 justify-between md:py-4 md:pb-8 xl:py-2"
               style={{ width: "inherit" }}>
-              <div className="dark:text-white md:text-5xl lg:text-6xl xl:text-7xl cursor-pointer flex items-center justify-center">
+              <div className="text-gray-800 dark:text-white md:text-5xl lg:text-6xl xl:text-7xl cursor-pointer flex items-center justify-center 2xl:text-8xl">
                 <a href="/">BH</a>
-              </div>
-              <div className="">
-                <DarkModeToggle />
               </div>
             </div>
             <div className="flex flex-col w-full h-full overflow-auto hide-scrollbar gap-2 p-2">
               {OPTIONS.map(({ logo, text, href }, key) => {
                 return (
-                  <Link href={href} key={key} className="group">
+                  <Link
+                    href={href}
+                    target={key === 0 ? "" : "_blank"}
+                    key={key}
+                    className="group">
                     <div
                       key={text}
-                      className="py-3 px-4 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-start md:justify-center xl:justify-start items-center gap-4">
+                      className="py-3 px-4 rounded-lg text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-start md:justify-center xl:justify-start items-center gap-4">
                       <div className="transition-transform transform group-hover:scale-110 text-2xl lg:text-3xl xl:text-4xl">
                         {logo}
                       </div>
@@ -53,6 +52,9 @@ export default function Leftbar({ locale }: Props) {
                 );
               })}
               <LanguageButton locale={locale}></LanguageButton>
+              <ThemeSelect locale={locale} />
+              {/* <div className="">
+              </div> */}
             </div>
           </div>
           <div>

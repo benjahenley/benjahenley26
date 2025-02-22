@@ -32,6 +32,13 @@ export interface ImageAttributes {
   updatedAt: string;
 }
 
+export type ImageType = {
+  src: string;
+  width?: number;
+  height?: number;
+  cropped?: boolean;
+};
+
 export interface ImageData {
   id: number;
   attributes: ImageAttributes;

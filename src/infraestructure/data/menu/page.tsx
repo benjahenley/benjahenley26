@@ -11,7 +11,9 @@ import { contents } from "@/data/contents/content";
 import { IoLanguage } from "react-icons/io5";
 
 function getOptions(locale: Locales) {
-  const { items } = contents[locale].ui.leftbar;
+  const items =
+    contents[locale]?.ui?.leftbar?.items || contents["es"].ui.leftbar.items;
+
   const OPTIONS = [
     {
       logo: <CgProfile />,
@@ -36,13 +38,13 @@ function getOptions(locale: Locales) {
     {
       logo: <FaWhatsapp />,
       text: items[4],
-      href: "https://www.instagram.com/benjahenley/",
+      href: "https://wa.link/6qupmc",
     },
-    {
-      logo: <FaSoundcloud />,
-      text: items[5],
-      href: "/soundcloud",
-    },
+    // {
+    //   logo: <FaSoundcloud />,
+    //   text: items[5],
+    //   href: "/soundcloud",
+    // },
   ];
   return OPTIONS;
 }

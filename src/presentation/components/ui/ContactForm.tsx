@@ -4,7 +4,6 @@ import { useState } from "react";
 import { atom, useAtom } from "jotai";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { PrimaryButton } from "@/presentation/components/ui/Buttons";
-import { DisplayArrowIcon } from "../../../../public/svgs";
 
 type Inputs = {
   name: string;
@@ -62,7 +61,6 @@ export function Form({ className }: Props) {
       className={`bg-gray-300 dark:bg-[#2d3748] w-full max-w-[528px] mt-5 cursor-pointer ${className}`}>
       <summary className="flex justify-between p-2">
         <h5 className="text-sm font-semibold">CONTACT FORM</h5>
-        <DisplayArrowIcon className="w-4 h-4"></DisplayArrowIcon>
       </summary>
       <form
         className="flex flex-col gap-1 p-2"

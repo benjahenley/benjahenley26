@@ -45,7 +45,7 @@ const NavbarMobile: FC<Props> = ({ className, locale }) => {
         />
       </div>
       <div className="h-20 md:hidden"></div>
-      <div className="fixed md:hidden bottom-0 w-full h-16 bg-custom-gradient">
+      <div className="z-[9999] fixed md:hidden bottom-0 left-0 right-0 w-full h-16 bg-custom-gradient">
         <div className="w-full h-full flex justify-between items-center text-white px-2">
           <div
             className="flex items-center justify-left text-4xl"

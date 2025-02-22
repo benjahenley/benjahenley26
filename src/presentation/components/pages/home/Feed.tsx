@@ -1,8 +1,11 @@
-import { useQuery } from "@apollo/client";
-import Tweet from "../../ui/Tweet";
-import { Locales, TweetContentProps } from "@/infraestructure/interfaces";
-import { GET_TWEETS } from "@/graphql/queries/getTweets";
+"use client";
+
+import Tweet from "../../ui/interactions/comments/ProjectComment";
+import { Locales, TweetApiResponse } from "@/infraestructure/interfaces";
 import { Spinner } from "../../ui/Spinner";
+import { useQuery } from "@apollo/client";
+import { GET_TWEETS_BY_CATEGORY } from "@/graphql/queries/getTweets";
+import { TweetCategory } from "@/graphql/types";
 
 type Props = {
   locale: Locales;
@@ -10,15 +13,14 @@ type Props = {
 };
 
 export default function Feed({ locale, className }: Props) {
-  const { loading, error, data } = useQuery(GET_TWEETS, {
+  const { loading, error, data } = useQuery(GET_TWEETS_BY_CATEGORY, {
     variables: {
       language: locale as string,
-      category: "FEED",
+      category: TweetCategory.FEED,
     },
     errorPolicy: "all",
   });
 
-  //TODO: HACER LOADING COMP
   if (loading) {
     return (
       <>
@@ -27,7 +29,7 @@ export default function Feed({ locale, className }: Props) {
     );
   }
   if (error) {
-    console.log(error.message);
+    console.log("error", error);
     return (
       <div className="w-full h-auto flex justify-center items-center">
         <img src="/photos/error/404.jpg" className="w-full h-auto "></img>
@@ -35,11 +37,15 @@ export default function Feed({ locale, className }: Props) {
     );
   }
 
+  console.log({ data });
+
   return (
     <div className={className}>
-      {data?.tweets.map((tweet: TweetContentProps, index: number) => (
-        <Tweet {...tweet} key={index}></Tweet>
-      ))}
+      {data.getTweetsByCategory.map(
+        (tweet: TweetApiResponse, index: number) => (
+          <Tweet {...tweet} key={index}></Tweet>
+        )
+      )}
     </div>
   );
 }

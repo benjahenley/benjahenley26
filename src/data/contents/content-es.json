@@ -2,65 +2,342 @@
   "pages": {
     "home": {
       "bio": {
-        "title": "Desarrollador Web Junior",
+        "title": "FullStack Developer",
         "subtitle": "Mi objetivo es crear soluciones estéticamente agradables y funcionales a través del código y el diseño. Con una cartera en crecimiento de proyectos exitosos, estoy comprometido a avanzar continuamente en mis habilidades y conocimientos. Estoy ansioso por aportar mi experiencia y pasión a un equipo colaborativo, donde pueda contribuir eficazmente, aprender de otros y crecer junto a profesionales talentosos.",
         "followButton": "Seguir",
         "followButtonClicked": "Siguiendo"
       },
       "about": {
-        "title": "Sobre mí...",
+        "title": "Sobre mí",
         "texts": [
-          "Soy Benja, un programador de Buenos Aires, Argentina. Mi viaje en la programación comenzó en mayo de 2021 cuando comencé un curso en APX School, una plataforma interactiva que permite a los estudiantes progresar a su propio ritmo.",
-          "Antes de eso, ya estaba interesado en la programación y aprendí Python a través de tutoriales en YouTube de Mosh Hamedi.",
-          "Aprendo rápido y tengo un buen ojo para los detalles. Siempre estoy ansioso por hacer nuevas conexiones, enfrentar nuevos desafíos y entregar mi mejor trabajo.",
-          "Me encanta aprender cosas nuevas, actualmente estoy en camino de desarrollar mi primera aplicación nativa. Lo cual será todo un desafío. Estoy estudiando en Udemy, completé un curso de Next 14 y estoy en proceso de completar mi curso nativo.",
-          "Además de programar, me apasiona la música electrónica, especialmente el techno. He sido DJ y productor desde la escuela secundaria. Mira mi música en Spotify"
+          "Si te tomaste el tiempo para investigar y crear tu propia cuenta, te lo agradezco de corazón! Ahora puedo spammear tu mail hasta que me contrates, chiste jiji. Podes tuitear lo que quieras e interactuar con mis cosas en el pequeño espacio que construí. Decime algo lindo sobre mis proyectos che! 🥹 Lo agradecería mucho 😌. Esta pequeña comunidad va a ocupar un lugar especial en mi corazón.",
+          "Tengo 24 años, este viaje en el mundo de la programación ha sido corto y dulce, y me encantaría guiarte en el proceso. Creo que tengo espacio para hablar de mí primero, ¿verdad? De todos modos, no soy el típico tipo inteligente. Probé la universidad durante unos (muy) largos 2 años y el sufrimiento nunca fue agradable... ¿o tal vez elegí mal? Verás, cuando era chico pensaba que sería bioquímico, pero las cosas no siempre salen como uno espera. La realidad es que, después de 2 años, me di cuenta de que ya NO iba a ser el próximo Walter White en ascenso — más bien en retirada... No?? Hola?",
+          "Bueno, tal vez esta no sea la biografía más interesante, pero al menos no te spammeo ChatGPT. Sé sincero, ¿qué tan harto estás de escuchar la palabra 'seamless' en tus textos? Te conté que soy bastante nerd con los memes? ¿Eso cuenta como un punto a favor en los hermosos ojos de mi futuro empleador? ¡Tal vez! Quién sabe en qué está interesado quien esté leyendo esto. Sin juzgar — en fin, volvamos a mí."
         ],
+        "artistSection": {
+          "title": "Mi lado artístico",
+          "texts": [
+            "Ah, sí, este soy yo. En mi tiempo libre me gusta hacer música electrónica. Sí, escoliosis y dolor de hombros hasta la muerte para mí, gracias. Específicamente, para los que conocen la escena (los real ones), hago peak-time techno, un género bastante popular hoy en día en el mundo — ese que está afuera de mi cueva, o eso me han comentado al menos. Así que sí, soy un nerd cocoonero, pero te juro que tengo amigos y novia (al menos por ahora, ampliaremos). Pero si no tuviera seres queridos y nunca entrenara siquiera, saben como estaría rompiendola en Assembly a esta altura?",
+
+            "Empecé a tocar y a producir después de terminar la secundaria. Las fotos de abajo son de una sesión en la que invertí mi platita, porque no podés ser dj de techno sin un feed emo, casual y un toque cringe."
+          ]
+        },
+        "stats": {
+          "title": "Datos",
+          "favouriteThingTitle": "Cosa Favorita",
+          "leastFavouriteThingTitle": "Cosa Menos Favorita",
+          "ageTitle": "Edad",
+          "hobbiesTitle": "Hobbies",
+          "featsTitle": "Atributos",
+          "favouriteThing": "",
+          "leastFavouriteThing": "Recibir hate por spamear W's en el grupo de warap de los pibes.",
+          "age": "24 añitos",
+          "hobbies": "Contar la biyuya, producir beats bien chetos, entrenar, meditar (ansiedark), pasear a mis perritos (el caniche no es mío, gracias a dios [hate a los caniches]), salir a bailar, tocar en boliches, viciar YouTube shorts hasta desmayar, PARKOUR! Decime que viste The Office, gracias, aprender cosas nuevas, viajar (la gira mundial sigue en veremos) y conocer seres interesantes.",
+          "feats": "Me encanta conectar personas entre si, unir desconocidos entre si me gusta, tremendo crossover. Disfruto comunicarme, incluso si implica conversaciones difíciles para vencer diferencias y conectar enserio con la gente. Me gusta superar mis límites, aprender nuevas skills y perfeccionar las viejas. Durante la cuarentena pinté todas las paredes de mi habitación, dato no menor porque complementa todo lo artístico de mi personalidad. Soy súper Argentino, me fascinan los asados y el mate. Pero no hables mal de nuestra economía porque se pudre todo eh!"
+        },
+
+        "music": {
+          "title": "Mi música"
+        },
         "link": "aquí"
       },
-      "skillset": {
-        "title": "Mis Habilidades",
-        "texts": [
-          "💻 Soy experto en JavaScript y TypeScript, con una sólida base en bases de datos SQL (PostgreSQL) y NoSQL como Firebase. Me especializo en construir aplicaciones web escalables y eficientes utilizando React y Next.js, manejando todo, desde el diseño inicial y la arquitectura hasta el despliegue. Para el alojamiento, he trabajado extensamente con Vercel, Heroku y GitHub Pages 🚀, asegurando una entrega fluida y accesibilidad.",
-          "🌍 Mis habilidades bilingües en inglés 🇬🇧 y español 🇪🇸 me han permitido colaborar eficazmente en equipos diversos. En Panorama Minero, trabajé en la internacionalización de páginas web, mejorando la UI/UX y ampliando el alcance de la plataforma al optimizar la accesibilidad en varios idiomas.",
-          "🚤 Durante mi tiempo en ibijetrent, colaboré con un desarrollador frontend para integrar funcionalidades complejas, entregando una aplicación robusta que superó las expectativas de los usuarios. Las sesiones regulares de brainstorming y la resolución de problemas en tiempo real nos ayudaron a crear una experiencia de usuario fluida.",
-          "🚧 Con una sólida experiencia en la gestión de bases de datos, he trabajado extensamente con SQL (PostgreSQL) y NoSQL (Firebase) para construir aplicaciones confiables y escalables. Mi experiencia incluye la creación de operaciones CRUD eficientes, la implementación de APIs GraphQL y el uso de Apollo Client para la gestión de datos y el estado de forma fluida. Esta combinación de habilidades me permite diseñar aplicaciones sólidas y orientadas a datos, asegurando un rendimiento óptimo y una experiencia de usuario excepcional. 🚀"
+      "projects": {
+        "TechStack": "Tech Usada",
+        "pinned": "Proyecto Pinneado",
+        "projectArray": [
+          {
+            "title": "E-commerce Backend",
+            "projectId": "1",
+            "description": "Consultá mi backend de comercio electrónico, completo con documentación exhaustiva de Postman",
+            "url": "https://github.com/benjini123/dwf-m9-desafio-final",
+            "github": "https://github.com/benjini123/dwf-m9-desafio-final",
+            "date": "24 dic 2022",
+            "images": [
+              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/POSTMAN_aqufhj.png"
+            ],
+            "techStack": [
+              "React",
+              "TypeScript",
+              "Next.js",
+              "Postman",
+              "GitHub",
+              "Vercel",
+              "Algolia",
+              "Airtable"
+            ]
+          },
+          {
+            "title": "Ibijet Rent",
+            "projectId": "2",
+            "description": "¿Buscas divertirte en Ibiza? Te recomiendo alquilar una moto de agua para explorar los hermosos paisajes que esta isla ofrece. Diseñé un potente algoritmo que verifica la disponibilidad tanto de guías como de motos de agua, junto con un backend robusto utilizando Firebase. Esto asegura que puedas alquilar una moto de agua y disfrutar de una experiencia sin contratiempos.",
+            "url": "https://ibijetrent.com/",
+            "github": "https://github.com/benjahenley/renta-motos-backend",
+            "date": "25 jul 2024",
+            "images": [
+              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/IBIJET_itywxp.png"
+            ],
+            "techStack": [
+              "React",
+              "TypeScript",
+              "Next.js",
+              "Postman",
+              "GitHub",
+              "Vercel",
+              "Firebase",
+              "CSS3",
+              "HTML5",
+              "Tailwind",
+              "Paypal"
+            ]
+          },
+          {
+            "title": "Desafío Crossup",
+            "projectId": "3",
+            "description": "Cuando estaba buscando trabajo activamente, una de las entrevistas que hice fue con Crossup, una empresa dedicada a la venta en MiTienda Nube, lamentablemente no quedé, pero me lleve conmigo la experiencia de codear un store esteticamente agradable que ha embellecido mi portfolio",
+            "url": "https://crossup-challenge.vercel.app/",
+            "github": "https://github.com/benjahenley/crossup-challenge",
+            "date": "12 dic 2024",
+            "images": [
+              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739882132/portfolio-24/projects/crossup-challenge_af6auh.png"
+            ],
+            "techStack": [
+              "React",
+              "TypeScript",
+              "Next.js",
+              "Postman",
+              "GitHub",
+              "Vercel",
+              "Firebase",
+              "CSS3",
+              "HTML5",
+              "Tailwind",
+              "Paypal"
+            ]
+          },
+          {
+            "title": "Post Cosecha",
+            "projectId": "4",
+            "description": "Post cosecha fue uno de esos proyectos que uno hace en solitario. Con poca información del cliente y mucho lugar a imaginación. Pero esta libertad me permitió expresarme y crear un estilo único. El unico gasto a cargo del cliente fue un video para la portada.",
+            "pinned": true,
+            "url": "https://www.postcosechasrl.com.ar/",
+            "github": "https://github.com/benjahenley/post-cosecha",
+            "date": "17 nov 2024",
+            "images": [
+              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1732111030/portfolio-24/projects/POST_COSECHA_vqctvl.png"
+            ],
+            "techStack": [
+              "React",
+              "TypeScript",
+              "Next.js",
+              "Postman",
+              "GitHub",
+              "Vercel",
+              "Firebase",
+              "CSS3",
+              "HTML5",
+              "Tailwind",
+              "Paypal"
+            ]
+          },
+          {
+            "title": "Expo San Juan",
+            "projectId": "5",
+            "description": "He tenido una gran experiencia trabajando con Panorama Minero, una empresa líder en la industria minera. Han estado complacidos de colaborar conmigo en múltiples ocasiones. Esta vez, mejoré la interfaz de usuario internacionalizando su página de la Expo San Juan, haciéndola accesible tanto en inglés como en español. Además, colaboré con un equipo de diseño para agregar nuevas secciones a la página.",
+            "url": "https://exposanjuan.com.ar/",
+            "github": "",
+            "date": "23 mar 2024",
+            "images": [
+              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073224/portfolio-24/projects/SAN-JUAN_qxjuws.png"
+            ],
+            "techStack": [
+              "React",
+              "TypeScript",
+              "Next.js",
+              "Postman",
+              "GitHub",
+              "Vercel",
+              "Firebase",
+              "Tailwind",
+              "CSS3",
+              "HTML5",
+              "Strapi",
+              "Docker"
+            ]
+          },
+          {
+            "title": "Women In Mining",
+            "projectId": "6",
+            "description": "International Women in Mining (IWiM) es una organización internacional dirigida por voluntarios comprometidos con el avance de las mujeres en el sector minero. Me complació desarrollar esta página dedicada a la inclusión y visibilidad de la fuerza laboral femenina.",
+            "url": "",
+            "github": "",
+            "date": "24 jun 2024",
+            "images": [
+              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073227/portfolio-24/projects/WIM-2_r9xouw.png",
+              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/WIM-4_szrxtv.png"
+            ],
+            "techStack": [
+              "React",
+              "TypeScript",
+              "Next.js",
+              "Postman",
+              "GitHub",
+              "Vercel",
+              "Tailwind",
+              "CSS3",
+              "HTML5",
+              "Strapi",
+              "Docker"
+            ]
+          },
+          {
+            "title": "Gold Silver And Copper",
+            "projectId": "7",
+            "description": "Tuve el privilegio de contribuir en la creación de la página de Panorama Minero dedicada al Oro, Plata y Cobre. Este proyecto implicó una extensa colaboración para desarrollar un recurso integral y visualmente atractivo para los usuarios interesados en estos sectores clave de la minería. Internacionalicé la página, haciéndola accesible tanto en inglés como en español, lo que amplió su alcance a una audiencia más amplia. Además, optimicé la interfaz de usuario para garantizar una experiencia fluida e interactiva, integrando una navegación intuitiva y elementos interactivos. Mi trabajo mejoró la usabilidad y accesibilidad de la página, aportando un valor significativo a Panorama Minero al atraer a una audiencia más diversa y global.",
+            "url": "https://oroplataycobre.com.ar/",
+            "github": "",
+            "date": "12 nov 2023",
+            "images": [
+              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739294422/portfolio-24/projects/GOLD_ecoxkg.png"
+            ],
+            "techStack": [
+              "React",
+              "TypeScript",
+              "Next.js",
+              "GitHub",
+              "Vercel",
+              "Bootstrap",
+              "CSS3",
+              "HTML5",
+              "Strapi",
+              "Docker"
+            ]
+          },
+          {
+            "title": "Buenos Aires Vision",
+            "projectId": "8",
+            "description": "Mi primer proyecto en solitario fue un gran éxito. Diseñé una página web para Buenos Aires Vision, una empresa de turismo reconocida por ofrecer la mejor selección de tours en Buenos Aires. Sus ofertas van desde experiencias gastronómicas exquisitas hasta exploraciones fluviales, asegurando una estancia memorable para los visitantes. Mi papel consistió en mostrar estos tours de manera elegante y atractiva, lo que efectivamente atrajo a clientes y aumentó los ingresos de la empresa.",
+            "url": "https://www.buenosairesvision.tur.ar",
+            "github": "",
+            "date": "06 ago 2023",
+            "images": [
+              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073226/portfolio-24/projects/BAV-DARK_ltkj43.png"
+            ],
+            "techStack": [
+              "React",
+              "TypeScript",
+              "Next.js",
+              "GitHub",
+              "Vercel",
+              "CSS3",
+              "HTML5",
+              "Bootstrap"
+            ]
+          }
         ]
       },
-      "login": {
-        "title": "Login",
-        "description": "Ingresa tu email para loguearte a tu cuenta",
-        "inputs": {
-          "email": "Email",
-          "password": "Contraseña"
-        },
-        "forgotPass": "Olvidaste tu contraseña?",
-        "button": "Login",
-        "noAccount": "No tenes una cuenta?",
-        "signup": "Registrate"
+      "skillset": {
+        "title": "Habilidades",
+        "description": "Cada proyecto es una oportunidad para crecer, innovar y perfeccionar mi experiencia. A continuación se muestra un vistazo a las habilidades que dan forma a mi trabajo e impulsan mi pasión por la tecnología.",
+        "texts": [
+          {
+            "emoji": "💻",
+            "title": "Habilidades Técnicas",
+            "description": "Soy un desarrollador full-stack especializado en React, Next.js y Nest.js con GraphQL y Apollo Client. Trabajo con PostgreSQL, Firebase Firestore y disfruto estilizando con Tailwind CSS. Tengo experiencia con Docker para despliegues escalables. Actualmente, estoy aprendiendo React Native y Swift para el desarrollo de aplicaciones nativas. También estoy explorando AWS para servicios en la nube y arquitectura serverless."
+          },
+          {
+            "emoji": "🌍",
+            "title": "Experiencia Bilingüe & UI/UX",
+            "description": "Dato curioso: mi padre es inglés, por lo que soy bilingüe. Estas habilidades en inglés y español me han permitido colaborar eficientemente en equipos diversos y con numerosos clientes, mejorando la internacionalización, la UI/UX y la accesibilidad."
+          },
+          {
+            "emoji": "📝",
+            "title": "Colaboración en Proyectos",
+            "description": "Disfruto trabajar en función de una visión de equipo. En ibijetrent, colaboré con un desarrollador frontend para integrar características complejas en una plataforma de reservas de motos de agua, logrando una solución que superó las expectativas. En Encender, trabajo con un equipo de desarrolladores para construir e integrar iframes en el sitio principal de Salesforce."
+          },
+          {
+            "emoji": "🚧",
+            "title": "Experiencia en Bases de Datos y APIs",
+            "description": "He creado y optimizado bases de datos SQL (PostgreSQL) y NoSQL (Firebase) para aplicaciones escalables, implementando operaciones CRUD eficientes y diseñando APIs GraphQL con Apollo Client para una recuperación de datos fluida. El backend de esta página web está construido con Node.js y Nest.js, con datos de tweets almacenados en una base de datos PostgreSQL. También containericé la aplicación con Docker, garantizando un entorno de desarrollo consistente y portátil."
+          },
+          {
+            "emoji": "🎯",
+            "title": "Resolución de Problemas",
+            "description": "Disfruto descomponer problemas complejos y aplicar principios de diseño y mejores prácticas de desarrollo para encontrar soluciones eficientes. Analizar un problema desde múltiples ángulos me permite ofrecer resultados innovadores y bien estructurados. Al diseñar la arquitectura de un proyecto, priorizo la escalabilidad, el mantenimiento y el rendimiento para garantizar eficiencia a largo plazo. Si esto implica aprender una nueva tecnología para actualizar la infraestructura existente, lo haré sin dudarlo."
+          },
+          {
+            "emoji": "🧑🏻‍🎨",
+            "title": "Creatividad e Innovación",
+            "description": "En mi carrera como programador, la creatividad y la innovación son el núcleo de todo lo que desarrollo. Constantemente exploro nuevas tecnologías y frameworks, combinándolos de maneras únicas para crear soluciones eficientes y visualmente atractivas. Ya sea diseñando algoritmos complejos o interfaces intuitivas, me enfoco en pensar fuera de lo convencional para resolver problemas y mejorar la experiencia del usuario. Disfruto experimentando con ideas frescas, desafiando límites y transformando obstáculos en oportunidades de crecimiento. Esta mentalidad me permite crear proyectos impactantes que no solo cumplen con los requisitos técnicos, sino que también aportan un toque creativo al espacio digital."
+          },
+          {
+            "emoji": "🔄",
+            "title": "Adaptabilidad y Aprendizaje Continuo",
+            "description": "Siempre estoy explorando nuevas tecnologías y metodologías para mejorar mis habilidades y mantenerme al día con las tendencias de la industria. Actualmente, estoy aprendiendo sobre desarrollo de aplicaciones nativas y explorando nuevos frameworks y librerías para mejorar mis capacidades de desarrollo frontend y backend."
+          },
+          {
+            "emoji": "🗣️",
+            "title": "Comunicación & Trabajo en Equipo",
+            "description": "Tengo experiencia colaborando con equipos multidisciplinarios, facilitando una comunicación efectiva y asegurando el progreso fluido de los proyectos. Me siento cómodo trabajando con clientes para comprender sus necesidades y ofrecer soluciones que cumplan con sus expectativas."
+          },
+          {
+            "emoji": "⏳",
+            "title": "Gestión del Tiempo y Organización",
+            "description": "Destaco en la gestión de múltiples tareas y en la priorización efectiva para garantizar entregas de proyectos puntuales y de alta calidad. Tengo una gran ética de trabajo y creo que la mejor forma de aprender es a través de la experiencia práctica; esta mentalidad ha dado forma a mi trayectoria como programador. Mis primeros proyectos freelance me enseñaron la importancia de cumplir plazos y entregar trabajos de calidad a tiempo. En Encender, me estoy adaptando a una nueva forma de trabajo en un entorno dinámico y acelerado, colaborando con múltiples clientes y proyectos, lo que ha fortalecido mi capacidad de trabajar de manera eficiente y flexible."
+          }
+        ],
+        "techStack": {
+          "title": "Stack Tecnológico",
+          "description": "Utilizo un stack tecnológico moderno y optimizado, integrando front-end, back-end, bases de datos y soluciones en la nube para desarrollar aplicaciones escalables y de alto rendimiento."
+        }
       }
-    },
-    "soundcloud": {
-      "options": {
-        "list": ["Todo, Temas Populares, Temas, Playlists"]
-      },
-      "followButton": "Seguir",
-      "followButtonClicked": "Siguiendo",
-      "stationButton": "estación"
     }
   },
   "ui": {
-    "soundcloud": {
-      "rightbar": {
-        "texts": [
-          "Benjamin Henley Saubidet, nacido en Buenos Aires, Argentina en el año 2000, es un DJ y productor de techno. Su pasión por la música electrónica floreció después de terminar la escuela y entrar en el mundo real, donde consiguió un trabajo y comenzó a invertir en lo que pronto se convertiría en su futuro.",
-          "Su carrera como productor comenzó con su primer lanzamiento, gracias al DJ local y ahora artista de Drumcode, Nicolas Taboada, quien lo seleccionó para la primera compilación de techno de DJ Mag.",
-          "Su sonido se caracteriza por melodías bailables y a veces melancólicas. Es un gran fanático del diseño de sonido y todas sus pistas poseen una variedad de golpes, rugidos y efectos originales que hacen que su sonido sea único.",
-          "Actualmente está firmado con IAMT Red, Invicta, Nova Collective, Redlof, Kaligo, Reload Black, DJ Mag LA, Infekted, Made in Brussels, Spacekraft y Future Techno."
-        ]
-      }
+    "login": {
+      "title": "Login",
+      "description": "Ingresa tu email para loguearte a tu cuenta",
+      "inputs": {
+        "email": "Email",
+        "password": "Contraseña"
+      },
+      "forgotPass": "Olvidaste tu contraseña?",
+      "button": "Login",
+      "noAccount": "No tenes una cuenta?",
+      "signup": "Registrate"
     },
+    "signup": {
+      "title": {
+        "email": "Crear cuenta en BH!",
+        "code": "Código",
+        "password": "Contraseña"
+      },
+      "description": {
+        "email": "Ingresa tu email para empezar, te enviaremos un código de verificación.",
+        "code": "Ingresa el código de verificación",
+        "password": "Elige tu contraseña"
+      },
+      "inputLabels": {
+        "email": "Email",
+        "userTag": "Usuario",
+        "firstName": "Nombre",
+        "lastName": "Apellido/s",
+        "password": "Contraseña",
+        "confirmPassword": "Confirmar contraseña"
+      },
+      "button": "Registrarse",
+      "haveAccount": "Ya tenes una cuenta?",
+      "login": "Logueate",
+      "code": "Ingresa el código de verificación",
+      "codeButton": "Verificar Código"
+    },
+
     "leftbar": {
+      "theme": {
+        "themeTitle": "Tema",
+        "dark": "Modo Noche",
+        "light": "Modo Día"
+      },
+
       "items": [
         "PERFIL",
         "LINKEDIN",

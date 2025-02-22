@@ -1,7 +1,7 @@
 import "./globals.css";
 import "photoswipe/style.css";
 import { Provider as JotaiProvider } from "jotai";
-import { Source_Sans_3 } from "@next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 import { ThemeProvider } from "../../presentation/components/providers/Theme";
 import { Locales } from "@/infraestructure/interfaces";
 import { AudioProvider } from "@/presentation/components/providers/Audio";
@@ -17,7 +17,7 @@ const sourceSansPro = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio 2024",
+  title: "BH | Portfolio",
   description: "Benja Henley",
 };
 

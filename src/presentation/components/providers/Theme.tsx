@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect } from "react";
 import { useAtom } from "jotai";
 import { darkModeAtom } from "@/atoms/darkmode";
 
@@ -9,7 +9,6 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 
-// Create the context
 const ThemeContext = createContext<ThemeContextType>({
   theme: "light",
   toggleTheme: () => {},
@@ -18,7 +17,6 @@ const ThemeContext = createContext<ThemeContextType>({
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [darkMode, setDarkMode] = useAtom(darkModeAtom);
 
-  // Toggle function
   const toggleTheme = () => {
     const root = window.document.documentElement;
     const newTheme = darkMode ? "light" : "dark";
@@ -29,11 +27,11 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     setDarkMode(!darkMode);
   };
 
-  // Sync with document class on mount
-  if (typeof window !== "undefined") {
+  useEffect(() => {
     const root = document.documentElement;
+    root.classList.remove("light", "dark");
     root.classList.add(darkMode ? "dark" : "light");
-  }
+  }, [darkMode]);
 
   return (
     <ThemeContext.Provider

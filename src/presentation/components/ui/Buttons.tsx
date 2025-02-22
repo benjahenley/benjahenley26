@@ -1,9 +1,15 @@
+import { cn } from "@/lib/utils";
+
 export function PrimaryButton(props: any) {
   return (
     <button
       onClick={props.onClick}
       type={props.type}
-      className="text-white block bg-[#E85A4F] hover:scale-[1.01] shadow-lg w-full py-2 px-4 border border-transparent rounded cursor-pointer">
+      disabled={props.disabled}
+      className={cn(
+        "text-white block bg-[#E85A4F] hover:scale-[1.01] shadow-lg w-full py-2 px-4 border border-transparent rounded cursor-pointer",
+        props.className
+      )}>
       <h5 className="text-sm font-semibold">{props.children}</h5>
     </button>
   );

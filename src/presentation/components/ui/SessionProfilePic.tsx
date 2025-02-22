@@ -1,4 +1,4 @@
-import { AvatarIcon } from "../../../../public/svgs";
+import { FaRegUserCircle } from "react-icons/fa";
 
 type Props = {
   className?: string;
@@ -11,9 +11,13 @@ function SessionProfilePic({ className, small, image }: Props) {
     <div className={className}>
       <div
         className={`${
-          small ? "w-10 h-10 border-transparent" : "w-22 h-22"
+          small ? "w-10 h-10 border-transparent grid items-center" : "w-22 h-22"
         } rounded-full overflow-hidden`}>
-        {image ? <div></div> : <AvatarIcon></AvatarIcon>}
+        {image ? (
+          <div></div>
+        ) : (
+          <FaRegUserCircle className=" w-full h-full pr-2" />
+        )}
       </div>
     </div>
   );

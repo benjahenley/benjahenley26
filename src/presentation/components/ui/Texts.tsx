@@ -15,9 +15,18 @@ function PageTitle({ children, className = "" }: Props) {
 function SectionTitle({ children, className = "" }: Props) {
   return (
     <h3
-      className={`${className} text-4xl font-bold text-gray-800 dark:text-gray-100`}>
+      className={`${className} text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100`}>
       {children}
     </h3>
+  );
+}
+
+function SectionText({ children, className = "" }: Props) {
+  return (
+    <p
+      className={`${className} text-clip text-base md:text-lg font-normal dark:text-gray-300`}>
+      {children}
+    </p>
   );
 }
 
@@ -51,7 +60,7 @@ function MainProductText({ children, className = "" }: Props) {
 function PriceText({ children, className = "" }: Props) {
   return (
     <p
-      className={`${className} text-lg font-semibold text-gray-700 dark:text-gray-400`}>
+      className={`${className} text-md font-bold text-gray-900 dark:text-gray-100`}>
       {children}
     </p>
   );
@@ -78,7 +87,7 @@ function TweetNameTitle({ children, className = "" }: Props) {
 function TextBase({ children, className = "" }: Props) {
   return (
     <p
-      className={`${className} text-sm md:text-base font-normal text-black dark:text-gray-300 `}>
+      className={`${className} text-sm md:text-base font-normal text-gray-800 dark:text-gray-300 `}>
       {children}
     </p>
   );
@@ -88,6 +97,7 @@ export {
   PageTitle,
   ProductTitle,
   SectionTitle,
+  SectionText,
   MainProductTitle,
   MainProductText,
   PriceText,

@@ -1,13 +1,14 @@
 import { gql } from "@apollo/client";
 
-export const GET_TWEETS = gql`
-  query GetTweets($language: String!, $category: TweetCategory!) {
-    tweets(language: $language, category: $category) {
+export const GET_TWEETS_BY_CATEGORY = gql`
+  query GetTweetsByCategory($language: String!, $category: TweetCategory!) {
+    getTweetsByCategory(language: $language, category: $category) {
       id
       date
       techStack
       category
       pinned
+      link
       reposts {
         id
         user {

@@ -1,13 +1,8 @@
 "use client";
 
+import { modalAtom } from "@/atoms/modals";
+import { MODAL_VIEW } from "@/infraestructure/interfaces/modal";
 import { atom, useSetAtom, useAtomValue } from "jotai";
-
-export type MODAL_VIEW = "SIGN_IN" | "SIGN_UP" | "OPTIONS";
-
-const modalAtom = atom({
-  open: false,
-  view: "ADD_REVIEW_VIEW",
-});
 
 export function useModal() {
   let modal = useAtomValue(modalAtom);

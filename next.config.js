@@ -1,8 +1,20 @@
-const withSvgr = require("next-svgr");
-
 /** @type {import('next').NextConfig} */
-const nextConfig = withSvgr({
-  darkMode: "class",
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
+const nextConfig = withBundleAnalyzer({
+  swcMinify: true,
+  experimental: {
+    swcTraceProfiling: true,
+  },
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
+  experimental: {
+    legacyBrowsers: false,
+  },
   compiler: {
     styledComponents: true,
   },

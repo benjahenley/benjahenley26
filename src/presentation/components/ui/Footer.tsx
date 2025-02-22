@@ -1,10 +1,4 @@
 import {
-  GithubIcon,
-  InstagramIcon,
-  LinkedinIcon,
-} from "../../../../public/svgs";
-
-import {
   FaLinkedin,
   FaInstagramSquare,
   FaGithubSquare,
