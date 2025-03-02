@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useOutsideClick } from "@/hooks/use-outside-click";
+import { useClickOutside } from "@/hooks";
 import SpotifyCards from "@/infraestructure/data/spotify-cards";
 import { Locales } from "@/infraestructure/interfaces";
 
@@ -32,7 +32,7 @@ export function ExpandableCardDemo({ locale }: Props) {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
 
-  useOutsideClick(ref, () => setActive(null));
+  useClickOutside(ref, () => setActive(null));
 
   return (
     <>

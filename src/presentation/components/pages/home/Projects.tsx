@@ -1,5 +1,4 @@
 import { Locales } from "@/infraestructure/interfaces/index";
-import { Spinner } from "../../ui/Spinner";
 import { contents } from "@/data/contents/content";
 import Project from "../../ui/Project";
 import { useCallback, useEffect, useState } from "react";
@@ -12,6 +11,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { useModal } from "../../modals/context";
 import ProjectComments from "../../ui/interactions/comments/ProjectComments";
+import { SpinnerContainer } from "../../ui/SpinnerContainer";
 
 type Props = {
   locale: Locales;
@@ -87,7 +87,7 @@ export default function Projects({ locale, className }: Props) {
 
   // Loading Spinner
   if (loading) {
-    return <Spinner />;
+    return <SpinnerContainer />;
   }
 
   // Error Handling

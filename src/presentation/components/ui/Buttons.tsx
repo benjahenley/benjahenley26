@@ -6,10 +6,9 @@ export function PrimaryButton(props: any) {
       onClick={props.onClick}
       type={props.type}
       disabled={props.disabled}
-      className={cn(
-        "text-white block bg-[#E85A4F] hover:scale-[1.01] shadow-lg w-full py-2 px-4 border border-transparent rounded cursor-pointer",
-        props.className
-      )}>
+      className={`text-white block bg-[#E85A4F] hover:scale-[1.01] shadow-lg w-full py-2 px-4 border border-transparent rounded cursor-pointer ${
+        props.disabled && "cursor-not-allowed opacity-20"
+      } ${props.className}`}>
       <h5 className="text-sm font-semibold">{props.children}</h5>
     </button>
   );

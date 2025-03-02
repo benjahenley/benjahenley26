@@ -4,12 +4,12 @@ import iconMapping from "@/utils/iconMapping";
 import ProjectLinkInteractions from "./ProjectLinkInteractions";
 import UserStatsExpandable from "./UserStatsExpandable";
 import { TextBase } from "./Texts";
-import CalendarDateExpandable from "./CalendarDateExpandable";
 import LikeButton from "./interactions/likes/LikeButton";
 import CommentButton from "./interactions/comments/CommentButton";
 import RepostButton from "./interactions/reposts/RepostButton";
 import { Locales } from "@/infraestructure/interfaces";
 import { IoMdArrowBack } from "react-icons/io";
+import CollapsableCalendar from "./CollapsableCalendar";
 
 export type Props = {
   selected?: boolean;
@@ -60,7 +60,7 @@ function Project({
             userTag={"@benjahenley"}
           />
           <div className="hidden calendar__desktop">
-            <CalendarDateExpandable date={projectData.date} />
+            <CollapsableCalendar date={projectData.date} />
           </div>
         </div>
         <TextBase className="mb-4 ">{projectData.description}</TextBase>

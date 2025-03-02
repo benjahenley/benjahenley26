@@ -26,8 +26,8 @@ export function CommentButton({
     <li
       className="flex items-center gap-1 cursor-pointer"
       onClick={handleClick}>
-      <p className="p-2 rounded-full hover:bg-pink-100">
-        <FaComment className="text-pink-500" />
+      <p className="p-2 rounded-full hover:bg-blue-300 bg-opacity-10">
+        <FaComment className="" />
       </p>
       <span>{commentCount}</span>
     </li>

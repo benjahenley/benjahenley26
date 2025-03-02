@@ -71,7 +71,7 @@ export default function ModalContainer({ locale }: Props) {
       <Dialog
         as="div"
         className={clsx(
-          "fixed inset-0 z-[9999] h-full w-full overflow-y-auto overflow-x-hidden bg-gray-dark bg-opacity-40 p-4 text-center"
+          "fixed inset-0 z-[9999] flex items-center justify-center h-full w-full overflow-y-auto overflow-x-hidden bg-gray-dark bg-opacity-40 p-4 text-center"
         )}
         onClose={closeModal}>
         <TransitionChild
@@ -83,7 +83,7 @@ export default function ModalContainer({ locale }: Props) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0">
           <DialogBackdrop
-            className="fixed inset-0 z-[9999] cursor-pointer bg-black opacity-50"
+            className="fixed inset-0 z-[9999]   cursor-pointer bg-black opacity-50"
             onClick={() => closeModal()}
           />
         </TransitionChild>
@@ -110,7 +110,7 @@ export default function ModalContainer({ locale }: Props) {
           leave="ease-in duration-200"
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-105">
-          <div className=" relative z-[9999] inline-block w-full text-left align-middle sm:w-auto">
+          <div className=" relative z-[9999] m-auto inline-block w-full text-left align-middle sm:w-auto">
             {view && renderModalContent(view, locale)}
           </div>
         </TransitionChild>

@@ -50,8 +50,8 @@ export default function Options({ className }: Props) {
             setOptions(false);
             openModal("SIGN_IN");
           }}
-          className="hover:font-black group px-7 py-2 font-bold hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-800 dark:text-white flex items-center justify-center xl:justify-between">
-          <p className="hidden xl:block">Sign In</p>
+          className="hover:font-black group px-5 xl:px-7 py-2 font-bold hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-800 dark:text-white flex items-center justify-between md:justify-center xl:justify-between">
+          <p className="flex md:hidden xl:block">Sign In</p>
           <FaSignInAlt className="text-lg group-hover:scale-110" />
         </button>
         <button
@@ -59,8 +59,8 @@ export default function Options({ className }: Props) {
             e.stopPropagation();
             openModal("SIGN_UP");
           }}
-          className="hover:font-black group px-7 py-2 font-bold hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-800 dark:text-white flex items-center justify-center xl:justify-between">
-          <p className="hidden xl:block">Sign Up</p>
+          className="hover:font-black group px-5 xl:px-7 py-2 font-bold hover:bg-gray-200 dark:hover:bg-slate-700 text-gray-800 dark:text-white flex items-center justify-between md:justify-center xl:justify-between">
+          <p className="flex md:hidden xl:block">Sign Up</p>
           <FaUserPlus className="text-lg group-hover:scale-110" />
         </button>
         <button
@@ -68,8 +68,8 @@ export default function Options({ className }: Props) {
             e.stopPropagation();
             setOptions(false); // Close options on sign-out
           }}
-          className="hover:font-black group px-7 py-2 font-bold hover:bg-gray-300 dark:hover:bg-slate-700 text-red-600 flex items-center justify-center xl:justify-between">
-          <p className="hidden xl:block">Sign Out</p>
+          className="hover:font-black group px-5 xl:px-7 py-2 font-bold hover:bg-gray-300 dark:hover:bg-slate-700 text-red-600 flex items-center justify-between md:justify-center xl:justify-between">
+          <p className="flex md:hidden xl:block">Sign Out</p>
           <FaSignOutAlt className="text-lg group-hover:scale-110" />
         </button>
       </div>

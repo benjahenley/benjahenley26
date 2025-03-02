@@ -1,7 +1,7 @@
+import "photoswipe/style.css";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { GiExpand } from "react-icons/gi";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
-import "photoswipe/style.css";
 
 type Props = {
   url?: string;

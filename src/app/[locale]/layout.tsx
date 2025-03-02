@@ -4,10 +4,10 @@ import { Provider as JotaiProvider } from "jotai";
 import { Source_Sans_3 } from "next/font/google";
 import { ThemeProvider } from "../../presentation/components/providers/Theme";
 import { Locales } from "@/infraestructure/interfaces";
-import Script from "next/script";
 import { locales } from "@/middleware";
 import { Metadata } from "next";
 import ModalContainer from "@/presentation/components/modals/view";
+import favicon from "./favicon.ico";
 
 const sourceSansPro = Source_Sans_3({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],

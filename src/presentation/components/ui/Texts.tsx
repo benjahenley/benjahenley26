@@ -1,6 +1,7 @@
 type Props = {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 };
 
 function PageTitle({ children, className = "" }: Props) {
@@ -12,9 +13,10 @@ function PageTitle({ children, className = "" }: Props) {
   );
 }
 
-function SectionTitle({ children, className = "" }: Props) {
+function SectionTitle({ children, className = "", style }: Props) {
   return (
     <h3
+      style={style}
       className={`${className} text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100`}>
       {children}
     </h3>
@@ -78,7 +80,16 @@ function OptionsText({ children, className = "" }: Props) {
 function TweetNameTitle({ children, className = "" }: Props) {
   return (
     <h4
-      className={`${className} text-sm font-bold cursor-pointer text-black dark:text-white`}>
+      className={`${className} text-md font-extrabold cursor-pointer text-gray-800 dark:text-white`}>
+      {children}
+    </h4>
+  );
+}
+
+function TwitterHandle({ children, className = "" }: Props) {
+  return (
+    <h4
+      className={`${className}text-xs dark:text-gray-500 cursor-pointer text-gray-800 font-normal`}>
       {children}
     </h4>
   );
@@ -87,7 +98,7 @@ function TweetNameTitle({ children, className = "" }: Props) {
 function TextBase({ children, className = "" }: Props) {
   return (
     <p
-      className={`${className} text-sm md:text-base font-normal text-gray-800 dark:text-gray-300 `}>
+      className={`${className} text-base lg:text-lg  font-normal text-gray-600 dark:text-gray-400 `}>
       {children}
     </p>
   );
@@ -104,4 +115,5 @@ export {
   OptionsText,
   TweetNameTitle,
   TextBase,
+  TwitterHandle,
 };

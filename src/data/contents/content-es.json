@@ -10,30 +10,54 @@
       "about": {
         "title": "Sobre mí",
         "texts": [
-          "Si te tomaste el tiempo para investigar y crear tu propia cuenta, te lo agradezco de corazón! Ahora puedo spammear tu mail hasta que me contrates, chiste jiji. Podes tuitear lo que quieras e interactuar con mis cosas en el pequeño espacio que construí. Decime algo lindo sobre mis proyectos che! 🥹 Lo agradecería mucho 😌. Esta pequeña comunidad va a ocupar un lugar especial en mi corazón.",
-          "Tengo 24 años, este viaje en el mundo de la programación ha sido corto y dulce, y me encantaría guiarte en el proceso. Creo que tengo espacio para hablar de mí primero, ¿verdad? De todos modos, no soy el típico tipo inteligente. Probé la universidad durante unos (muy) largos 2 años y el sufrimiento nunca fue agradable... ¿o tal vez elegí mal? Verás, cuando era chico pensaba que sería bioquímico, pero las cosas no siempre salen como uno espera. La realidad es que, después de 2 años, me di cuenta de que ya NO iba a ser el próximo Walter White en ascenso — más bien en retirada... No?? Hola?",
-          "Bueno, tal vez esta no sea la biografía más interesante, pero al menos no te spammeo ChatGPT. Sé sincero, ¿qué tan harto estás de escuchar la palabra 'seamless' en tus textos? Te conté que soy bastante nerd con los memes? ¿Eso cuenta como un punto a favor en los hermosos ojos de mi futuro empleador? ¡Tal vez! Quién sabe en qué está interesado quien esté leyendo esto. Sin juzgar — en fin, volvamos a mí."
+          "Hola! Soy Benja, un programador full-stack que ama la tecnología y el diseño. Soy Argentino, vivo en Buenos Aires y tengo 24 años. Si te tomaste el tiempo para investigar y crear tu cuenta, te lo agradezco de corazón. Ahora puedo spammear tu email hasta que me contrates... nah, mentira 👀. Ya podés tuitear lo que quieras e interactuar con lo que construí. ¿Me decís algo lindo sobre mis proyectos? Lo agradecería mucho. Esta pequeña comunidad tiene un lugar especial en mi corazón.",
+
+          "Este viaje en la programación ha sido corto pero intenso. Me encantaría guiarte en el proceso, pero antes, ¿puedo hablar de mí un poco? Bah, ya lo estoy haciendo. No soy el típico nerd. Probé la universidad durante (muy) largos dos años y me di cuenta de que el sufrimiento académico no era lo mío. ¿O quizás elegí mal? Cuando era chico, quería ser bioquímico. Pero después de dos años en la UBA entendí que NO iba a ser el próximo Walter White en ascenso… más bien en retirada. ¿No? ¿Hola?",
+
+          "Quizas fue o por falta de interes, o por el hecho de que apenas me egrese del colegio entre a los años mas estagnantes de mi vida, 6 para ser exacto. Trabaje en una oficina con mi abuelo de asistente contable, trabajo repetitivo y monotono. No me gustaba, pero me daba dinero y me permitia pagar por mis pasatiempos. Que aprendí de esta etapa? Que odio las rutinas y las monotonías, me gusta estar en un ambiente dinámico y divertido. En un ambiente en el que este en constante desafío, obligado a aprender cosas nuevas y a superarme cada día. En un ambiente en el que pueda escalar, la empresa de mi abuelo no me hubiera permitido hacerlo.",
+
+          "Quizas fue o por falta de interes, o por el hecho de que apenas me egrese del colegio entre a los años mas estagnantes de mi vida, 6 para ser exacto. Trabaje en una oficina con mi abuelo de asistente contable, trabajo repetitivo y monotono. No me gustaba, pero me daba dinero y me permitia pagar por mis pasatiempos. Que aprendí de esta etapa? Que odio las rutinas y que odio las monotonías, me gusta estar en un ambiente dinámico y divertido. En un ambiente en el que este en constante desafío, obligado a aprender cosas nuevas y a superarme cada día."
         ],
         "artistSection": {
-          "title": "Mi lado artístico",
+          "title_top": "Mi lado ",
+          "title_bottom": "Artístico",
           "texts": [
-            "Ah, sí, este soy yo. En mi tiempo libre me gusta hacer música electrónica. Sí, escoliosis y dolor de hombros hasta la muerte para mí, gracias. Específicamente, para los que conocen la escena (los real ones), hago peak-time techno, un género bastante popular hoy en día en el mundo — ese que está afuera de mi cueva, o eso me han comentado al menos. Así que sí, soy un nerd cocoonero, pero te juro que tengo amigos y novia (al menos por ahora, ampliaremos). Pero si no tuviera seres queridos y nunca entrenara siquiera, saben como estaría rompiendola en Assembly a esta altura?",
+            "Ah, sí, este soy yo. En mi tiempo libre me gusta hacer música electrónica. Sí, escoliosis y dolor de hombros hasta la muerte para mí, gracias. Específicamente, para los que conocen la escena (los reales), hago peak-time techno, un género bastante popular hoy en día en el mundo — ese mundo que está fuera de mi cueva, o eso me han comentado al menos. Así que sí, soy un nerd cocoonero, pero te juro que tengo amigos y novia (al menos por ahora, ampliaremos). Pero si no tuviera seres queridos y nunca entrenara siquiera, saben como estaría rompiendola en Assembly a esta altura?",
 
-            "Empecé a tocar y a producir después de terminar la secundaria. Las fotos de abajo son de una sesión en la que invertí mi platita, porque no podés ser dj de techno sin un feed emo, casual y un toque cringe."
-          ]
+            "Empecé a tocar y a producir después de terminar la secundaria. Las fotos de abajo son de una sesión en la que invertí dinero, porque no podés ser dj de techno sin un feed emo, casual y un toque cringe.",
+
+            "Si tenes ganas de escuchar mi música, podés hacerlo en mi SoundCloud o en mi Spotify. Aca te dejo un par de links para que puedas escuchar mi sonido. Te agradezco que me escuches y espero que te guste."
+          ],
+          "myMusicTitle": "Mi música"
         },
         "stats": {
           "title": "Datos",
-          "favouriteThingTitle": "Cosa Favorita",
-          "leastFavouriteThingTitle": "Cosa Menos Favorita",
-          "ageTitle": "Edad",
-          "hobbiesTitle": "Hobbies",
-          "featsTitle": "Atributos",
-          "favouriteThing": "",
-          "leastFavouriteThing": "Recibir hate por spamear W's en el grupo de warap de los pibes.",
-          "age": "24 añitos",
-          "hobbies": "Contar la biyuya, producir beats bien chetos, entrenar, meditar (ansiedark), pasear a mis perritos (el caniche no es mío, gracias a dios [hate a los caniches]), salir a bailar, tocar en boliches, viciar YouTube shorts hasta desmayar, PARKOUR! Decime que viste The Office, gracias, aprender cosas nuevas, viajar (la gira mundial sigue en veremos) y conocer seres interesantes.",
-          "feats": "Me encanta conectar personas entre si, unir desconocidos entre si me gusta, tremendo crossover. Disfruto comunicarme, incluso si implica conversaciones difíciles para vencer diferencias y conectar enserio con la gente. Me gusta superar mis límites, aprender nuevas skills y perfeccionar las viejas. Durante la cuarentena pinté todas las paredes de mi habitación, dato no menor porque complementa todo lo artístico de mi personalidad. Soy súper Argentino, me fascinan los asados y el mate. Pero no hables mal de nuestra economía porque se pudre todo eh!"
+          "titles": {
+            "name": "Nombre Completo",
+            "age": "App imprescindible",
+            "feats": "Atributos",
+            "hobbies": "Hobbies",
+            "favouriteThing": "Actividad Favorita",
+            "favouriteShow": "Show Favorito",
+            "leastFavouriteThing": "Actividad Menos Favorita",
+            "longestBook": "Libro mas largo que leí",
+            "randomTalent": "Talento Random",
+            "funFact": "Dato divertido",
+            "coffee": "Consumo diario de cafeína"
+          },
+          "texts": {
+            "name": "Benjamin Henley Saubidet III",
+            "age": "Notion",
+            "hobbies": "Producir musica electronica, entrenar, meditar, pasear a mis perritos (tengo un perro salchicha y un golden), salir a bailar, pasar musica, viciar YouTube shorts hasta desmayar, PARKOUR!, aprender cosas nuevas, cocinar, viajar y conocer personas interesantes.",
+            "feats": "Generar conexiones interpersonales entre desconocidos. Comunicarme con los demás. Superar mis límites, aprender nuevas skills y perfeccionar las viejas. Durante la cuarentena pinté todas las paredes de mi habitación. Soy más Argentino que el mate y el asado.",
+            "favouriteShow": "The Office",
+            "favouriteThing": "Comer",
+            "leastFavouriteThing": "Pasar mucho tiempo sin comer",
+            "longestBook": "'It' de Stephen King.",
+            "randomTalent": "Agarrar cosas con los pies. No me preguntes cómo lo descubrí, pero es un talento que me ha servido en más de una ocasión.",
+            "funFact": "Me",
+            "coffee": "Estoy tomando 2 cafés por día. No me juzgues. También tomo mucho mate, pero no lo cuento como cafeína porque es una bebida sagrada."
+          }
         },
 
         "music": {
@@ -236,58 +260,87 @@
         ]
       },
       "skillset": {
-        "title": "Habilidades",
-        "description": "Cada proyecto es una oportunidad para crecer, innovar y perfeccionar mi experiencia. A continuación se muestra un vistazo a las habilidades que dan forma a mi trabajo e impulsan mi pasión por la tecnología.",
-        "texts": [
-          {
-            "emoji": "💻",
-            "title": "Habilidades Técnicas",
-            "description": "Soy un desarrollador full-stack especializado en React, Next.js y Nest.js con GraphQL y Apollo Client. Trabajo con PostgreSQL, Firebase Firestore y disfruto estilizando con Tailwind CSS. Tengo experiencia con Docker para despliegues escalables. Actualmente, estoy aprendiendo React Native y Swift para el desarrollo de aplicaciones nativas. También estoy explorando AWS para servicios en la nube y arquitectura serverless."
-          },
-          {
-            "emoji": "🌍",
-            "title": "Experiencia Bilingüe & UI/UX",
-            "description": "Dato curioso: mi padre es inglés, por lo que soy bilingüe. Estas habilidades en inglés y español me han permitido colaborar eficientemente en equipos diversos y con numerosos clientes, mejorando la internacionalización, la UI/UX y la accesibilidad."
-          },
-          {
-            "emoji": "📝",
-            "title": "Colaboración en Proyectos",
-            "description": "Disfruto trabajar en función de una visión de equipo. En ibijetrent, colaboré con un desarrollador frontend para integrar características complejas en una plataforma de reservas de motos de agua, logrando una solución que superó las expectativas. En Encender, trabajo con un equipo de desarrolladores para construir e integrar iframes en el sitio principal de Salesforce."
-          },
-          {
-            "emoji": "🚧",
-            "title": "Experiencia en Bases de Datos y APIs",
-            "description": "He creado y optimizado bases de datos SQL (PostgreSQL) y NoSQL (Firebase) para aplicaciones escalables, implementando operaciones CRUD eficientes y diseñando APIs GraphQL con Apollo Client para una recuperación de datos fluida. El backend de esta página web está construido con Node.js y Nest.js, con datos de tweets almacenados en una base de datos PostgreSQL. También containericé la aplicación con Docker, garantizando un entorno de desarrollo consistente y portátil."
-          },
-          {
-            "emoji": "🎯",
-            "title": "Resolución de Problemas",
-            "description": "Disfruto descomponer problemas complejos y aplicar principios de diseño y mejores prácticas de desarrollo para encontrar soluciones eficientes. Analizar un problema desde múltiples ángulos me permite ofrecer resultados innovadores y bien estructurados. Al diseñar la arquitectura de un proyecto, priorizo la escalabilidad, el mantenimiento y el rendimiento para garantizar eficiencia a largo plazo. Si esto implica aprender una nueva tecnología para actualizar la infraestructura existente, lo haré sin dudarlo."
-          },
-          {
-            "emoji": "🧑🏻‍🎨",
-            "title": "Creatividad e Innovación",
-            "description": "En mi carrera como programador, la creatividad y la innovación son el núcleo de todo lo que desarrollo. Constantemente exploro nuevas tecnologías y frameworks, combinándolos de maneras únicas para crear soluciones eficientes y visualmente atractivas. Ya sea diseñando algoritmos complejos o interfaces intuitivas, me enfoco en pensar fuera de lo convencional para resolver problemas y mejorar la experiencia del usuario. Disfruto experimentando con ideas frescas, desafiando límites y transformando obstáculos en oportunidades de crecimiento. Esta mentalidad me permite crear proyectos impactantes que no solo cumplen con los requisitos técnicos, sino que también aportan un toque creativo al espacio digital."
-          },
-          {
-            "emoji": "🔄",
-            "title": "Adaptabilidad y Aprendizaje Continuo",
-            "description": "Siempre estoy explorando nuevas tecnologías y metodologías para mejorar mis habilidades y mantenerme al día con las tendencias de la industria. Actualmente, estoy aprendiendo sobre desarrollo de aplicaciones nativas y explorando nuevos frameworks y librerías para mejorar mis capacidades de desarrollo frontend y backend."
-          },
-          {
-            "emoji": "🗣️",
-            "title": "Comunicación & Trabajo en Equipo",
-            "description": "Tengo experiencia colaborando con equipos multidisciplinarios, facilitando una comunicación efectiva y asegurando el progreso fluido de los proyectos. Me siento cómodo trabajando con clientes para comprender sus necesidades y ofrecer soluciones que cumplan con sus expectativas."
-          },
-          {
-            "emoji": "⏳",
-            "title": "Gestión del Tiempo y Organización",
-            "description": "Destaco en la gestión de múltiples tareas y en la priorización efectiva para garantizar entregas de proyectos puntuales y de alta calidad. Tengo una gran ética de trabajo y creo que la mejor forma de aprender es a través de la experiencia práctica; esta mentalidad ha dado forma a mi trayectoria como programador. Mis primeros proyectos freelance me enseñaron la importancia de cumplir plazos y entregar trabajos de calidad a tiempo. En Encender, me estoy adaptando a una nueva forma de trabajo en un entorno dinámico y acelerado, colaborando con múltiples clientes y proyectos, lo que ha fortalecido mi capacidad de trabajar de manera eficiente y flexible."
-          }
-        ],
+        "softSkills": {
+          "title": "Habilidades blandas",
+          "description": "Cada proyecto es una oportunidad para crecer, innovar y perfeccionar mi experiencia. A continuación se muestra un vistazo a las habilidades que dan forma a mi trabajo e impulsan mi pasión por la tecnología.",
+          "texts": [
+            {
+              "emoji": "💻",
+              "title": "Habilidades Técnicas",
+              "description": "Soy un desarrollador full-stack especializado en React, Next.js y Nest.js con GraphQL y Apollo Client. Trabajo con PostgreSQL, Firebase Firestore y disfruto estilizando con Tailwind CSS. Tengo experiencia con Docker para despliegues escalables. Actualmente, estoy aprendiendo React Native y Swift para el desarrollo de aplicaciones nativas. También estoy explorando AWS para servicios en la nube y arquitectura serverless."
+            },
+            {
+              "emoji": "🌍",
+              "title": "Experiencia Bilingüe & UI/UX",
+              "description": "Dato curioso: mi padre es inglés, por lo que soy bilingüe. Estas habilidades en inglés y español me han permitido colaborar eficientemente en equipos diversos y con numerosos clientes, mejorando la internacionalización, la UI/UX y la accesibilidad."
+            },
+            {
+              "emoji": "📝",
+              "title": "Colaboración en Proyectos",
+              "description": "Disfruto trabajar en función de una visión de equipo. En ibijetrent, colaboré con un desarrollador frontend para integrar características complejas en una plataforma de reservas de motos de agua, logrando una solución que superó las expectativas. En Encender, trabajo con un equipo de desarrolladores para construir e integrar iframes en el sitio principal de Salesforce."
+            },
+            {
+              "emoji": "🚧",
+              "title": "Experiencia en Bases de Datos y APIs",
+              "description": "He creado y optimizado bases de datos SQL (PostgreSQL) y NoSQL (Firebase) para aplicaciones escalables, implementando operaciones CRUD eficientes y diseñando APIs GraphQL con Apollo Client para una recuperación de datos fluida. El backend de esta página web está construido con Node.js y Nest.js, con datos de tweets almacenados en una base de datos PostgreSQL. También containericé la aplicación con Docker, garantizando un entorno de desarrollo consistente y portátil."
+            },
+            {
+              "emoji": "🎯",
+              "title": "Resolución de Problemas",
+              "description": "Disfruto descomponer problemas complejos y aplicar principios de diseño y mejores prácticas de desarrollo para encontrar soluciones eficientes. Analizar un problema desde múltiples ángulos me permite ofrecer resultados innovadores y bien estructurados. Al diseñar la arquitectura de un proyecto, priorizo la escalabilidad, el mantenimiento y el rendimiento para garantizar eficiencia a largo plazo. Si esto implica aprender una nueva tecnología para actualizar la infraestructura existente, lo haré sin dudarlo."
+            },
+            {
+              "emoji": "🧑🏻‍🎨",
+              "title": "Creatividad e Innovación",
+              "description": "En mi carrera como programador, la creatividad y la innovación son el núcleo de todo lo que desarrollo. Constantemente exploro nuevas tecnologías y frameworks, combinándolos de maneras únicas para crear soluciones eficientes y visualmente atractivas. Ya sea diseñando algoritmos complejos o interfaces intuitivas, me enfoco en pensar fuera de lo convencional para resolver problemas y mejorar la experiencia del usuario. Disfruto experimentando con ideas frescas, desafiando límites y transformando obstáculos en oportunidades de crecimiento. Esta mentalidad me permite crear proyectos impactantes que no solo cumplen con los requisitos técnicos, sino que también aportan un toque creativo al espacio digital."
+            },
+            {
+              "emoji": "🔄",
+              "title": "Adaptabilidad y Aprendizaje Continuo",
+              "description": "Siempre estoy explorando nuevas tecnologías y metodologías para mejorar mis habilidades y mantenerme al día con las tendencias de la industria. Actualmente, estoy aprendiendo sobre desarrollo de aplicaciones nativas y explorando nuevos frameworks y librerías para mejorar mis capacidades de desarrollo frontend y backend."
+            },
+            {
+              "emoji": "🗣️",
+              "title": "Comunicación & Trabajo en Equipo",
+              "description": "Tengo experiencia colaborando con equipos multidisciplinarios, facilitando una comunicación efectiva y asegurando el progreso fluido de los proyectos. Me siento cómodo trabajando con clientes para comprender sus necesidades y ofrecer soluciones que cumplan con sus expectativas."
+            },
+            {
+              "emoji": "⏳",
+              "title": "Gestión del Tiempo y Organización",
+              "description": "Destaco en la gestión de múltiples tareas y en la priorización efectiva para garantizar entregas de proyectos puntuales y de alta calidad. Tengo una gran ética de trabajo y creo que la mejor forma de aprender es a través de la experiencia práctica; esta mentalidad ha dado forma a mi trayectoria como programador. Mis primeros proyectos freelance me enseñaron la importancia de cumplir plazos y entregar trabajos de calidad a tiempo. En Encender, me estoy adaptando a una nueva forma de trabajo en un entorno dinámico y acelerado, colaborando con múltiples clientes y proyectos, lo que ha fortalecido mi capacidad de trabajar de manera eficiente y flexible."
+            }
+          ]
+        },
         "techStack": {
           "title": "Stack Tecnológico",
           "description": "Utilizo un stack tecnológico moderno y optimizado, integrando front-end, back-end, bases de datos y soluciones en la nube para desarrollar aplicaciones escalables y de alto rendimiento."
+        },
+        "achievements": {
+          "title": "Logros Profesionales",
+          "description": "Métricas clave y logros destacados de mi trayectoria profesional",
+          "clientSatisfaction": {
+            "title": "Satisfacción del Cliente",
+            "percentage": "98%",
+            "description": "Entregué consistentemente soluciones de alta calidad que superaron las expectativas de los clientes"
+          },
+          "projectsDelivered": {
+            "title": "Proyectos Entregados",
+            "value": "15+",
+            "description": "Completé con éxito más de 15 proyectos, desde sitios web corporativos hasta aplicaciones complejas"
+          },
+          "codeEfficiency": {
+            "title": "Eficiencia de Código",
+            "percentage": "90%",
+            "description": "Optimicé la velocidad de carga y el rendimiento de aplicaciones web a través de prácticas de código eficientes"
+          },
+          "education": {
+            "title": "Educación y Capacitación",
+            "description": "Completé el curso de Desarrollo Full Stack de APX y cursos de Udemy sobre Desarrollo Móvil"
+          },
+          "careerMilestone": {
+            "title": "Hito Profesional",
+            "description": "Conseguí mi primer trabajo en Encender después de meses de esfuerzo y dedicación"
+          }
         }
       }
     }
@@ -307,12 +360,12 @@
     },
     "signup": {
       "title": {
-        "email": "Crear cuenta en BH!",
+        "email": "Crear cuenta",
         "code": "Código",
         "password": "Contraseña"
       },
       "description": {
-        "email": "Ingresa tu email para empezar, te enviaremos un código de verificación.",
+        "email": "Ingresa tu email para unirte a mi comunidad, te enviaré un código de verificación.",
         "code": "Ingresa el código de verificación",
         "password": "Elige tu contraseña"
       },
@@ -328,7 +381,8 @@
       "haveAccount": "Ya tenes una cuenta?",
       "login": "Logueate",
       "code": "Ingresa el código de verificación",
-      "codeButton": "Verificar Código"
+      "codeButton": "Verificar Código",
+      "createAccount": "Crear Cuenta"
     },
 
     "leftbar": {
@@ -348,8 +402,8 @@
         "IDIOMA"
       ],
       "languages": {
-        "en": "Inglés (UK)",
-        "es": "Español (ES)"
+        "en": "Inglés",
+        "es": "Español"
       }
     },
     "rightbar": {

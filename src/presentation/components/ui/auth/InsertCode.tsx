@@ -36,7 +36,7 @@ function Slot(props: SlotProps) {
   return (
     <div
       className={cn(
-        "flex size-12 items-center justify-center rounded-lg border border-slate-200 bg-white font-medium text-slate-950 shadow-sm shadow-black/5 transition-shadow dark:border-slate-800 dark:bg-slate-950 dark:text-slate-50",
+        "flex md:size-12 size-9 items-center justify-center rounded-lg border border-slate-200 bg-white font-medium text-slate-950 shadow-sm shadow-black/5 transition-shadow dark:border-slate-800 dark:bg-slate-950 dark:text-slate-50",
         {
           "z-10 border  border-slate-900 ring-[3px] ring-slate-950/20  dark:border-slate-300 dark:ring-slate-300/20":
             props.isActive,

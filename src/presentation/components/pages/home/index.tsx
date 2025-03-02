@@ -21,13 +21,14 @@ import RightBar from "../../ui/rightbar/page";
 import { BoxesCore } from "../../ui/Background-boxes";
 import { FollowerPointerCard } from "../../ui/Pointer";
 import { PiLinkSimpleBold } from "react-icons/pi";
+import { SpinnerContainer } from "../../ui/SpinnerContainer";
 
 const Feed = dynamic(() => import("./Feed"), { suspense: true, ssr: true });
+const About = dynamic(() => import("./About"), { suspense: true, ssr: false });
 const Projects = dynamic(() => import("./Projects"), {
   suspense: true,
   ssr: true,
 });
-const About = dynamic(() => import("./Feed"), { suspense: true, ssr: false });
 const Skillset = dynamic(() => import("./Skillset"), { suspense: false });
 
 type Props = {
@@ -44,14 +45,14 @@ export default function HomeComp({ locale }: Props) {
         <aside className="relative h-[100vh] hidden md:block md:w-[10vw] xl:w-[20vw] 2xl:w-[15vw] p-0 m-0 bg-white dark:bg-[#1f2937]">
           <Leftbar locale={locale} />
         </aside>
-        <main className="relative m-0 md:w-auto lg:m-0 w-full lg:w-auto flex-1 border-l min-h-screen border-r border-gray-300 dark:border-gray-600">
+        <main className="relative m-0 lg:m-0 w-auto  flex-1 border-l min-h-screen border-r border-gray-300 dark:border-gray-600">
           <header className="border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1f2937] dark:text-white w-full  mx-0 md:mx-auto lg:mx-0">
             <div className=" mx-auto ">
-              <FollowerPointerCard>
-                <div className="flex justify-center items-center h-[250px] sm:h-[250px] md:h-[200px] lg:h-[300px] overflow-hidden relative">
-                  <BoxesCore className="w-full h-full"></BoxesCore>
-                </div>
-              </FollowerPointerCard>
+              {/* <FollowerPointerCard> */}
+              <div className="flex justify-center items-center h-[250px] sm:h-[250px] md:h-[200px] lg:h-[300px] overflow-hidden relative">
+                {/* <BoxesCore className="w-full h-full"></BoxesCore> */}
+              </div>
+              {/* </FollowerPointerCard> */}
               <div className="px-2 md:px-3 relative">
                 <div className="flex flex-row overflow-visible justify-between items-end space-y-2 pt-5 md:pt-20 h-[40px]">
                   <ProfilePic className="relative w-20 h-20 sm:w-40 sm:h-40  border-4 border-gray-100 dark:border-gray-500 rounded-full overflow-hidden m-0 p-0 cursor-pointer" />
@@ -117,8 +118,8 @@ export default function HomeComp({ locale }: Props) {
                 setSection(newSection)
               }></OptionsMenu>
           </header>
-          <section className="bg-white dark:bg-[#1f2937] dark:text-white w-full mx-auto z-0">
-            <Suspense fallback={<Spinner />}>
+          <section className="bg-white dark:bg-[#1f2937] dark:text-white w-full mx-auto z-0 ">
+            <Suspense fallback={<SpinnerContainer />}>
               <div className="grid gap-4">
                 {section === "feed" && <Feed locale={locale} />}
                 {section === "about" && <About locale={locale} />}
@@ -131,7 +132,7 @@ export default function HomeComp({ locale }: Props) {
           <NavbarMobile locale={locale}></NavbarMobile>
         </main>
 
-        <aside className="relative hidden p-2 pl-5 lg:block lg:w-[30vw] xl:w-[20vw] bg-white dark:bg-[#1f2937]">
+        <aside className="relative hidden p-2 md:block md:w-[30vw] lg:w-[25vw] xl:w-[20vw]  bg-white dark:bg-[#1f2937]">
           <RightBar locale={locale}></RightBar>
         </aside>
       </div>

@@ -16,7 +16,7 @@ function SessionProfilePic({ className, small, image }: Props) {
         {image ? (
           <div></div>
         ) : (
-          <FaRegUserCircle className=" w-full h-full pr-2" />
+          <FaRegUserCircle className=" w-full h-full pr-2 md:pr-0 xl:pr-2" />
         )}
       </div>
     </div>

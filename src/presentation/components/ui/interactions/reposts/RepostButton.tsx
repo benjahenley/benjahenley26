@@ -37,12 +37,8 @@ export function RepostButton({ projectId, initialCount }: InteractionProps) {
 
   return (
     <li className="flex items-center gap-1 cursor-pointer" onClick={handleLike}>
-      <p className="p-2 rounded-full hover:bg-pink-100">
-        {reposted ? (
-          <AiOutlineRetweet className="text-pink-500" />
-        ) : (
-          <AiOutlineRetweet />
-        )}
+      <p className="p-2 rounded-full hover:bg-green-500 ">
+        {reposted ? <AiOutlineRetweet className="" /> : <AiOutlineRetweet />}
       </p>
       <span>{count}</span>
     </li>

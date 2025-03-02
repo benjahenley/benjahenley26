@@ -13,7 +13,7 @@ type Props = {
   locale: Locales;
 };
 
-export const LanguageButton: FC<Props> = ({ sidebar, locale }) => {
+export const LanguageSelect: FC<Props> = ({ sidebar, locale }) => {
   const [dropdown, setDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
@@ -60,7 +60,7 @@ export const LanguageButton: FC<Props> = ({ sidebar, locale }) => {
       <button
         style={{ width: "inherit" }}
         onClick={() => setDropdown(!dropdown)}
-        className="px-4 py-3 rounded-lg text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-start md:justify-center xl:justify-between items-center w-full">
+        className="px-4 py-3 rounded-lg text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-between md:justify-center xl:justify-between items-center w-full">
         <div className="flex flex-row items-center gap-4 ">
           <div className="text-xl md:text-2xl lg:text-3xl xl:text-4xl transition-transform transform group-hover:scale-110">
             <IoLanguage />
@@ -77,7 +77,7 @@ export const LanguageButton: FC<Props> = ({ sidebar, locale }) => {
       </button>
 
       {dropdown && (
-        <div className="h-full overflow-x-hidden w-full pt-2">
+        <div className="h-full overflow-x-hidden w-full">
           <ul className="w-full" role="none" onClick={() => setDropdown(false)}>
             {LANGUAGES.map(({ code, name, flag }) => (
               <li className="w-full" key={code}>
@@ -85,16 +85,18 @@ export const LanguageButton: FC<Props> = ({ sidebar, locale }) => {
                   className="w-full"
                   onClick={() => changeLanguage(code as Locales)}>
                   <div
-                    className={`px-3 lg:px-5 rounded-lg py-1 w-full dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-start md:justify-center xl:justify-between items-center gap-6 ${
+                    className={`px-4 lg:px-[21px] rounded-lg py-1 w-full dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-start md:justify-center xl:justify-between items-center gap-4 md:gap-6 ${
                       locale === code ? "bg-gray-200 dark:bg-gray-600" : ""
                     }`}>
-                    <div className="flex flex-row justify-center items-center gap-6">
-                      <div className="text-lg lg:text-xl xl:text-2xl ">
+                    <div className="flex flex-row justify-center items-center gap-4 md:gap-6">
+                      <div className="text-lg lg:text-xl xl:text-2xl grayscale ">
                         {flag}
                       </div>
                       <p className="md:hidden xl:block">{name}</p>
                     </div>
-                    {locale === code && <p className="hidden xl:flex">·</p>}
+                    {locale === code && (
+                      <p className="hidden xl:flex text-blue-400">·</p>
+                    )}
                   </div>
                 </button>
               </li>

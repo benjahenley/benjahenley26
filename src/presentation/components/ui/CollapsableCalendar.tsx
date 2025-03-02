@@ -1,21 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaCalendarAlt } from "react-icons/fa";
+import useClickOutside from "@/hooks/useClickOutside";
 
 type Props = {
   date: string;
 };
 
-function CalendarDateExpandable({ date }: Props) {
+function CollapsableCalendar({ date }: Props) {
   const [hovered, setHovered] = useState(false);
+  const calendarRef = useRef<HTMLDivElement>(null);
+
+  // Use our custom hook to handle clicks outside
+  useClickOutside(
+    calendarRef,
+    () => {
+      if (hovered) setHovered(false);
+    },
+    hovered
+  );
+
+  const handleCalendarClick = () => {
+    setHovered(!hovered);
+  };
 
   return (
     <motion.div
-      className="flex items-center overflow-hidden bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full md:p-3 cursor-pointer gap-2"
+      ref={calendarRef}
+      className="flex p-2 items-center overflow-hidden bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full md:p-3 gap-2 cursor-pointer"
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
+      onClick={handleCalendarClick}
       initial={{ width: "auto" }}
       animate={{ width: hovered ? "auto" : "auto" }}
       transition={{ duration: 0.3 }}>
@@ -34,4 +51,4 @@ function CalendarDateExpandable({ date }: Props) {
   );
 }
 
-export default CalendarDateExpandable;
+export default CollapsableCalendar;

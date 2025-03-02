@@ -66,7 +66,7 @@ export const ThemeSelect = ({ locale }: Props) => {
       {/* Toggle Button */}
       <button
         onClick={() => setDropdown(!dropdown)}
-        className="px-4 py-3 rounded-lg text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-center xl:justify-between items-center w-full">
+        className="px-4 py-3 rounded-lg text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-between md:justify-center xl:justify-between items-center w-full">
         <div className="flex flex-row items-center gap-4">
           <div className="text-xl md:text-2xl lg:text-3xl xl:text-4xl transition-transform transform group-hover:scale-110">
             {isDarkMode ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
@@ -76,7 +76,7 @@ export const ThemeSelect = ({ locale }: Props) => {
           </p>
         </div>
         <MdKeyboardArrowDown
-          className={`text-2xl transform transition-transform hidden xl:flex ${
+          className={`text-2xl transform transition-transform flex md:hidden xl:flex ${
             dropdown ? "rotate-0" : "-rotate-90"
           }`}
         />
@@ -84,7 +84,7 @@ export const ThemeSelect = ({ locale }: Props) => {
 
       {/* Dropdown Menu */}
       {dropdown && (
-        <div className="h-full overflow-x-hidden w-full pt-2">
+        <div className="h-full overflow-x-hidden w-full">
           <ul
             className="w-full"
             role="menu"
@@ -96,19 +96,21 @@ export const ThemeSelect = ({ locale }: Props) => {
                   className="w-full"
                   onClick={() => handleThemeChange(mode)}>
                   <div
-                    className={`px-4 lg:px-5 rounded-lg py-2 w-full justify-center xl:justify-between ${
+                    className={`px-4 lg:px-[22px] rounded-lg py-2 w-full justify-between md:justify-center xl:justify-between ${
                       isDarkMode === (mode === "dark")
                         ? "bg-gray-200 dark:bg-gray-600"
                         : ""
                     } dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-start items-center gap-4 transition-colors duration-200`}>
-                    <div className="flex flex-row justify-center items-center gap-6">
+                    <div className="flex flex-row justify-center items-center gap-4 md:gap-6">
                       <div className="text-lg lg:text-xl xl:text-2xl">
                         {icon}
                       </div>
-                      <p className="hidden xl:flex">{label}</p>
+                      <p className="flex text-gray-800 dark:text-white text-xs md:text-base  md:hidden xl:flex">
+                        {label}
+                      </p>
                     </div>
                     {isDarkMode === (mode === "dark") && (
-                      <p className="hidden xl:flex">·</p>
+                      <p className="flex text-blue-400 md:hidden xl:flex">·</p>
                     )}
                   </div>
                 </button>

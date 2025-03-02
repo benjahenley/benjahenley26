@@ -14,7 +14,6 @@
     "@next/bundle-analyzer": "^15.1.7",
     "@prisma/client": "^5.21.1",
     "axios": "^1.7.9",
-    "cloudinary": "^2.5.1",
     "clsx": "^2.1.1",
     "file-loader": "^6.2.0",
     "flowbite-react": "^0.10.1",
@@ -31,8 +30,7 @@
     "react-hook-form": "^7.52.1",
     "react-icons": "^5.5.0",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7",
-    "yup": "^1.4.0"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/config-array": "^0.19.2",

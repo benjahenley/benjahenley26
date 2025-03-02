@@ -1,7 +1,6 @@
 import ThemeSelect from "@/presentation/components/ui/selects/Theme";
 import Link from "next/link";
 import TwitterSession from "../auth/UserSession";
-import { LanguageButton } from "../selects/Language";
 import { Locales } from "@/infraestructure/interfaces";
 
 import OPTIONS from "@/infraestructure/data/menu/page";
@@ -9,6 +8,8 @@ import getOptions from "@/infraestructure/data/menu/page";
 import { optionsAtom } from "@/atoms/options";
 import { useAtom } from "jotai";
 import Options from "../auth/Options";
+import { LanguageSelect } from "../selects/Language";
+import UserSession from "../auth/UserSession";
 
 type Props = {
   locale: Locales;
@@ -26,7 +27,7 @@ export default function Leftbar({ locale }: Props) {
             <div
               className="border-b xl:border-none px-6 2xl:px-4 border-gray-300 dark:border-slate-600 md:flex-col xl:flex-row flex items-center gap-2 xl:gap-14 justify-between md:py-4 md:pb-8 xl:py-2"
               style={{ width: "inherit" }}>
-              <div className="text-gray-800 dark:text-white md:text-5xl lg:text-6xl xl:text-7xl cursor-pointer flex items-center justify-center 2xl:text-8xl">
+              <div className="text-gray-800 dark:text-white md:text-5xl lg:text-7xl xl:text-7xl cursor-pointer flex items-center justify-center 2xl:text-8xl">
                 <a href="/">BH</a>
               </div>
             </div>
@@ -51,7 +52,7 @@ export default function Leftbar({ locale }: Props) {
                   </Link>
                 );
               })}
-              <LanguageButton locale={locale}></LanguageButton>
+              <LanguageSelect locale={locale}></LanguageSelect>
               <ThemeSelect locale={locale} />
               {/* <div className="">
               </div> */}
@@ -59,7 +60,7 @@ export default function Leftbar({ locale }: Props) {
           </div>
           <div>
             {options && <Options />}
-            <TwitterSession></TwitterSession>
+            <UserSession></UserSession>
           </div>
         </div>
       </div>

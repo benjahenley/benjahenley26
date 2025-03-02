@@ -10,29 +10,45 @@
       "about": {
         "title": "About me",
         "texts": [
-          "If you've taken the time to dig in and make your own account, I truly thank you! You can tweet anything you like and interact with my stuff in the little playground I built. Be sure to say something about my projects!🥹 I would really appreciate it 😌. This little community will have a special spot in my heart.",
+          "If you've taken the time to dig in and make your own account, I truly thank you! You can tweet anything you like and interact with my stuff in the little playground I built. Be sure to say something about my projects! I would really appreciate it. This little community will have a special spot in my heart.",
           "I'm 24 years young, this journey into coding has been short and sweet, and I'd love to guide you through it. I think I've got room to blab about me first though, right? Anyway, I'm not your typical smart guy. I tried college for a (very) long 2 years, and the suffering was never pleasant… or maybe I chose wrong? You see, I used to think I would be a biochemist growing up, but things don't always go as planned. The reality is, 2 years in, I realized that I was NOT the next up-and-coming Walter White any longer — more like down-and-retreating, get it? Hello?",
-          "Well, this might not be the most interesting bio, but at least I didn't spam ChatGPT on you. For real, how bored are you of hearing the word “seamless” in every AI response? At least I made you believe I didn't spam AI on you, skibidi sigma. Did I also mention I am quite the nerd when it comes to memes? Is that a plus in my future employer's beautiful eyes? Maybe! Who knows what stuff the person reading this is into. No judgment there though — anyway, back to me.",
-          "Oh yeah, so this is me. In my free time, I like to make electronic music. Yes, scoliosis and shoulder pain till death for me thanks. Specifically, for those who know the scene (real ones, word), I make peak-time techno, a genre that is quite popular nowadays in the world — the one outside my room I've been told about. So yeah, I'm quite the stay-at-home nerd, but I promise I have friends and a girlfriend (at least as of now). But if I didn't have any loved ones and also never worked out, you just know I would be straight crushing it in Assembly by now."
+          "Well, this might not be the most interesting bio, but at least I didn't spam ChatGPT on you. For real, how bored are you of hearing the word \"seamless\" in every AI response? At least I made you believe I didn't spam AI on you, skibidi sigma. Did I also mention I am quite the nerd when it comes to memes? Is that a plus in my future employer's beautiful eyes? Maybe! Who knows what stuff the person reading this is into. No judgment there though — anyway, back to me."
         ],
         "artistSection": {
-          "title": "My Artistic side",
+          "title_top": "My artsy",
+          "title_bottom": "Side",
           "texts": [
+            "Oh yeah, so this is me. In my free time, I like to make electronic music. Yes, scoliosis and shoulder pain till death for me thanks. Specifically, for those who know the scene (real ones, word), I make peak-time techno, a genre that is quite popular nowadays in the world — the one outside my room I've been told about. So yeah, I'm quite the stay-at-home nerd, but I promise I have friends and a girlfriend (at least as of now). But if I didn't have any loved ones and also never worked out, you just know I would be straight crushing it in Assembly by now.",
             "Apart from programming, I'm passionate about electronic music, especially techno. I've been a DJ and producer since high school. The pictures below are from a photoshoot I invested in because you can't be a techno artist without going for the casual, kinda-gothic, and cringy Insta feed."
-          ]
+          ],
+          "myMusicTitle": "My Music"
         },
         "stats": {
-          "title": "Stats Card",
-          "favouriteThingTitle": "Favourite Thing",
-          "leastFavouriteThingTitle": "Least Favourite Thing",
-          "ageTitle": "Age",
-          "hobbiesTitle": "Hobbies",
-          "featsTitle": "Feats",
-          "favouriteThing": "Spamming W's in the group chat.",
-          "leastFavouriteThing": "Getting hate for spamming W's in the group chat.",
-          "age": "24 years young",
-          "hobbies": "Gym, Making it rain, producing fresh beatzz, Working out, Rocking out, meditation, park-time with the doggies, clubbing, DJ'ing in cool clubs, binge watching youtube shorts until unconscious, parkour! I love learning new things, traveling (still planning my world tour), and connecting with people.",
-          "feats": "I love connecting people. I've made friends during wild nights in Buenos Aires and introduced them to each other. I enjoy communication, even tough conversations. I love pushing boundaries, learning new skills, and perfecting old ones. My room walls are painted from quarantine days. I'm super Argentine, so I love asados and mate. But don't talk about our economy."
+          "title": "Datos",
+          "titles": {
+            "name": "Full Name",
+            "age": "Age",
+            "feats": "Feats",
+            "hobbies": "Hobbies",
+            "favouriteThing": "Favourite Thing",
+            "favouriteShow": "Favourite Show",
+            "leastFavouriteThing": "Least favourite Thing",
+            "longestBook": "Longest book i've read",
+            "randomTalent": "Random Talent"
+          },
+          "texts": {
+            "randomTalent": "Picking up things with my feet. Don't ask me how I discovered it, but it's a talent that has come in handy on more than one occasion.",
+            "name": "Benjamin Henley Saubidet",
+            "favouriteThing": "Spamming W's in the group chat.",
+            "leastFavouriteThing": "Getting hate for spamming W's in the group chat.",
+            "age": "24 years young",
+            "hobbies": "Making it rain, producing fresh beatz, Working out, Rocking out, meditation, park-time with the doggies (not the one in the pic), clubbing, DJ'ing in cool clubs, binge watching youtube shorts until unconscious, PARKOUR, learning new things, traveling (still planning my world tour) and connecting with people.",
+            "feats": "I love connecting people. I've made friends during wild nights in Buenos Aires and introduced them to each other. I enjoy communication, even tough conversations. I love pushing boundaries, learning new skills, and perfecting old ones. My room walls are painted from quarantine days. I'm super Argentine, so I love asados and mate. But don't talk about our economy.",
+            "favouriteShow": "The Office, hands down.",
+            "longestBook": "'It' by Stephen King.",
+            "funFact": "Fun Fact",
+            "coffee": "Im having two coffees a day, don't judge. I'm a coffee lover, not a coffee snob... but I havo to admit I like starbucks. I also drink mate, a traditional Argentine drink."
+          }
         }
       },
       "projects": {
@@ -232,58 +248,88 @@
       },
       "skillset": {
         "title": "Skillset",
-        "description": "Every project is an opportunity to grow, innovate, and refine my expertise. Below is a glimpse into the skills that shape my work and drive my passion for technology.",
         "techStack": {
           "title": "Tech Stack",
           "description": "I work with a modern and efficient tech stack, combining front-end, back-end, databases, and cloud technologies to build scalable applications."
         },
-        "texts": [
-          {
-            "emoji": "💻",
-            "title": "Technical Skills",
-            "description": "I'm a full-stack developer specializing in React, Next.js, and Nest.js with GraphQL and Apollo Client. I work with PostgreSQL, Firebase Firestore, and enjoy styling with Tailwind CSS. I have experience with Docker for scalable deployments. Currently, I'm learning React Native and Swift for native app development. I'm also digging into AWS for cloud services and serverless architecture."
+        "softSkills": {
+          "title": "Soft Skills",
+          "description": "Every project is an opportunity to grow, innovate, and refine my expertise. Below is a glimpse into the skills that shape my work and drive my passion for technology.",
+          "texts": [
+            {
+              "emoji": "💻",
+              "title": "Technical Skills",
+              "description": "I'm a full-stack developer specializing in React, Next.js, and Nest.js with GraphQL and Apollo Client. I work with PostgreSQL, Firebase Firestore, and enjoy styling with Tailwind CSS. I have experience with Docker for scalable deployments. Currently, I'm learning React Native and Swift for native app development. I'm also digging into AWS for cloud services and serverless architecture."
+            },
+            {
+              "emoji": "🌍",
+              "title": "Bilingual Experience & UI/UX",
+              "description": "Fun fact: my father is English, so I am bilingual. These skills in English and Spanish have allowed me to collaborate efficiently in diverse teams, and with numerous clients. improving internationalization, UI/UX, and accessibility."
+            },
+            {
+              "emoji": "📝",
+              "title": "Project Collaboration",
+              "description": "I enjoy working toward a team vision. At ibijetrent, I collaborated with a frontend developer to integrate complex features into a jet ski reservation platform, delivering a solution that exceeded expectations. At Encender, I work with a team of developers to build and integrate iframes into the main Salesforce site."
+            },
+            {
+              "emoji": "🚧",
+              "title": "Database & API Experience",
+              "description": "I've built and optimized SQL (PostgreSQL) and NoSQL (Firebase) databases for scalable applications, implementing efficient CRUD operations and designing GraphQL APIs with Apollo Client for seamless data fetching. This web page's backend is built with Node.js and Nest.js, with tweet data retrieved from a PostgreSQL database. I also containerized the application using Docker, ensuring a consistent and portable development environment."
+            },
+            {
+              "emoji": "🎯",
+              "title": "Problem-Solving",
+              "description": "I enjoy breaking down complex problems and applying design principles and best development practices to find efficient solutions. Analyzing a problem from multiple angles allows me to deliver innovative and well-structured results. When designing a project's architecture, I prioritize scalability, maintainability, and performance to ensure long-term efficiency. If this means learning a new technology, to update existing infrastructure so be it."
+            },
+            {
+              "emoji": "🧑🏻‍🎨",
+              "title": "Creativity & Innovation",
+              "description": "In my programming career, creativity and innovation are at the core of everything I build. I constantly explore new technologies and frameworks, blending them in unique ways to develop efficient and visually engaging solutions. Whether designing complex algorithms or intuitive user interfaces, I focus on thinking outside the box to solve problems and enhance user experiences. I enjoy experimenting with fresh ideas, pushing boundaries, and turning challenges into opportunities for growth. This mindset allows me to create impactful projects that not only meet technical requirements but also bring a creative spark to the digital space."
+            },
+            {
+              "emoji": "🔄",
+              "title": "Adaptability & Continuous Learning",
+              "description": "I'm always exploring new technologies and methodologies to enhance my skills and stay ahead of industry trends. I'm currently learning about native app and exploring new frameworks, together with libraries to improve both my frontend and backend coding capabilities."
+            },
+            {
+              "emoji": "🗣️",
+              "title": "Communication & Teamwork",
+              "description": "I have experience collaborating with multidisciplinary teams, facilitating effective communication, and ensuring smooth project progress. I'm comfortable working with clients to understand their needs and deliver solutions that meet their expectations."
+            },
+            {
+              "emoji": "⏳",
+              "title": "Time Management & Organization",
+              "description": "I excel at managing multiple tasks and prioritizing effectively to ensure timely, high-quality project deliveries. I have a strong work ethic and believe that the best way to learn is through hands-on experience—this mindset has shaped my programming journey. My first freelance projects taught me the importance of deadlines and delivering quality work on time. At Encender, I am adapting to a new way of working, fast-paced environment, working with multiple clients and projects, which has strengthened my ability to work dynamically and efficiently."
+            }
+          ]
+        },
+        "achievements": {
+          "title": "Professional Achievements",
+          "description": "Key metrics and accomplishments from my professional journey",
+          "clientSatisfaction": {
+            "title": "Client Satisfaction",
+            "percentage": "98%",
+            "description": "Consistently delivered high-quality solutions that exceed client expectations"
           },
-          {
-            "emoji": "🌍",
-            "title": "Bilingual Experience & UI/UX",
-            "description": "Fun fact: my father is English, so I am bilingual. These skills in English and Spanish have allowed me to collaborate efficiently in diverse teams, and with numerous clients. improving internationalization, UI/UX, and accessibility."
+          "projectsDelivered": {
+            "title": "Projects Delivered",
+            "value": "15+",
+            "description": "Successfully completed over 15 projects, from corporate websites to complex applications"
           },
-          {
-            "emoji": "📝",
-            "title": "Project Collaboration",
-            "description": "I enjoy working toward a team vision. At ibijetrent, I collaborated with a frontend developer to integrate complex features into a jet ski reservation platform, delivering a solution that exceeded expectations. At Encender, I work with a team of developers to build and integrate iframes into the main Salesforce site."
+          "codeEfficiency": {
+            "title": "Code Efficiency",
+            "percentage": "90%",
+            "description": "Optimized web app loading speed and performance through efficient coding practices"
           },
-          {
-            "emoji": "🚧",
-            "title": "Database & API Experience",
-            "description": "I've built and optimized SQL (PostgreSQL) and NoSQL (Firebase) databases for scalable applications, implementing efficient CRUD operations and designing GraphQL APIs with Apollo Client for seamless data fetching. This web page's backend is built with Node.js and Nest.js, with tweet data retrieved from a PostgreSQL database. I also containerized the application using Docker, ensuring a consistent and portable development environment."
+          "education": {
+            "title": "Education & Training",
+            "description": "Completed APX course on Full Stack Development and Udemy courses on Mobile Development"
           },
-          {
-            "emoji": "🎯",
-            "title": "Problem-Solving",
-            "description": "I enjoy breaking down complex problems and applying design principles and best development practices to find efficient solutions. Analyzing a problem from multiple angles allows me to deliver innovative and well-structured results. When designing a project's architecture, I prioritize scalability, maintainability, and performance to ensure long-term efficiency. If this means learning a new technology, to update existing infrastructure so be it."
-          },
-          {
-            "emoji": "🧑🏻‍🎨",
-            "title": "Creativity & Innovation",
-            "description": "In my programming career, creativity and innovation are at the core of everything I build. I constantly explore new technologies and frameworks, blending them in unique ways to develop efficient and visually engaging solutions. Whether designing complex algorithms or intuitive user interfaces, I focus on thinking outside the box to solve problems and enhance user experiences. I enjoy experimenting with fresh ideas, pushing boundaries, and turning challenges into opportunities for growth. This mindset allows me to create impactful projects that not only meet technical requirements but also bring a creative spark to the digital space."
-          },
-          {
-            "emoji": "🔄",
-            "title": "Adaptability & Continuous Learning",
-            "description": "I'm always exploring new technologies and methodologies to enhance my skills and stay ahead of industry trends. I'm currently learning about native app and exploring new frameworks, together with libraries to improve both my frontend and backend coding capabilities."
-          },
-          {
-            "emoji": "🗣️",
-            "title": "Communication & Teamwork",
-            "description": "I have experience collaborating with multidisciplinary teams, facilitating effective communication, and ensuring smooth project progress. I'm comfortable working with clients to understand their needs and deliver solutions that meet their expectations."
-          },
-          {
-            "emoji": "⏳",
-            "title": "Time Management & Organization",
-            "description": "I excel at managing multiple tasks and prioritizing effectively to ensure timely, high-quality project deliveries. I have a strong work ethic and believe that the best way to learn is through hands-on experience—this mindset has shaped my programming journey. My first freelance projects taught me the importance of deadlines and delivering quality work on time. At Encender, I am adapting to a new way of working, fast-paced environment, working with multiple clients and projects, which has strengthened my ability to work dynamically and efficiently."
+          "careerMilestone": {
+            "title": "Career Milestone",
+            "description": "Landed my first company job at Encender after months of hard work and dedication"
           }
-        ]
+        }
       }
     }
   },
@@ -324,7 +370,8 @@
       "haveAccount": "Already have an account?",
       "login": "Login",
       "code": "Enter the code sent to your email",
-      "codeButton": "Verify Code"
+      "codeButton": "Verify Code",
+      "createAccount": "Create Account"
     },
     "leftbar": {
       "theme": {
@@ -342,8 +389,8 @@
         "LANGUAGE"
       ],
       "languages": {
-        "en": "English (UK)",
-        "es": "Spanish (ES)"
+        "en": "English",
+        "es": "Spanish"
       }
     },
     "rightbar": {
