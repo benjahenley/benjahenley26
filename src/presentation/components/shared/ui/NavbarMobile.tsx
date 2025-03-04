@@ -1,0 +1,170 @@
+"use client";
+
+import { FC, useEffect, useRef, useState } from "react";
+import { HiOutlineMenu } from "react-icons/hi";
+import { FiTrendingUp } from "react-icons/fi";
+import { Locales } from "@/infraestructure/interfaces";
+import { LeftbarMobile } from "@/presentation/components/sections/leftbar/mobile";
+
+type Props = {
+  className?: string;
+  // setMenu: () => void;
+  locale: Locales;
+};
+
+const NavbarMobile: FC<Props> = ({ className, locale }) => {
+  const [menu, setMenu] = useState(false);
+  const [trends, setTrends] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [touchStartY, setTouchStartY] = useState(0);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const navbarRef = useRef<HTMLDivElement>(null);
+  const NAVBAR_HEIGHT = 80; // 20rem in pixels
+
+  // Handle dynamic padding to compensate for navbar
+  useEffect(() => {
+    // Set initial padding
+    document.body.style.paddingBottom = isVisible
+      ? `${NAVBAR_HEIGHT}px`
+      : "0px";
+
+    // Add transition for smooth content adjustment
+    document.body.style.transition = "padding-bottom 0.5s ease-in-out";
+
+    return () => {
+      // Clean up
+      document.body.style.paddingBottom = "0px";
+      document.body.style.transition = "";
+    };
+  }, []);
+
+  // Update padding when navbar visibility changes
+  useEffect(() => {
+    document.body.style.paddingBottom = isVisible
+      ? `${NAVBAR_HEIGHT}px`
+      : "0px";
+  }, [isVisible]);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setMenu(false);
+    }
+  };
+
+  // Handle scroll events to show/hide navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+
+      // Determine if we should show or hide the navbar
+      // If scrolling up or at top of page, show navbar
+      // If scrolling down, hide navbar
+      const shouldBeVisible =
+        prevScrollPos > currentScrollPos || currentScrollPos < 10;
+
+      setIsVisible(shouldBeVisible);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
+  // Handle touch gestures for swiping
+  useEffect(() => {
+    const handleTouchStart = (e: TouchEvent) => {
+      setTouchStartY(e.touches[0].clientY);
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!touchStartY) return;
+
+      const touchY = e.touches[0].clientY;
+      const diff = touchStartY - touchY;
+
+      // If swiping down (negative diff), show navbar
+      // If swiping up (positive diff), hide navbar
+      if (Math.abs(diff) > 50) {
+        // threshold for swipe detection
+        setIsVisible(diff < 0);
+      }
+    };
+
+    const handleTouchEnd = () => {
+      setTouchStartY(0);
+    };
+
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
+  }, [touchStartY]);
+
+  useEffect(() => {
+    if (menu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menu]);
+
+  return (
+    <div className={className}>
+      <div ref={menuRef}>
+        <LeftbarMobile
+          handleClose={() => setMenu(false)}
+          locale={locale}
+          isOpen={menu}
+          className={`${!menu && "hidden"}`}
+        />
+      </div>
+      <div
+        ref={navbarRef}
+        className={`z-[9999] fixed md:hidden bottom-0 left-0 right-0 w-full h-20 bg-custom-gradient transition-all duration-500 ease-in-out ${
+          isVisible
+            ? "translate-y-0 opacity-100"
+            : "translate-y-full opacity-90"
+        }`}
+        style={{
+          boxShadow: isVisible ? "0 -4px 6px -1px rgba(0, 0, 0, 0.1)" : "none",
+        }}>
+        <div className="w-full h-full flex justify-between items-center text-white px-2">
+          <div
+            className="flex items-center justify-left text-4xl"
+            onClick={() => setMenu(!menu)}>
+            <HiOutlineMenu className="cursor-pointer" />
+          </div>
+          <div className="flex items-center justify-center relative">
+            <text
+              className="relative z-10 text-4xl font-bold"
+              style={{
+                fontFamily: "Helvetica, sans-serif",
+                lineHeight: "normal",
+              }}>
+              BH
+            </text>
+          </div>
+
+          <div className="text-4xl flex items-center justify-end mr-2">
+            <FiTrendingUp />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default NavbarMobile;

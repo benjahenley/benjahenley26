@@ -8,22 +8,26 @@
         "followButtonClicked": "Following"
       },
       "about": {
-        "title": "About me",
-        "texts": [
-          "If you've taken the time to dig in and make your own account, I truly thank you! You can tweet anything you like and interact with my stuff in the little playground I built. Be sure to say something about my projects! I would really appreciate it. This little community will have a special spot in my heart.",
-          "I'm 24 years young, this journey into coding has been short and sweet, and I'd love to guide you through it. I think I've got room to blab about me first though, right? Anyway, I'm not your typical smart guy. I tried college for a (very) long 2 years, and the suffering was never pleasant… or maybe I chose wrong? You see, I used to think I would be a biochemist growing up, but things don't always go as planned. The reality is, 2 years in, I realized that I was NOT the next up-and-coming Walter White any longer — more like down-and-retreating, get it? Hello?",
-          "Well, this might not be the most interesting bio, but at least I didn't spam ChatGPT on you. For real, how bored are you of hearing the word \"seamless\" in every AI response? At least I made you believe I didn't spam AI on you, skibidi sigma. Did I also mention I am quite the nerd when it comes to memes? Is that a plus in my future employer's beautiful eyes? Maybe! Who knows what stuff the person reading this is into. No judgment there though — anyway, back to me."
-        ],
+        "sectionOne": {
+          "title": "About me",
+          "texts": [
+            "Hello! I'm Benja, a full-stack developer who loves technology and design. I'm Argentine, I live in Buenos Aires, and I'm 24 years old. If you took the time to explore and create your account, I sincerely appreciate it. Now I can spam your email until you hire me… just kidding 👀. You can now tweet whatever you want and interact with what I've built. Want to say something nice about my projects? I'd really appreciate it. This small community holds a special place in my heart.",
+            "I'm 24 years young, this journey into coding has been short and sweet, and I'd love to guide you through it. I think I've got room to blab about me first though, right?",
+            "I'm not your typical nerd. I tried university for (very) long two years and realized that academic suffering wasn't for me. Or maybe I just chose the wrong path? As a kid, I wanted to be a biochemist. But after two years at UBA, I understood that I was NOT going to be the next up and coming Walter White… more like down and retreating am I right? No? Hello?",
+            "Perhaps it was due to a lack of interest or the fact that, shortly after graduating from high school, I entered the most stagnant period of my life—six years, to be exact. During this time, I worked as an accounting assistant in my grandfather's office, performing repetitive and monotonous tasks. I didn't enjoy it, but it provided me with financial stability and allowed me to support my hobbies.",
+            "What did I learn from this experience? That I strongly dislike routine and monotony. I thrive in a dynamic and engaging environment, one that constantly challenges me, pushes me to learn new things, and encourages my continuous growth. I seek a workplace where I can advance and develop professionally—something my grandfather's company would not have been able to offer me."
+          ]
+        },
         "artistSection": {
           "title_top": "My artsy",
           "title_bottom": "Side",
           "texts": [
-            "Oh yeah, so this is me. In my free time, I like to make electronic music. Yes, scoliosis and shoulder pain till death for me thanks. Specifically, for those who know the scene (real ones, word), I make peak-time techno, a genre that is quite popular nowadays in the world — the one outside my room I've been told about. So yeah, I'm quite the stay-at-home nerd, but I promise I have friends and a girlfriend (at least as of now). But if I didn't have any loved ones and also never worked out, you just know I would be straight crushing it in Assembly by now.",
-            "Apart from programming, I'm passionate about electronic music, especially techno. I've been a DJ and producer since high school. The pictures below are from a photoshoot I invested in because you can't be a techno artist without going for the casual, kinda-gothic, and cringy Insta feed."
+            "Oh yeah, so this is me. In my free time, I like to make electronic music. Yes, scoliosis and shoulder pain till death for me thanks. Specifically, for those who know the scene (real ones, word), I make peak-time techno, a genre that is quite popular nowadays in the world — the one outside my room I've been told about. So yeah, I'm quite the stay-at-home nerd, but I promise I have friends and a girlfriend (at least as of now). But if I didn't have any loved ones you just know I would be straight crushing it in Assembly by now.",
+            "So anyways, the pictures below are from a photoshoot I invested in because you can't be a techno artist without going for the casual, kinda-gothic, and cringy Insta feed."
           ],
           "myMusicTitle": "My Music"
         },
-        "stats": {
+        "statsSection": {
           "title": "Datos",
           "titles": {
             "name": "Full Name",
@@ -34,7 +38,9 @@
             "favouriteShow": "Favourite Show",
             "leastFavouriteThing": "Least favourite Thing",
             "longestBook": "Longest book i've read",
-            "randomTalent": "Random Talent"
+            "randomTalent": "Random Talent",
+            "funFact": "Fun Fact",
+            "coffee": "Coffee"
           },
           "texts": {
             "randomTalent": "Picking up things with my feet. Don't ask me how I discovered it, but it's a talent that has come in handy on more than one occasion.",

@@ -1,7 +1,7 @@
 "use client";
 
 import { Locales } from "@/infraestructure/interfaces";
-import HomeComp from "@/presentation/components/pages/home";
+import HomeComp from "@/presentation/components/sections/main";
 
 export default function Home({
   params: { locale },

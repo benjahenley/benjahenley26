@@ -8,29 +8,36 @@
         "followButtonClicked": "Siguiendo"
       },
       "about": {
-        "title": "Sobre mí",
-        "texts": [
-          "Hola! Soy Benja, un programador full-stack que ama la tecnología y el diseño. Soy Argentino, vivo en Buenos Aires y tengo 24 años. Si te tomaste el tiempo para investigar y crear tu cuenta, te lo agradezco de corazón. Ahora puedo spammear tu email hasta que me contrates... nah, mentira 👀. Ya podés tuitear lo que quieras e interactuar con lo que construí. ¿Me decís algo lindo sobre mis proyectos? Lo agradecería mucho. Esta pequeña comunidad tiene un lugar especial en mi corazón.",
+        "sectionOne": {
+          "title": "Sobre mí",
+          "texts": [
+            "Hola! Soy Benja, un programador full-stack que ama la tecnología y el diseño. Soy Argentino, vivo en Buenos Aires y tengo 24 años. Si te tomaste el tiempo para investigar y crear tu cuenta, te lo agradezco de corazón. Ahora puedo spammear tu email hasta que me contrates... nah, mentira 👀. Ya podés tuitear lo que quieras e interactuar con lo que construí. ¿Me decís algo lindo sobre mis proyectos? Lo agradecería mucho. Esta pequeña comunidad tiene un lugar especial en mi corazón.",
 
-          "Este viaje en la programación ha sido corto pero intenso. Me encantaría guiarte en el proceso, pero antes, ¿puedo hablar de mí un poco? Bah, ya lo estoy haciendo. No soy el típico nerd. Probé la universidad durante (muy) largos dos años y me di cuenta de que el sufrimiento académico no era lo mío. ¿O quizás elegí mal? Cuando era chico, quería ser bioquímico. Pero después de dos años en la UBA entendí que NO iba a ser el próximo Walter White en ascenso… más bien en retirada. ¿No? ¿Hola?",
+            "Este viaje en la programación ha sido corto pero intenso. Me encantaría guiarte en el proceso, pero antes, ¿puedo hablar de mí un poco? Bah, ya lo estoy haciendo.",
 
-          "Quizas fue o por falta de interes, o por el hecho de que apenas me egrese del colegio entre a los años mas estagnantes de mi vida, 6 para ser exacto. Trabaje en una oficina con mi abuelo de asistente contable, trabajo repetitivo y monotono. No me gustaba, pero me daba dinero y me permitia pagar por mis pasatiempos. Que aprendí de esta etapa? Que odio las rutinas y las monotonías, me gusta estar en un ambiente dinámico y divertido. En un ambiente en el que este en constante desafío, obligado a aprender cosas nuevas y a superarme cada día. En un ambiente en el que pueda escalar, la empresa de mi abuelo no me hubiera permitido hacerlo.",
+            "No seguí el camino tradicional. Probé la universidad durante (muy) largos dos años y me di cuenta de que el sufrimiento académico no era lo mío. ¿O quizás elegí mal? Cuando era chico, quería ser bioquímico. Pero después de dos años en la UBA entendí que NO iba a ser el próximo Walter White en ascenso… más bien en retirada. ¿No? ¿Hola?",
 
-          "Quizas fue o por falta de interes, o por el hecho de que apenas me egrese del colegio entre a los años mas estagnantes de mi vida, 6 para ser exacto. Trabaje en una oficina con mi abuelo de asistente contable, trabajo repetitivo y monotono. No me gustaba, pero me daba dinero y me permitia pagar por mis pasatiempos. Que aprendí de esta etapa? Que odio las rutinas y que odio las monotonías, me gusta estar en un ambiente dinámico y divertido. En un ambiente en el que este en constante desafío, obligado a aprender cosas nuevas y a superarme cada día."
-        ],
+            "Quizas fue o por falta de interes, o por el hecho de que apenas me egrese del colegio entre a los años mas estagnantes de mi vida, 6 para ser exacto. Trabaje en una oficina con mi abuelo de asistente contable, trabajo repetitivo y monotono. No me gustaba, pero me daba dinero y me permitia pagar por mis pasatiempos. Que aprendí de esta etapa? Que odio las rutinas y las monotonías, me gusta estar en un ambiente dinámico y divertido. En un ambiente en el que este en constante desafío, obligado a aprender cosas nuevas y a superarme cada día. En un ambiente en el que pueda escalar, la empresa de mi abuelo no me hubiera permitido hacerlo.",
+
+            "Quizás fue por falta de interés o porque, apenas egresé del colegio, entré en la etapa más estancada de mi vida: seis años, para ser exacto. Durante ese tiempo, trabajé como asistente contable en la oficina de mi abuelo, realizando tareas repetitivas y monótonas. No me gustaba, pero me proporcionaba estabilidad económica y me permitía costear mis pasatiempos.",
+
+            "¿Qué aprendí de esta experiencia? Que no soporto la rutina ni la monotonía. Me desenvuelvo mejor en un entorno dinámico y estimulante, donde los desafíos sean constantes, donde esté obligado a aprender cosas nuevas y a superarme cada día. Busco un espacio donde pueda crecer y desarrollarme profesionalmente, algo que la empresa de mi abuelo no habría podido ofrecerme."
+          ]
+        },
         "artistSection": {
           "title_top": "Mi lado ",
+
           "title_bottom": "Artístico",
+          "myMusicTitle": "Mi música",
           "texts": [
-            "Ah, sí, este soy yo. En mi tiempo libre me gusta hacer música electrónica. Sí, escoliosis y dolor de hombros hasta la muerte para mí, gracias. Específicamente, para los que conocen la escena (los reales), hago peak-time techno, un género bastante popular hoy en día en el mundo — ese mundo que está fuera de mi cueva, o eso me han comentado al menos. Así que sí, soy un nerd cocoonero, pero te juro que tengo amigos y novia (al menos por ahora, ampliaremos). Pero si no tuviera seres queridos y nunca entrenara siquiera, saben como estaría rompiendola en Assembly a esta altura?",
+            "Ah, sí, este soy yo. En mi tiempo libre me gusta hacer música electrónica. Sí, escoliosis y dolor de hombros hasta la muerte para mí, gracias. Específicamente, para los que conocen la escena (los reales), hago peak-time techno, un género bastante popular hoy en día en el mundo — ese mundo que está fuera de mi cueva, o eso me han comentado al menos. Así que sí, soy un nerd cocoonero, pero te juro que tengo amigos y novia (al menos por ahora, ampliaremos). Pero si no tuviera seres queridos saben como estaría rompiendola en Assembly a esta altura?",
 
             "Empecé a tocar y a producir después de terminar la secundaria. Las fotos de abajo son de una sesión en la que invertí dinero, porque no podés ser dj de techno sin un feed emo, casual y un toque cringe.",
 
-            "Si tenes ganas de escuchar mi música, podés hacerlo en mi SoundCloud o en mi Spotify. Aca te dejo un par de links para que puedas escuchar mi sonido. Te agradezco que me escuches y espero que te guste."
-          ],
-          "myMusicTitle": "Mi música"
+            "Si tenes ganas de escuchar mi música, podés hacerlo en mi SoundCloud o en mi Spotify. Aca te dejo un par de links para que puedas escuchar mi sonido, el cual espero que te guste mucho!"
+          ]
         },
-        "stats": {
+        "statsSection": {
           "title": "Datos",
           "titles": {
             "name": "Nombre Completo",
@@ -48,8 +55,8 @@
           "texts": {
             "name": "Benjamin Henley Saubidet III",
             "age": "Notion",
-            "hobbies": "Producir musica electronica, entrenar, meditar, pasear a mis perritos (tengo un perro salchicha y un golden), salir a bailar, pasar musica, viciar YouTube shorts hasta desmayar, PARKOUR!, aprender cosas nuevas, cocinar, viajar y conocer personas interesantes.",
-            "feats": "Generar conexiones interpersonales entre desconocidos. Comunicarme con los demás. Superar mis límites, aprender nuevas skills y perfeccionar las viejas. Durante la cuarentena pinté todas las paredes de mi habitación. Soy más Argentino que el mate y el asado.",
+            "hobbies": "Producir musica electronica, entrenar, meditar, pasear a mis perritos (tengo un perro salchicha y un golden, Caipi y Maisy, respectivamente), salir a bailar, pasar musica, viciar YouTube shorts hasta desmayar, PARKOUR!, aprender cosas nuevas, cocinar, viajar y conocer personas interesantes.",
+            "feats": "Generar conexiones interpersonales. Comunicar efectivamente. Superar límites personales. Aprender continuamente. Perfeccionar habilidades existentes.",
             "favouriteShow": "The Office",
             "favouriteThing": "Comer",
             "leastFavouriteThing": "Pasar mucho tiempo sin comer",

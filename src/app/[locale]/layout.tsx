@@ -6,8 +6,7 @@ import { ThemeProvider } from "../../presentation/components/providers/Theme";
 import { Locales } from "@/infraestructure/interfaces";
 import { locales } from "@/middleware";
 import { Metadata } from "next";
-import ModalContainer from "@/presentation/components/modals/view";
-import favicon from "./favicon.ico";
+import ModalContainer from "@/presentation/components/shared/modals/view";
 
 const sourceSansPro = Source_Sans_3({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
@@ -18,6 +17,9 @@ const sourceSansPro = Source_Sans_3({
 export const metadata: Metadata = {
   title: "BH | Portfolio",
   description: "Benja Henley",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export async function generateStaticParams() {
@@ -35,9 +37,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={locale ? locale : "es"}>
-      <head>
-        <link rel="shortcut icon" href="/favicon.ico" />
-      </head>
       <body
         className={`${sourceSansPro.className} dark:bg-slate-800 h-full min-h-screen z`}>
         <JotaiProvider>

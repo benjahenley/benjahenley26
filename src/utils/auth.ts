@@ -16,6 +16,11 @@ type verifyHandleAndSetPasswordProps = {
   handle: string;
 };
 
+type loginProps = {
+  email: string;
+  password: string;
+};
+
 export const sendCodeToEmail = async ({
   email,
   userFirstName,
@@ -104,7 +109,11 @@ export const verifyHandleAndCreateUser = async ({
   email,
   handle,
   password,
-}: verifyHandleAndSetPasswordProps) => {
+}: {
+  email: string;
+  handle: string;
+  password: string;
+}) => {
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/auth/create-user`,
@@ -126,12 +135,10 @@ export const verifyHandleAndCreateUser = async ({
     try {
       data = await response.json();
     } catch (error) {
-      console.log("1");
       throw new Error("Invalid JSON response from server");
     }
 
     if (!response.ok) {
-      console.log("2");
       throw new Error(
         data?.message || `Request failed with status ${response.status}`
       );
@@ -139,9 +146,45 @@ export const verifyHandleAndCreateUser = async ({
 
     return data;
   } catch (error: any) {
-    console.log("3");
-
     console.error("Request Failed:", error.message);
+    throw new Error(error.message || "An unknown error occurred");
+  }
+};
+
+export const signIn = async (email: string, password: string) => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      }
+    );
+
+    console.log(response);
+    let data;
+
+    try {
+      data = await response.json();
+    } catch (error) {
+      throw new Error("Invalid JSON response from server");
+    }
+
+    if (!response.ok) {
+      throw new Error(
+        data?.message || `Request failed with status ${response.status}`
+      );
+    }
+
+    return data;
+  } catch (error: any) {
+    console.error("Request Failed!:", error.message);
     throw new Error(error.message || "An unknown error occurred");
   }
 };

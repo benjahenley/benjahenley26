@@ -83,6 +83,7 @@ const config: Config = {
     },
   },
   plugins: [
+    require("tailwind-scrollbar"),
     addVariablesForColors,
     flowbite.plugin(),
     // require("daisyui"),
