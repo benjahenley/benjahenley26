@@ -1,18 +1,18 @@
-import { TECH_CATEGORIES } from "@/infraestructure/data/technologies/page";
+import { TECH_CATEGORIES } from "@/infraestructure/data/TechCategories";
 import { FaMedal } from "react-icons/fa";
-import { SkillsetSection } from "./SkillsetSection";
+import { TitleWithDescription } from "../../shared/ui/TitleWithDescription";
 import Tooltip from "../../shared/feedback/Tooltip";
 
 export const TechStack = ({ textContent }: { textContent: any }) => {
   return (
-    <SkillsetSection
+    <TitleWithDescription
       title={textContent.title}
       description={textContent.description || ""}
       contentClassName="flex flex-wrap justify-center gap-4 box-border p-2">
       {TECH_CATEGORIES.map((category, index) => (
         <div
           key={index}
-          className={`w-full lg:w-1/2 max-w-xs shadow-md p-4 border border-transparent rounded-lg hover:border-white/20 hover:shadow-lg hover:shadow-current/20 bg-gradient-to-br ${category.gradient} transition-all duration-300 transform hover:scale-[1.025] `}>
+          className={`w-full lg:w-1/2 max-w-xs shadow-md p-4 border border-transparent rounded-lg hover:border-white/20 hover:shadow-lg hover:shadow-current/20 bg-gradient-to-br ${category.gradient} opacity-80 hover:opacity-100 transition-all duration-300 transform hover:scale-[1.025] `}>
           <h4 className="text-xl text-white font-bold text-center mb-4 drop-shadow-md">
             {category.title}
           </h4>
@@ -27,6 +27,6 @@ export const TechStack = ({ textContent }: { textContent: any }) => {
           </div>
         </div>
       ))}
-    </SkillsetSection>
+    </TitleWithDescription>
   );
 };

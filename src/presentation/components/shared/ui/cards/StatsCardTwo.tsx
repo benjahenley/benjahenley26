@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Locales } from "@/infraestructure/interfaces";
 import Image from "next/image";
 
@@ -191,7 +191,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
   const title = "DEV STATS";
 
   return (
-    <div className="relative m-auto max-w-4xl mt-10 flex flex-col justify-center items-end xl:flex-row-reverse text-gray-800 dark:text-gray-200 rounded-xl">
+    <div className="p-4 relative m-auto max-w-4xl mt-10 flex flex-col justify-center items-end xl:flex-row-reverse text-gray-800 dark:text-gray-200 rounded-xl">
       <style jsx global>{`
         @keyframes pulse-expand {
           0%,
@@ -284,7 +284,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
       </div>
 
       {/* Content Container with Gradient Background */}
-      <div className="m-auto xl:m-0 flex flex-col justify-between max-w-md w-full h-full  p-6 bg-gradient-to-br from-slate-200 via-indigo-200 to-gray-200 dark:from-slate-950 dark:via-slate-900 dark:to-gray-950 text-white rounded-lg xl:rounded-none xl:rounded-l-lg relative overflow-hidden">
+      <div className="m-auto xl:m-0 flex flex-col justify-between max-w-md w-full h-full  p-6 bg-gradient-to-br from-purple-100 via-purple-200 to-gray-100  dark:from-slate-950 dark:via-slate-900 dark:to-gray-950 text-white rounded-lg xl:rounded-none xl:rounded-l-lg relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute top-5 right-5 w-32 h-32 rounded-full bg-gradient-to-br dark:from-emerald-500/10 dark:to-green-500/5 blur-2xl from-blue-500/30 to-indigo-500/5"></div>
 
@@ -293,11 +293,11 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
         <div className="flex flex-col relative z-10">
           {/* Elegant Header */}
           <div className="flex flex-row items-center justify-between gap-4 mb-0 border-b border-gray-700/30 pb-3">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-700 to-blue-900 dark:from-emerald-300 dark:to-green-500 text-transparent bg-clip-text">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-700 to-indigo-900 dark:from-emerald-500 dark:to-emerald-700 text-transparent bg-clip-text">
               {title}
             </h2>
             <div
-              className="text-3xl font-bold bg-gradient-to-r from-indigo-700 to-blue-900 dark:from-emerald-300 dark:to-green-500 text-transparent bg-clip-text"
+              className="text-3xl font-bold bg-gradient-to-r from-purple-700 to-indigo-900 dark:from-emerald-500 dark:to-emerald-700 text-transparent bg-clip-text"
               style={{ animation: "glow 4s ease-in-out infinite" }}>
               ✷
             </div>
@@ -305,50 +305,52 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
 
           {/* Stats List with Improved Scrolling */}
           {/* <div className="space-y-2 h-full max-h-[350px] overflow-y-auto group pr-2 custom-scrollbar dark:custom-scrollbar-dark"> */}
-          <div className="space-y-2 h-full max-h-[350px] overflow-y-auto group pr-2 scrollbar-thin dark:scrollbar-thumb-green-400 dark:scrollbar-track-gray-100 scrollbar-thumb-blue-800 scrollbar-track-gray-800">
-            {stats.map((stat, statIndex) => {
-              return (
-                <motion.div
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: statIndex * 0.05 }}
-                  key={statIndex}
-                  className="flex justify-between items-center p-2 transition-all duration-300 hover:bg-indigo-500/10 dark:hover:bg-white/5 rounded-md cursor-pointer"
-                  onMouseEnter={() => setHoveredStat(statIndex)}
-                  onMouseLeave={() => setHoveredStat(null)}
-                  onClick={() => {
-                    if (window.innerWidth < 1280) {
-                      setIsMobileDetailOpen(statIndex);
-                      setHoveredStat(statIndex);
-                    }
-                  }}>
-                  <div className="flex flex-row items-center gap-3">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-indigo-200 to-blue-900 dark:from-gray-700 dark:to-gray-800 dark:border border-gray-300/30 dark:border-gray-600/30">
-                      <span className="text-lg">{stat.emoji}</span>
+          {
+            <div className="space-y-2 h-full max-h-[350px] overflow-y-auto group pr-2 scrollbar-thin scrollbar-thumb-purple-700 scrollbar-track-gray-200 dark:scrollbar-thumb-emerald-400 dark:scrollbar-track-gray-800 ">
+              {stats.map((stat, statIndex) => {
+                return (
+                  <motion.div
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: statIndex * 0.05 }}
+                    key={statIndex}
+                    className="flex justify-between items-center p-2 transition-all duration-300 hover:bg-indigo-500/10 dark:hover:bg-white/5 rounded-md cursor-pointer"
+                    onMouseEnter={() => setHoveredStat(statIndex)}
+                    onMouseLeave={() => setHoveredStat(null)}
+                    onClick={() => {
+                      if (window.innerWidth < 1280) {
+                        setIsMobileDetailOpen(statIndex);
+                        setHoveredStat(statIndex);
+                      }
+                    }}>
+                    <div className="flex flex-row items-center gap-3">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-indigo-200 to-blue-900 dark:from-gray-700 dark:to-gray-800 dark:border border-gray-300/30 dark:border-gray-600/30">
+                        <span className="text-lg">{stat.emoji}</span>
+                      </div>
+                      <div>
+                        <span className="text-gray-800 dark:text-gray-200">
+                          {stat.name[locale]}
+                        </span>
+                        <p
+                          className={`text-sm font-bold ${
+                            stat.score <= 2
+                              ? "text-purple-300 dark:text-emerald-800" // Low scores
+                              : stat.score === 3
+                              ? "text-purple-400 dark:text-emerald-700" // Mid scores
+                              : stat.score === 4
+                              ? "text-purple-500 dark:text-emerald-500" // Good scores
+                              : "text-purple-700 dark:text-emerald-300" // Best scores
+                          }`}>
+                          {stat.score}/5
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <span className="text-gray-800 dark:text-gray-200">
-                        {stat.name[locale]}
-                      </span>
-                      <p
-                        className={`text-sm font-bold ${
-                          stat.score <= 2
-                            ? "text-red-600 dark:text-red-400" // Keep red for low scores
-                            : stat.score === 3
-                            ? "text-yellow-500 dark:text-yellow-300" // Keep yellow for warning/mid-score
-                            : stat.score === 4
-                            ? "text-green-600 dark:text-green-300" // Keep green for good scores
-                            : "text-emerald-500 dark:text-emerald-300" // Emerald for best scores
-                        }`}>
-                        {stat.score}/5
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex space-x-2">
-                    {[...Array(5)].map((_, dotIndex) => (
-                      <div
-                        key={dotIndex}
-                        className={`
+                    <div className="flex space-x-2">
+                      {[...Array(5)].map((_, dotIndex) => (
+                        <div
+                          key={dotIndex}
+                          className={`
                         w-3 h-3 rounded-sm
                         ${
                           dotIndex < stat.score
@@ -356,30 +358,31 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
                             : "bg-blue-300 dark:bg-gray-700/50"
                         }
                       `}
-                        style={{
-                          animation:
-                            dotIndex < stat.score
-                              ? getAnimationProps(statIndex, dotIndex)
-                              : "none",
-                        }}
-                      />
-                    ))}
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                          style={{
+                            animation:
+                              dotIndex < stat.score
+                                ? getAnimationProps(statIndex, dotIndex)
+                                : "none",
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          }
         </div>
 
         {/* Elegant Footer */}
         <div className="flex flex-row items-center justify-between gap-4 pt-3 border-t border-gray-700/30 relative z-10">
           <div
-            className="text-3xl font-bold bg-gradient-to-r from-indigo-700 to-blue-900 dark:from-emerald-300 dark:to-green-500 text-transparent bg-clip-text"
+            className="text-3xl font-bold bg-gradient-to-r from-purple-700 to-indigo-900 dark:from-emerald-500 dark:to-emerald-700 text-transparent bg-clip-text"
             style={{ animation: "glow 4s ease-in-out infinite" }}>
             ✷
           </div>
           <div>
-            <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-700 to-blue-900 dark:from-emerald-300 dark:to-green-500 text-transparent bg-clip-text">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-purple-700 to-indigo-900 dark:from-emerald-500 dark:to-emerald-700 text-transparent bg-clip-text">
               {title}
             </h2>
             <div className="text-xs text-gray-400 text-right">
@@ -396,8 +399,8 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
               hoveredStat === index && (
                 <motion.div
                   key={index}
+                  whileInView={{ x: 0 }}
                   initial={{ x: "100%" }}
-                  animate={{ x: 0 }}
                   exit={{ x: "100%" }}
                   className="fixed bottom-[83px] right-0 w-[300px] h-fit bg-gradient-to-br from-blue-400 to-indigo-500 dark:from-green-500 dark:to-emerald-600 rounded-lg p-4 shadow-lg z-50">
                   <button

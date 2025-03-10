@@ -1,6 +1,5 @@
 import "photoswipe/style.css";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-import { GiExpand } from "react-icons/gi";
+import { FaGithub, FaLink, FaExpand } from "react-icons/fa";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 
 type Props = {
@@ -28,8 +27,8 @@ function ProjectLinkInteractions({ url, github, imageSrc }: Props) {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black hover:bg-gray-200 transition-colors duration-200">
-            <FaExternalLinkAlt />
+            className="w-12 h-12 bg-white rounded-full flex items-center justify-center dark:bg-gray-900 dark:hover:bg-gray-600 hover:bg-gray-200 transition-colors duration-200">
+            <FaLink className="text-gray-800 dark:text-white text-md" />
           </a>
         )}
         {github && (
@@ -37,14 +36,14 @@ function ProjectLinkInteractions({ url, github, imageSrc }: Props) {
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black hover:bg-gray-200 transition-colors duration-200">
-            <FaGithub />
+            className="w-12 h-12 bg-white rounded-full flex items-center justify-center dark:bg-gray-900 dark:hover:bg-gray-600 hover:bg-gray-200 transition-colors duration-200">
+            <FaGithub className="text-gray-800 dark:text-white text-md" />
           </a>
         )}
         <button
-          className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black hover:bg-gray-200 transition-colors duration-200"
+          className="w-12 h-12 bg-white rounded-full flex items-center justify-center dark:bg-gray-900 dark:hover:bg-gray-600 hover:bg-gray-200 transition-colors duration-200"
           onClick={handleClick}>
-          <GiExpand />
+          <FaExpand className="text-gray-800 dark:text-white text-md" />
         </button>
       </div>
     </div>

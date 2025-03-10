@@ -13,6 +13,7 @@ type FormFieldProps = {
   icon?: React.ElementType;
   togglePasswordVisibility?: () => void;
   showPassword?: boolean;
+  forgotPasswordButton?: React.ReactNode;
 };
 
 const FormField = ({
@@ -26,10 +27,15 @@ const FormField = ({
   icon: Icon,
   togglePasswordVisibility,
   showPassword,
+  forgotPasswordButton,
 }: FormFieldProps) => {
   return (
     <div className="grid gap-2 mt-4">
-      <label className="text-sm font-medium tracking-wide">{label}</label>
+      <div className="flex items-center justify-between">
+        <label className="text-sm font-medium tracking-wide">{label}</label>
+        {forgotPasswordButton && <div>{forgotPasswordButton}</div>}
+      </div>
+
       <div className="relative">
         <input
           type={
@@ -50,6 +56,7 @@ const FormField = ({
             <Icon size={16} aria-hidden="true" />
           </div>
         )}
+
         {type === "password" && togglePasswordVisibility && (
           <button
             type="button"

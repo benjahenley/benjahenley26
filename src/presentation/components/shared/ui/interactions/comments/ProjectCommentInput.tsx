@@ -12,7 +12,7 @@ export function ProjectCommentInput({ projectId }: Props) {
   const [newComment, setNewComment] = useState("");
   const [session] = useAtom(userSession);
   const { openModal } = useModal();
-  const isLoggedIn = Boolean(session.userName) && Boolean(session.twitterTag);
+  const { isLoggedIn } = session;
 
   const handleCommentSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -47,11 +47,7 @@ export function ProjectCommentInput({ projectId }: Props) {
           <div className="flex items-center border border-gray-300 dark:border-gray-600 rounded-full overflow-hidden bg-white dark:bg-gray-700">
             <input
               type="text"
-              placeholder={
-                isLoggedIn
-                  ? `Comment as ${session.userName || session.twitterTag}...`
-                  : "Sign in to comment..."
-              }
+              placeholder={isLoggedIn ? `Add Comment` : "Sign in to comment..."}
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               className="flex-grow w-full rounded-full py-3 px-4 bg-transparent focus:outline-none text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"

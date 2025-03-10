@@ -28,7 +28,7 @@ export function LikeButton({ projectId, likeCount }: InteractionProps) {
   // Fetch initial liked state when user is logged in
   useEffect(() => {
     const fetchUserLikeStatus = async () => {
-      if (!userAtom.userId) return;
+      // if (!userAtom.userId) return;
 
       try {
         // const res = await axios.get(`/api/project/${projectId}/isLiked`, {
@@ -43,19 +43,19 @@ export function LikeButton({ projectId, likeCount }: InteractionProps) {
     };
 
     fetchUserLikeStatus();
-  }, [userAtom.userId, projectId]);
+  }, [userAtom, projectId]);
 
   const handleLike = async () => {
     if (loading) return; // Prevent double taps
 
     try {
-      if (!userAtom.userId) {
+      if (!userAtom.isLoggedIn) {
         return modal.openModal("SIGN_IN");
       }
 
       setLoading(true);
 
-      const data = await toggleLike(projectId, userAtom.userId);
+      const data = await toggleLike(projectId, Number(userAtom.userId));
 
       if (data.like) {
         setCount((prev) => prev + 1);

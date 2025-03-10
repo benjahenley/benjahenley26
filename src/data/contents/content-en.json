@@ -11,11 +11,15 @@
         "sectionOne": {
           "title": "About me",
           "texts": [
-            "Hello! I'm Benja, a full-stack developer who loves technology and design. I'm Argentine, I live in Buenos Aires, and I'm 24 years old. If you took the time to explore and create your account, I sincerely appreciate it. Now I can spam your email until you hire me… just kidding 👀. You can now tweet whatever you want and interact with what I've built. Want to say something nice about my projects? I'd really appreciate it. This small community holds a special place in my heart.",
-            "I'm 24 years young, this journey into coding has been short and sweet, and I'd love to guide you through it. I think I've got room to blab about me first though, right?",
-            "I'm not your typical nerd. I tried university for (very) long two years and realized that academic suffering wasn't for me. Or maybe I just chose the wrong path? As a kid, I wanted to be a biochemist. But after two years at UBA, I understood that I was NOT going to be the next up and coming Walter White… more like down and retreating am I right? No? Hello?",
-            "Perhaps it was due to a lack of interest or the fact that, shortly after graduating from high school, I entered the most stagnant period of my life—six years, to be exact. During this time, I worked as an accounting assistant in my grandfather's office, performing repetitive and monotonous tasks. I didn't enjoy it, but it provided me with financial stability and allowed me to support my hobbies.",
-            "What did I learn from this experience? That I strongly dislike routine and monotony. I thrive in a dynamic and engaging environment, one that constantly challenges me, pushes me to learn new things, and encourages my continuous growth. I seek a workplace where I can advance and develop professionally—something my grandfather's company would not have been able to offer me."
+            "Hi! I'm Benja, a full-stack developer who loves technology and design. I'm Argentinian, I live in Buenos Aires, and I'm 24 years old. If you took the time to explore and create your account, I sincerely appreciate it. Now I can spam your email until you hire me... nah, just kidding 👀. You can now tweet whatever you want and interact with what I built. Would you say something nice about my projects? I'd really appreciate it. This journey in programming has just begun and i'd love to guide you through the process, but first lets talk about me.",
+
+            "I didn't follow the traditional path. After finishing high school in 2025, I enrolled at the University of Buenos Aires to study Biochemistry. But after two years in the program, I realized that I was NOT going to be the next up-and-coming Walter White... more like a down-and-retreating. No? Hello?",
+
+            "At the same time as studying biochemistry, I started working at my grandfather's office as an accounting assistant, which was repetitive and monotonous work. I didn't like it, but it gave me money and allowed me to pay for my hobbies. What did I learn from this stage? That I hate routines and monotony. I like being in a dynamic environment where I am constantly challenged, forced to learn new things and improve every day. In an place where I can grow — something my grandfather's accounting studio would have never allowed me to do.",
+
+            "When I dropped out of college I realized I wasn't heading towards the direction I wanted. I felt frustrated and with no purpose. So I decided to take a different path and got into programming. And what an excellent decision. At first, it was difficult to balance work and being a self-taught programer. But my passion for solving errors and learning new technologies pushed me to get out of ruts faster by the day. Nowadays, I feel very happy that I took this path. I feel challenged every day.",
+
+            "Before I spread my wings and dove into programming 100%, I took on freelance projects to get my feet wet. I've learned a lot from them, and I'm still learning. Specially because I got to experience both sides of the coin: what its like to lead people that have less experience, and learning from the masters of the craft. I've made some great friends and connections that I'm very thankful for. Programming isnt just about coding, its about learning, networking, and building great relationships."
           ]
         },
         "artistSection": {
@@ -40,7 +44,7 @@
             "longestBook": "Longest book i've read",
             "randomTalent": "Random Talent",
             "funFact": "Fun Fact",
-            "coffee": "Coffee"
+            "coffee": "Daily Caffeine Intake"
           },
           "texts": {
             "randomTalent": "Picking up things with my feet. Don't ask me how I discovered it, but it's a talent that has come in handy on more than one occasion.",
@@ -48,209 +52,18 @@
             "favouriteThing": "Spamming W's in the group chat.",
             "leastFavouriteThing": "Getting hate for spamming W's in the group chat.",
             "age": "24 years young",
-            "hobbies": "Making it rain, producing fresh beatz, Working out, Rocking out, meditation, park-time with the doggies (not the one in the pic), clubbing, DJ'ing in cool clubs, binge watching youtube shorts until unconscious, PARKOUR, learning new things, traveling (still planning my world tour) and connecting with people.",
-            "feats": "I love connecting people. I've made friends during wild nights in Buenos Aires and introduced them to each other. I enjoy communication, even tough conversations. I love pushing boundaries, learning new skills, and perfecting old ones. My room walls are painted from quarantine days. I'm super Argentine, so I love asados and mate. But don't talk about our economy.",
+            "hobbies": "Producing music, Working out, Rocking out, meditation, park-time with the doggies, raving, DJ'ing in cool clubs, binge watching youtube shorts until unconscious, PARKOUR, learning new things, traveling (still planning my world tour) and connecting with people.",
+            "feats": "I bring random friend groups together. Open communication is a must for me, even when it means having tough conversations. I'm always looking to push boundaries, pick up new skills, and refine the ones I already have. Drawing is a big part of my life—my room walls are covered in my artwork (don't worry, my mental health is fine). I'm as Argentine as it gets: I live for asados and mate, and I hate our economy.",
             "favouriteShow": "The Office, hands down.",
             "longestBook": "'It' by Stephen King.",
             "funFact": "Fun Fact",
-            "coffee": "Im having two coffees a day, don't judge. I'm a coffee lover, not a coffee snob... but I havo to admit I like starbucks. I also drink mate, a traditional Argentine drink."
+            "coffee": "Im having two coffees a day, don't judge. I'm a coffee lover, not a coffee snob... but I have to admit I like Starbucks. I also drink mate, a traditional Argentine drink."
           }
         }
       },
       "projects": {
         "TechStack": "Tech Used",
-        "pinned": "Pinned Project",
-        "projectArray": [
-          {
-            "title": "E-commerce Backend",
-            "projectId": "1",
-            "description": "Check out my e-commerce backend, complete with comprehensive Postman documentation.",
-            "url": "https://github.com/benjini123/dwf-m9-desafio-final",
-            "github": "https://github.com/benjini123/dwf-m9-desafio-final",
-            "date": "24 dic 2022",
-            "images": [
-              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/POSTMAN_aqufhj.png"
-            ],
-            "techStack": [
-              "React",
-              "TypeScript",
-              "Next.js",
-              "Postman",
-              "GitHub",
-              "Vercel",
-              "Algolia",
-              "Airtable"
-            ]
-          },
-          {
-            "title": "Ibijet Rent",
-            "projectId": "2",
-            "description": "Looking to have fun in Ibiza? I recommend renting a jetski to explore the beautiful sights this island has to offer. I designed a powerful algorithm that checks the availability of both guides and jetskis, along with a robust backend using Firebase. This ensures you can easily rent a jetski and enjoy a smooth experience.",
-            "url": "https://ibijetrent.com/",
-            "github": "https://github.com/benjahenley/renta-motos-backend",
-            "date": "25 jul 2024",
-            "images": [
-              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/IBIJET_itywxp.png"
-            ],
-            "techStack": [
-              "React",
-              "TypeScript",
-              "Next.js",
-              "Postman",
-              "GitHub",
-              "Vercel",
-              "Firebase",
-              "CSS3",
-              "HTML5",
-              "Tailwind",
-              "Paypal"
-            ]
-          },
-          {
-            "title": "Crossup Challenge",
-            "projectId": "3",
-            "description": "While actively job hunting, I interviewed with Crossup, a company specializing in sales on MiTienda Nube. Unfortunately, I wasn't selected, but I gained the experience of coding an aesthetically pleasing store that has enhanced my portfolio.",
-            "url": "https://crossup-challenge.vercel.app/",
-            "github": "https://github.com/benjahenley/crossup-challenge",
-            "date": "12 dic 2024",
-            "images": [
-              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739882132/portfolio-24/projects/crossup-challenge_af6auh.png"
-            ],
-            "techStack": [
-              "React",
-              "TypeScript",
-              "Next.js",
-              "Postman",
-              "GitHub",
-              "Vercel",
-              "Firebase",
-              "CSS3",
-              "HTML5",
-              "Tailwind",
-              "Paypal"
-            ]
-          },
-          {
-            "title": "Post Cosecha",
-            "projectId": "4",
-            "description": "Post Cosecha was one of those projects undertaken solo. With little information from the client and much room for imagination, this freedom allowed me to express myself and create a unique style. The only expense incurred by the client was a video for the cover.",
-            "pinned": true,
-            "url": "https://www.postcosechasrl.com.ar/",
-            "github": "https://github.com/benjahenley/post-cosecha",
-            "date": "17 nov 2024",
-            "images": [
-              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1732111030/portfolio-24/projects/POST_COSECHA_vqctvl.png"
-            ],
-            "techStack": [
-              "React",
-              "TypeScript",
-              "Next.js",
-              "Postman",
-              "GitHub",
-              "Vercel",
-              "Firebase",
-              "Tailwind",
-              "CSS3",
-              "HTML5",
-              "Strapi",
-              "Docker"
-            ]
-          },
-          {
-            "title": "Expo San Juan",
-            "projectId": "5",
-            "description": "I've had a great experience working with Panorama Minero, a company at the forefront of the mining industry. They have been pleased to work with me on multiple occasions. This time, I improved the UI by internationalizing their San Juan Expo page, making it accessible in both English and Spanish. Additionally, I collaborated with a design team to add new sections to the page.",
-            "url": "https://exposanjuan.com.ar/",
-            "github": "",
-            "date": "23 mar 2024",
-            "images": [
-              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073224/portfolio-24/projects/SAN-JUAN_qxjuws.png"
-            ],
-            "techStack": [
-              "React",
-              "TypeScript",
-              "Next.js",
-              "Postman",
-              "GitHub",
-              "Vercel",
-              "Firebase",
-              "Tailwind",
-              "CSS3",
-              "HTML5",
-              "Strapi",
-              "Docker"
-            ]
-          },
-          {
-            "title": "Women In Mining",
-            "projectId": "6",
-            "description": "International Women in Mining (IWiM) is an international organization run by volunteers committed to the advancement of women in the mining sector. I was happy to develop this page dedicated to the inclusion and visibility of the female workforce.",
-            "url": "",
-            "github": "",
-            "date": "24 jun 2024",
-            "images": [
-              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073227/portfolio-24/projects/WIM-2_r9xouw.png",
-              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/WIM-4_szrxtv.png"
-            ],
-            "techStack": [
-              "React",
-              "TypeScript",
-              "Next.js",
-              "Postman",
-              "GitHub",
-              "Vercel",
-              "Tailwind",
-              "CSS3",
-              "HTML5",
-              "Strapi",
-              "Docker"
-            ]
-          },
-          {
-            "title": "Gold Silver And Copper",
-            "projectId": "7",
-            "description": "I had the privilege of contributing to the creation of Panorama Minero's Gold, Silver, and Copper page. This project involved extensive collaboration to develop a comprehensive and visually appealing resource for users interested in these key mining sectors. I internationalized the page, making it accessible in both English and Spanish, which broadened its reach to a wider audience. Additionally, I optimized the user interface to ensure a seamless and engaging experience, integrating intuitive navigation and interactive elements. My work improved the page's usability and accessibility, adding significant value to Panorama Minero by attracting a more diverse and global audience.",
-            "url": "https://oroplataycobre.com.ar/",
-            "github": "",
-            "date": "12 nov 2023",
-            "images": [
-              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739294422/portfolio-24/projects/GOLD_ecoxkg.png"
-            ],
-            "techStack": [
-              "React",
-              "TypeScript",
-              "Next.js",
-              "GitHub",
-              "Vercel",
-              "Bootstrap",
-              "CSS3",
-              "HTML5",
-              "Strapi",
-              "Docker"
-            ]
-          },
-          {
-            "title": "Buenos Aires Vision",
-            "projectId": "8",
-            "description": "My first solo project was a great success. I designed a web page for Buenos Aires Vision, a tourism company known for providing the best selection of tours in Buenos Aires. Their offerings range from exquisite dining experiences to river explorations, ensuring a memorable stay for visitors. My role involved showcasing these tours in an elegant and appealing manner, which effectively attracted clients and increased the company's revenue.",
-            "url": "https://www.buenosairesvision.tur.ar",
-            "github": "https://github.com/benjahenley/turismo-ba",
-            "date": "06 ago 2023",
-            "images": [
-              "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073226/portfolio-24/projects/BAV-DARK_ltkj43.png"
-            ],
-            "techStack": [
-              "React",
-              "TypeScript",
-              "Next.js",
-              "GitHub",
-              "Vercel",
-              "CSS3",
-              "HTML5",
-              "Bootstrap"
-            ]
-          }
-        ]
+        "pinned": "Pinned Project"
       },
       "skillset": {
         "title": "Skillset",
@@ -329,7 +142,7 @@
           },
           "education": {
             "title": "Education & Training",
-            "description": "Completed APX course on Full Stack Development and Udemy courses on Mobile Development"
+            "description": "Completed APX course on Full Stack Development and Udemy courses on Mobile Development. Now i'm going for a degree in Computer science at the Technological University of Buenos Aires (UTN)."
           },
           "careerMilestone": {
             "title": "Career Milestone",
@@ -360,7 +173,7 @@
         "password": "Set Password"
       },
       "description": {
-        "email": "Enter your email below to create an account, we'll send you a code to verify your email",
+        "email": "Enter your email below to create an account, I'll send you a code to verify your email",
         "code": "Enter the code sent to your email",
         "password": "Create your password"
       },
@@ -392,8 +205,9 @@
         "INSTAGRAM",
         "WHATSAPP",
         "MUSIC",
-        "LANGUAGE"
+        "DONATE"
       ],
+      "itemsWithDropdown": ["LANGUAGE", "THEME"],
       "languages": {
         "en": "English",
         "es": "Spanish"

@@ -1,4 +1,9 @@
-export type MODAL_VIEW = "SIGN_IN" | "SIGN_UP" | "OPTIONS" | "ADD_COMMENT";
+export type MODAL_VIEW =
+  | "SIGN_IN"
+  | "SIGN_UP"
+  | "OPTIONS"
+  | "ADD_COMMENT"
+  | "LOG_OUT";
 
 export type ModalAtom = {
   open: boolean;

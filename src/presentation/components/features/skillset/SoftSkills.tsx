@@ -3,13 +3,13 @@ import { FaMedal, FaStar } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TextBase } from "../../shared/ui/Texts";
 import { useState } from "react";
-import { SkillsetSection } from "./SkillsetSection";
+import { TitleWithDescription } from "../../shared/ui/TitleWithDescription";
 
 export const SoftSkills = ({ textContent }: { textContent: any }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <SkillsetSection
+    <TitleWithDescription
       title={textContent.title}
       description={textContent.description}
       contentClassName="flex flex-col items-center justify-center w-full gap-5 py-6 md:px-4 max-w-4xl mx-auto">
@@ -34,10 +34,10 @@ export const SoftSkills = ({ textContent }: { textContent: any }) => {
                   transition: { duration: 0.4 },
                 }}
                 whileTap={{ scale: 0.95 }}
-                className={`w-14 h-14 inline-flex items-center justify-center rounded-xl transition-all cursor-pointer shadow-md
+                className={`flex-shrink-0 w-14 h-14 inline-flex items-center justify-center rounded-xl transition-all cursor-pointer shadow-md
                     ${
                       activeIndex === index
-                        ? "bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-600 dark:to-indigo-800"
+                        ? "bg-gradient-to-br from-blue-500 to-indigo-500 dark:from-emerald-500 dark:to-emerald-700"
                         : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
                     }`}>
                 <span
@@ -51,9 +51,10 @@ export const SoftSkills = ({ textContent }: { textContent: any }) => {
                 </span>
               </motion.div>
               <div>
-                <p className="group-hover:font-bold text-md md:text-lg lg:text-xl font-semibold text-gray-800 dark:text-gray-200 transition-all duration-300">
+                <p className="group-hover:font-bold text-md md:text-lg lg:text-xl font-semibold text-gray-800 dark:text-gray-200 transition-all duration-300 line-clamp-2">
                   {step.title}
                 </p>
+
                 <div className="flex gap-1 mt-1">
                   {[...Array(5)].map((_, starIndex) => (
                     <motion.div
@@ -108,6 +109,6 @@ export const SoftSkills = ({ textContent }: { textContent: any }) => {
           </AnimatePresence>
         </motion.div>
       ))}
-    </SkillsetSection>
+    </TitleWithDescription>
   );
 };

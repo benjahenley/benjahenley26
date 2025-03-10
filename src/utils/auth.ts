@@ -164,10 +164,46 @@ export const signIn = async (email: string, password: string) => {
           email,
           password,
         }),
+        credentials: "include",
       }
     );
 
-    console.log(response);
+    let data;
+
+    try {
+      data = await response.json();
+    } catch (error) {
+      throw new Error("Invalid JSON response from server");
+    }
+
+    if (!response.ok) {
+      throw new Error(
+        data?.message || `Request failed with status ${response.status}`
+      );
+    }
+
+    console.log(data);
+
+    return data;
+  } catch (error: any) {
+    console.error("Request Failed:", error.message);
+    throw new Error(error.message || "An unknown error occurred");
+  }
+};
+
+export const logOut = async () => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/auth/logout`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      }
+    );
+
     let data;
 
     try {
@@ -184,7 +220,7 @@ export const signIn = async (email: string, password: string) => {
 
     return data;
   } catch (error: any) {
-    console.error("Request Failed!:", error.message);
+    console.error("Request Failed:", error.message);
     throw new Error(error.message || "An unknown error occurred");
   }
 };

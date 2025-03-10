@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import { ImageType } from "@/infraestructure/interfaces";
-import producerImages from "@/infraestructure/data/producerImages";
+import producerImages from "@/infraestructure/data/ProducerImages";
 
 const ProducerGallery = () => {
   const [imageDimensions, setImageDimensions] = useState<ImageType[]>([]);

@@ -4,7 +4,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { FiTrendingUp } from "react-icons/fi";
 import { Locales } from "@/infraestructure/interfaces";
-import { LeftbarMobile } from "@/presentation/components/sections/leftbar/mobile";
+import { LeftbarMobile } from "@/presentation/components/ui/leftbar/mobile";
 
 type Props = {
   className?: string;

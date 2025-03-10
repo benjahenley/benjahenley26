@@ -20,7 +20,7 @@ type Props = {
 };
 
 const SignIn = dynamic(() =>
-  import("../../features/auth/sign-in").then((mod) => {
+  import("../../features/auth/SignIn").then((mod) => {
     const Component = (props: any) => <mod.default {...props} />;
     Component.displayName = "SignIn";
     return Component;
@@ -28,7 +28,7 @@ const SignIn = dynamic(() =>
 );
 
 const SignUp = dynamic(() =>
-  import("../../features/auth/sign-up").then((mod) => {
+  import("../../features/auth/SignUp").then((mod) => {
     const Component = (props: any) => <mod.default {...props} />;
     Component.displayName = "SignUp";
     return Component;
@@ -36,9 +36,17 @@ const SignUp = dynamic(() =>
 );
 
 const Options = dynamic(() =>
-  import("../../features/auth/Options").then((mod) => {
+  import("../../features/auth/AuthOptions").then((mod) => {
     const Component = (props: any) => <mod.default {...props} />;
     Component.displayName = "Options";
+    return Component;
+  })
+);
+
+const LogOut = dynamic(() =>
+  import("../../features/auth/LogOut").then((mod) => {
+    const Component = (props: any) => <mod.default {...props} />;
+    Component.displayName = "LogOut";
     return Component;
   })
 );
@@ -53,6 +61,8 @@ function renderModalContent(view: MODAL_VIEW | string, locale: Locales) {
       return <Options className={locale} />;
     case "SIGN_UP":
       return <SignUp className={locale} />;
+    case "LOG_OUT":
+      return <LogOut className={locale} />;
     default:
       return null;
   }

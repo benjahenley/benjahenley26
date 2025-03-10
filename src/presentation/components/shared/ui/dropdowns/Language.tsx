@@ -11,20 +11,21 @@ import { langOptions } from "@/atoms/lang";
 type Props = {
   sidebar?: boolean;
   locale: Locales;
+  isOpen: boolean;
 };
 
-export const LanguageSelect: FC<Props> = ({ sidebar, locale }) => {
-  const [dropdown, setDropdown] = useState(false);
+export const LanguageSelect: FC<Props> = ({ sidebar, locale, isOpen }) => {
+  const [dropdown, setDropdown] = useState(isOpen);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pageContent = contents[locale] || contents["es"];
 
-  const leftBar = pageContent.ui.leftbar;
-
   const LANGUAGES = [
-    { code: "en", name: leftBar.languages.en, flag: "🇬🇧" },
-    { code: "es", name: leftBar.languages.es, flag: "🇪🇸" },
+    { code: "en", name: pageContent.ui.leftbar.languages.en, flag: "🇬🇧" },
+    { code: "es", name: pageContent.ui.leftbar.languages.es, flag: "🇪🇸" },
   ];
+
+  const { leftbar } = pageContent.ui;
 
   const changeLanguage = (newLocale: Locales) => {
     const url = window.location.pathname.split("/").slice(2).join("/");
@@ -66,7 +67,7 @@ export const LanguageSelect: FC<Props> = ({ sidebar, locale }) => {
             <IoLanguage />
           </div>
           <p className=" uppercase text-md md:hidden xl:block xl:text-lg transition-transform transform ">
-            {leftBar.items[6]}
+            {leftbar.itemsWithDropdown[0]}
           </p>
         </div>
         <MdKeyboardArrowDown

@@ -95,15 +95,17 @@ function UserStatsExpandable({ userTag, userName }: Props) {
             <motion.button
               onClick={() => setIsFollowing(!isFollowing)}
               className={`${
-                !isFollowing ? "bg-red-500" : "bg-gray-400 dark:bg-slate-600"
+                !isFollowing
+                  ? "bg-purple-700 dark:bg-emerald-700"
+                  : "bg-gray-400 dark:bg-gray-600"
               } text-white text-sm px-2 rounded-full flex flex-row items-center gap-1 group`}
               variants={itemVariants}>
               {isFollowing ? "Following" : "Follow"}
 
               {!isFollowing ? (
-                <FaPlus className="text-sm bg-red-400 rounded-full p-[2px] group-hover:rotate-180 duration-300"></FaPlus>
+                <FaPlus className="text-sm bg-purple-500 dark:bg-emerald-500 rounded-full p-[2px] group-hover:rotate-180 duration-300"></FaPlus>
               ) : (
-                <FaMinus className="text-sm p-[2px] bg-gray-500 dark:bg-gray-600 rounded-full group-hover:rotate-180 duration-300"></FaMinus>
+                <FaMinus className="text-sm p-[2px] bg-gray-500 dark:bg-gray-500 rounded-full group-hover:rotate-180 duration-300"></FaMinus>
               )}
             </motion.button>
           </div>

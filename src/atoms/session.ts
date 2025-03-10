@@ -1,9 +1,11 @@
+import { atom } from "jotai";
 import { atomWithStorage } from "jotai/utils";
 
-export const userSession = atomWithStorage("userData", {
-  userName: "",
-  userId: 1,
+export const userSession = atomWithStorage("userSession", {
+  userId: "",
+  userFirstName: "",
   userLastName: "",
-  userPassword: "",
-  twitterTag: "",
+  handle: "",
+  profileImg: "",
+  isLoggedIn: false,
 });

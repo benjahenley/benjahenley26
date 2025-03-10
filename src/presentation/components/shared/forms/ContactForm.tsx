@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { atom, useAtom } from "jotai";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { PrimaryButton } from "../../shared/ui/Buttons";
+import { PrimaryButton } from "../ui/buttons/Buttons";
 
 type Inputs = {
   name: string;
@@ -115,7 +115,7 @@ export function Form({ className }: Props) {
         <div className="mt-4">
           {successMessage && <p className="text-green-500">{successMessage}</p>}
           {errorMessage && <p className="text-red-500">{errorMessage}</p>}
-          <PrimaryButton type="submit">Send</PrimaryButton>
+          <PrimaryButton content="Send"></PrimaryButton>
         </div>
       </form>
     </details>

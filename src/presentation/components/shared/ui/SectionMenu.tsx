@@ -17,7 +17,9 @@ export function OptionsMenu({ locale, section, setSection }: Props) {
           key={id}
           onClick={() => setSection(id)}
           className={`text-sm md:text-base w-full h-full flex items-center justify-center hover:bg-gray-100 cursor-pointer dark:hover:bg-slate-700 ${
-            section === id ? "border-b-2 border-[#e8594f]" : ""
+            section === id
+              ? "border-b-2 border-purple-700 dark:border-emerald-500"
+              : ""
           }`}>
           {option}
         </li>

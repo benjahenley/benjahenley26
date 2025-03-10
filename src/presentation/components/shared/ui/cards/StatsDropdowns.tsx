@@ -1,4 +1,5 @@
 import { StatsSection } from "@/types/content";
+import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import {
   FiBook,
@@ -56,7 +57,11 @@ const StatItem = ({
   };
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
       className={`p-2 border border-gray-200 dark:border-gray-700 rounded-lg transition-all duration-300 cursor-pointer relative overflow-hidden group ${
         isExpanded ? "shadow-lg" : ""
       } ${
@@ -66,11 +71,10 @@ const StatItem = ({
       }`}
       onClick={onToggleExpand}
       data-index={index}>
-      {/* Gold gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-amber-100 to-yellow-400 dark:from-amber-700 dark:to-yellow-600 opacity-90 dark:opacity-80"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-purple-400 dark:from-emerald-700 dark:to-emerald-600 opacity-90 dark:opacity-80"></div>
 
       {/* Rotated rectangle design element */}
-      <div className="absolute h-[120%] w-[125%] inset-[-20px] rotate-[25deg] bg-gradient-to-r from-amber-200 to-yellow-300 dark:from-amber-600 dark:to-yellow-500 opacity-50"></div>
+      <div className="absolute h-[120%] w-[125%] inset-[-20px] rotate-[25deg] bg-gradient-to-r from-purple-200 to-purple-300 dark:from-emerald-600 dark:to-emerald-500 opacity-50"></div>
 
       {/* Content container - must be positioned relative to appear above the background */}
       <div className="relative z-10">
@@ -81,9 +85,6 @@ const StatItem = ({
                 colorClasses[color]
               } 
               transition-all duration-300 
-              group-hover:shadow-[0_0_15px_rgba(255,215,0,0.7)] 
-              group-hover:scale-110 
-              dark:group-hover:shadow-[0_0_15px_rgba(255,215,0,0.4)]
               ${
                 isActive
                   ? "shadow-[0_0_20px_rgba(255,215,0,0.9)] scale-125"
@@ -117,7 +118,7 @@ const StatItem = ({
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -127,13 +128,9 @@ const StatsDropdowns = ({ statsSection }: { statsSection: StatsSection }) => {
   const [activeItem, setActiveItem] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartRef = useRef<number | null>(null);
-  const lastTouchTimeRef = useRef<number>(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Initialize sound effect
   useEffect(() => {
-    audioRef.current = new Audio("/sounds/ios-picker.mp3"); // Path to your sound file
-
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -141,21 +138,6 @@ const StatsDropdowns = ({ statsSection }: { statsSection: StatsSection }) => {
       }
     };
   }, []);
-
-  const playTickSound = () => {
-    // Avoid playing sounds too rapidly
-    const now = Date.now();
-    if (now - lastTouchTimeRef.current > 80) {
-      // Minimum 80ms between sounds
-      if (audioRef.current) {
-        // Clone and play to allow overlapping sounds
-        const sound = audioRef.current.cloneNode() as HTMLAudioElement;
-        sound.volume = 0.3; // Lower volume
-        sound.play().catch((e) => console.log("Sound play error:", e));
-        lastTouchTimeRef.current = now;
-      }
-    }
-  };
 
   const handleToggle = (index: number) => {
     setExpandedItem(expandedItem === index ? null : index);
@@ -188,7 +170,6 @@ const StatsDropdowns = ({ statsSection }: { statsSection: StatsSection }) => {
         const index = parseInt(statItem.getAttribute("data-index") || "-1");
         if (index !== -1 && index !== activeItem) {
           setActiveItem(index);
-          playTickSound();
         }
       }
     }
@@ -236,8 +217,8 @@ const StatsDropdowns = ({ statsSection }: { statsSection: StatsSection }) => {
       color: "green" as ColorType,
     },
     {
-      title: titles.age,
-      content: texts.age,
+      title: titles.coffee,
+      content: texts.coffee,
       icon: <FiClock size={20} />,
       color: "indigo" as ColorType,
     },
@@ -256,7 +237,7 @@ const StatsDropdowns = ({ statsSection }: { statsSection: StatsSection }) => {
   ];
 
   return (
-    <div className="mt-6 bg-white dark:bg-gray-800 rounded-xl overflow-hidden p-2">
+    <div className="mt-6 bg-white dark:bg-gray-800 rounded-xl overflow-hidden">
       <style jsx global>{`
         @keyframes spin-once {
           from {

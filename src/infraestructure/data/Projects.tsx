@@ -1,0 +1,233 @@
+import { LocalProjectItem } from "../interfaces/project";
+
+const PROJECT_DATA: LocalProjectItem[] = [
+  {
+    title: "E-commerce Backend",
+    projectId: "1",
+    description: {
+      en: "Check out my e-commerce backend, complete with comprehensive Postman documentation.",
+      es: "Consultá mi backend de comercio electrónico, completo con documentación exhaustiva de Postman.",
+    },
+    url: "https://github.com/benjini123/dwf-m9-desafio-final",
+    github: "https://github.com/benjini123/dwf-m9-desafio-final",
+    date: "24 dic 2022",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/POSTMAN_aqufhj.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/POSTMAN_aqufhj.png",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Postman",
+      "GitHub",
+      "Vercel",
+      "Algolia",
+      "Airtable",
+    ],
+  },
+  {
+    title: "Ibijet Rent",
+    projectId: "2",
+    description: {
+      en: "Looking to have fun in Ibiza? I recommend renting a jetski to explore the beautiful sights this island has to offer. I designed a powerful algorithm that checks the availability of both guides and jetskis, along with a robust backend using Firebase. This ensures you can easily rent a jetski and enjoy a smooth experience.",
+      es: "¿Buscas divertirte en Ibiza? Te recomiendo alquilar una moto de agua para explorar los hermosos paisajes que esta isla ofrece. Diseñé un potente algoritmo que verifica la disponibilidad tanto de guías como de motos de agua, junto con un backend robusto utilizando Firebase. Esto asegura que puedas alquilar una moto de agua y disfrutar de una experiencia sin contratiempos.",
+    },
+    url: "https://ibijetrent.com/",
+    github: "https://github.com/benjahenley/renta-motos-backend",
+    date: "25 jul 2024",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/IBIJET_itywxp.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/IBIJET_itywxp.png",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Postman",
+      "GitHub",
+      "Vercel",
+      "Firebase",
+      "CSS3",
+      "HTML5",
+      "Tailwind",
+      "Paypal",
+    ],
+  },
+  {
+    title: "Crossup Challenge",
+    projectId: "3",
+    description: {
+      en: "While actively job hunting, I interviewed with Crossup, a company specializing in sales on MiTienda Nube. Unfortunately, I wasn't selected, but I gained the experience of coding an aesthetically pleasing store that has enhanced my portfolio.",
+      es: "Cuando estaba buscando trabajo activamente, una de las entrevistas que hice fue con Crossup, una empresa dedicada a la venta en MiTienda Nube. Lamentablemente, no quedé, pero me llevé la experiencia de codear una tienda estéticamente agradable que ha embellecido mi portfolio.",
+    },
+    url: "https://crossup-challenge.vercel.app/",
+    github: "https://github.com/benjahenley/crossup-challenge",
+    date: "12 dic 2024",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739882132/portfolio-24/projects/crossup-challenge_af6auh.png",
+      light: "",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Postman",
+      "GitHub",
+      "Vercel",
+      "Firebase",
+      "CSS3",
+      "HTML5",
+      "Tailwind",
+      "Paypal",
+    ],
+  },
+  {
+    title: "Post Cosecha",
+    projectId: "4",
+    description: {
+      en: "Post Cosecha was one of those projects undertaken solo. With little information from the client and much room for imagination, this freedom allowed me to express myself and create a unique style. The only expense incurred by the client was a video for the cover.",
+      es: "Post Cosecha fue uno de esos proyectos que uno hace en solitario. Con poca información del cliente y mucho lugar a imaginación, esta libertad me permitió expresarme y crear un estilo único. El único gasto a cargo del cliente fue un video para la portada.",
+    },
+    pinned: true,
+    url: "https://www.postcosechasrl.com.ar/",
+    github: "https://github.com/benjahenley/post-cosecha",
+    date: "17 nov 2024",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1732111030/portfolio-24/projects/POST_COSECHA_vqctvl.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1741563009/Screenshot_2025-03-09_at_8.26.39_PM_r0hbs2.png",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Postman",
+      "GitHub",
+      "Vercel",
+      "Firebase",
+      "Tailwind",
+      "CSS3",
+      "HTML5",
+      "Strapi",
+      "Docker",
+    ],
+  },
+  {
+    title: "Expo San Juan",
+    projectId: "5",
+    description: {
+      en: "I've had a great experience working with Panorama Minero, a company at the forefront of the mining industry. They have been pleased to work with me on multiple occasions. This time, I improved the UI by internationalizing their San Juan Expo page, making it accessible in both English and Spanish. Additionally, I collaborated with a design team to add new sections to the page.",
+      es: "He tenido una gran experiencia trabajando con Panorama Minero, una empresa líder en la industria minera. Han estado complacidos de colaborar conmigo en múltiples ocasiones. Esta vez, mejoré la interfaz de usuario internacionalizando su página de la Expo San Juan, haciéndola accesible tanto en inglés como en español. Además, colaboré con un equipo de diseño para agregar nuevas secciones a la página.",
+    },
+    url: "https://exposanjuan.com.ar/",
+    github: "",
+    date: "23 mar 2024",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1741563043/Screenshot_2025-03-09_at_8.28.04_PM_ajedqp.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1741563575/Screenshot_2025-03-09_at_8.39.20_PM_cw37vo.png",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Postman",
+      "GitHub",
+      "Vercel",
+      "Firebase",
+      "Tailwind",
+      "CSS3",
+      "HTML5",
+      "Strapi",
+      "Docker",
+    ],
+  },
+  {
+    title: "Women In Mining",
+    projectId: "6",
+    description: {
+      en: "International Women in Mining (IWiM) is an international organization run by volunteers committed to the advancement of women in the mining sector. I was happy to develop this page dedicated to the inclusion and visibility of the female workforce.",
+      es: "International Women in Mining (IWiM) es una organización internacional dirigida por voluntarios comprometidos con el avance de las mujeres en el sector minero. Me complació desarrollar esta página dedicada a la inclusión y visibilidad de la fuerza laboral femenina.",
+    },
+    url: "",
+    github: "",
+    date: "24 jun 2024",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073227/portfolio-24/projects/WIM-2_r9xouw.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1741563306/FOTO_8_to1raf.png",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Postman",
+      "GitHub",
+      "Vercel",
+      "Tailwind",
+      "CSS3",
+      "HTML5",
+      "Strapi",
+      "Docker",
+    ],
+  },
+  {
+    title: "Gold, Silver, and Copper",
+    projectId: "7",
+    description: {
+      en: "I had the privilege of contributing to the creation of Panorama Minero's Gold, Silver, and Copper page. This project involved extensive collaboration to develop a comprehensive and visually appealing resource for users interested in these key mining sectors. I internationalized the page, making it accessible in both English and Spanish, which broadened its reach to a wider audience. Additionally, I optimized the user interface to ensure a seamless and engaging experience, integrating intuitive navigation and interactive elements.",
+      es: "Tuve el privilegio de contribuir en la creación de la página de Panorama Minero dedicada al Oro, Plata y Cobre. Este proyecto implicó una extensa colaboración para desarrollar un recurso integral y visualmente atractivo para los usuarios interesados en estos sectores clave de la minería. Internacionalicé la página, haciéndola accesible tanto en inglés como en español, lo que amplió su alcance a una audiencia más amplia. Además, optimicé la interfaz de usuario para garantizar una experiencia fluida e interactiva, integrando una navegación intuitiva y elementos interactivos.",
+    },
+    url: "https://oroplataycobre.com.ar/",
+    github: "",
+    date: "12 nov 2023",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739294422/portfolio-24/projects/GOLD_ecoxkg.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739294422/portfolio-24/projects/GOLD_ecoxkg.png",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "GitHub",
+      "Vercel",
+      "Bootstrap",
+      "CSS3",
+      "HTML5",
+      "Strapi",
+      "Docker",
+    ],
+  },
+  {
+    title: "Buenos Aires Vision",
+    projectId: "8",
+    description: {
+      en: "My first solo project was a great success. I designed a web page for Buenos Aires Vision, a tourism company known for providing the best selection of tours in Buenos Aires. Their offerings range from exquisite dining experiences to river explorations, ensuring a memorable stay for visitors. My role involved showcasing these tours in an elegant and appealing manner, which effectively attracted clients and increased the company's revenue.",
+      es: "Mi primer proyecto en solitario fue un gran éxito. Diseñé una página web para Buenos Aires Vision, una empresa de turismo reconocida por ofrecer la mejor selección de tours en Buenos Aires. Sus ofertas van desde experiencias gastronómicas exquisitas hasta exploraciones fluviales, asegurando una estancia memorable para los visitantes. Mi papel consistió en mostrar estos tours de manera elegante y atractiva, lo que efectivamente atrajo a clientes y aumentó los ingresos de la empresa.",
+    },
+    url: "https://www.buenosairesvision.tur.ar",
+    github: "https://github.com/benjahenley/turismo-ba",
+    date: "06 ago 2023",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073226/portfolio-24/projects/BAV-DARK_ltkj43.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/BAV-LIGHT_xsnp4g.png",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "GitHub",
+      "Vercel",
+      "CSS3",
+      "HTML5",
+      "Bootstrap",
+    ],
+  },
+];
+
+export default PROJECT_DATA;

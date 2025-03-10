@@ -6,10 +6,11 @@ import { TextBase } from "../../shared/ui/Texts";
 import { Locales } from "@/infraestructure/interfaces";
 import { IoMdArrowBack } from "react-icons/io";
 import UserStatsExpandable from "../profile/UserStatsExpandable";
-import CollapsableCalendar from "../../shared/ui/CollapsableCalendar";
+import CollapsableCalendar from "./CollapsableCalendar";
 import LikeButton from "../../shared/ui/interactions/likes/LikeButton";
 import CommentButton from "../../shared/ui/interactions/comments/CommentButton";
 import RepostButton from "../../shared/ui/interactions/reposts/RepostButton";
+import { useTheme } from "../../providers/Theme";
 
 export type Props = {
   selected?: boolean;
@@ -36,6 +37,10 @@ function Project({
   handlePreviousProject,
   handleNextProject,
 }: Props) {
+  const { theme } = useTheme();
+  const imageUrl =
+    theme === "dark" ? projectData.images.light : projectData.images.dark;
+
   return (
     <div className={className}>
       <article className=" transition-all duration-200 border-b border-slate-300 dark:border-gray-600 px-4 py-3  hover:bg-gray-100 dark:hover:bg-slate-700">
@@ -56,25 +61,22 @@ function Project({
             <CollapsableCalendar date={projectData.date} />
           </div>
         </div>
-        <TextBase className="mb-4 ">{projectData.description}</TextBase>
+        <TextBase className="mb-4 ">{projectData.description[locale]}</TextBase>
         <div className="grid gap-4 group">
-          {projectData.images &&
-            projectData.images.map((image: string, key: number) => (
-              <div
-                key={key}
-                className="relative group overflow-hidden rounded-lg">
-                <img
-                  src={image}
-                  alt={image}
-                  className="w-full h-auto transition-transform duration-200 group-hover:scale-105"
-                />
-                <ProjectLinkInteractions
-                  url={projectData.url}
-                  github={projectData.github}
-                  imageSrc={image}
-                />
-              </div>
-            ))}
+          {projectData.images && (
+            <div className="relative group overflow-hidden rounded-lg">
+              <img
+                src={imageUrl}
+                alt={imageUrl}
+                className="w-full h-auto transition-transform duration-200 group-hover:scale-105"
+              />
+              <ProjectLinkInteractions
+                url={projectData.url}
+                github={projectData.github}
+                imageSrc={imageUrl}
+              />
+            </div>
+          )}
         </div>
         <div className="w-full flex justify-center md:justify-end">
           {projectData.techStack.length > 0 && (

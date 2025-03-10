@@ -26,12 +26,19 @@ export interface ApiProjectItemResponse {
 }
 
 export interface LocalProjectItem {
+  pinned?: boolean;
   title: string;
   projectId: string;
-  description: string;
+  description: {
+    en: string;
+    es: string;
+  };
   url: string;
   github: string;
   date: string;
-  images: string[];
+  images: {
+    dark: string;
+    light: string;
+  };
   techStack: string[];
 }

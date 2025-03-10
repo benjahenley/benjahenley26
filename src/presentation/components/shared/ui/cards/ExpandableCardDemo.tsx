@@ -3,8 +3,9 @@ import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useClickOutside } from "@/hooks";
-import SpotifyCards from "@/infraestructure/data/spotify-cards";
+import SpotifyCards from "@/infraestructure/data/SpotifyCards";
 import { Locales } from "@/infraestructure/interfaces";
+import { PrimaryButton } from "../buttons/Buttons";
 
 type Props = {
   locale: Locales;
@@ -101,24 +102,22 @@ export function ExpandableCardDemo({ locale }: Props) {
                   <motion.a
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
-                    target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-red-500 text-white">
-                    {active.ctaText}
+                    target="_blank">
+                    <PrimaryButton content={active.ctaText} rounded={true} />
                   </motion.a>
                 </div>
-                {/* <div className="pt-4 relative px-4">
+                <div className=" relative px-4">
                   <motion.div
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
-                  >
+                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]">
                     {typeof active.content === "function"
                       ? active.content()
                       : active.content}
                   </motion.div>
-                </div> */}
+                </div>
               </div>
             </motion.div>
           </div>
@@ -130,9 +129,18 @@ export function ExpandableCardDemo({ locale }: Props) {
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-gray-100 dark:hover:bg-slate-700 rounded-xl cursor-pointer">
+            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-gray-100 dark:hover:bg-slate-700 rounded-xl cursor-pointer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}>
             <div className="flex gap-4 flex-col md:flex-row ">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
+              <motion.div
+                layoutId={`image-${card.title}-${id}`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.4, delay: index * 0.15 }}>
                 <Image
                   width={100}
                   height={100}
@@ -141,22 +149,37 @@ export function ExpandableCardDemo({ locale }: Props) {
                   className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
                 />
               </motion.div>
-              <div className="">
+
+              <div>
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.4, delay: index * 0.2 }}
                   className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left">
                   {card.title}
                 </motion.h3>
+
                 <motion.p
                   layoutId={`description-${index}-${id}`}
+                  initial={{ opacity: 0, x: 10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.4, delay: index * 0.25 }}
                   className="text-neutral-600 dark:text-neutral-400 text-center md:text-left">
                   {card.description}
                 </motion.p>
               </div>
             </div>
+
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-300 hover:bg-red-500 hover:text-white text-gray-800 mt-4 md:mt-0">
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.3, delay: index * 0.3 }}
+              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-300 hover:bg-violet-500 dark:hover:bg-emerald-500 hover:text-white text-gray-800 mt-4 md:mt-0">
               {card.ctaText}
             </motion.button>
           </motion.div>
