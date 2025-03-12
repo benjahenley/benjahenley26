@@ -3,7 +3,28 @@ import { useEffect, useState } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import { ImageType } from "@/infraestructure/interfaces";
-import producerImages from "@/infraestructure/data/ProducerImages";
+
+const producerImages: any = [
+  {
+    src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730053180/portfolio-24/me/me1_zcjbh7.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730053180/portfolio-24/me/me2_cgongv.jpg",
+    cropped: true,
+  },
+  {
+    src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730053180/portfolio-24/me/me3_kiq6kh.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730053180/portfolio-24/me/me6_m1hdjf.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730053180/portfolio-24/me/me4_mpibjz.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730053181/portfolio-24/me/me8_xm5dxg.jpg",
+  },
+];
 
 const ProducerGallery = () => {
   const [imageDimensions, setImageDimensions] = useState<ImageType[]>([]);
