@@ -1,6 +1,4 @@
-import { ImageType } from "../interfaces";
-
-const producerImages: ImageType[] = [
+const producerImages: any = [
   {
     src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730053180/portfolio-24/me/me1_zcjbh7.jpg",
   },
