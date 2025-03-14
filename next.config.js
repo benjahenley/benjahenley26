@@ -7,7 +7,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const nextConfig = withBundleAnalyzer({
   swcMinify: true,
   experimental: {
-    swcTraceProfiling: true,
+    swcTraceProfiling: false,
   },
   images: {
     remotePatterns: [
