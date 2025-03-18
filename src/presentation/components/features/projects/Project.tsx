@@ -31,15 +31,12 @@ function Project({
   _count,
   locale,
   selected,
-  expandedView,
   onCommentClick,
   handleGoBack,
-  handlePreviousProject,
-  handleNextProject,
 }: Props) {
   const { theme } = useTheme();
   const imageUrl =
-    theme === "dark" ? projectData.images.light : projectData.images.dark;
+    theme === "dark" ? projectData.images.dark : projectData.images.light;
 
   return (
     <div className={className}>
@@ -110,9 +107,9 @@ function Project({
             likeCount={_count.likes}
           />
           <CommentButton
-            selected={selected && selected}
+            selected={selected}
             commentCount={_count.comments}
-            onCommentClick={() => onCommentClick()}
+            onCommentClick={onCommentClick}
           />
           <RepostButton
             projectId={projectData.projectId}

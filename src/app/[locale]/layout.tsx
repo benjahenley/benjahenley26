@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang={locale ? locale : "es"}>
       <body
-        className={`${sourceSansPro.className} dark:bg-slate-800 h-full min-h-screen z`}>
+        className={`${sourceSansPro.className} dark:bg-slate-800 h-full min-h-screen z `}>
         <JotaiProvider>
           <ThemeProvider>
             <ModalContainer locale={locale ? locale : "es"}></ModalContainer>

@@ -1,5 +1,4 @@
 import { Locales } from "@/infraestructure/interfaces/index";
-import { contents } from "@/data/contents/content";
 import { useCallback, useEffect, useState } from "react";
 import { getProjects } from "@/utils/getProjects";
 import {
@@ -20,25 +19,24 @@ type Props = {
 };
 
 export default function Projects({ locale, className }: Props) {
-  const [selectedApiProject, setSelectedApiProject] =
-    useState<ApiProjectItemResponse | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
+  const modal = useModal();
 
-  const [selectedLocalProject, setSelectedLocalProject] =
-    useState<LocalProjectItem | null>(null);
-
+  // ALL PROJECTS (From DB and JSON)
   const [projectsApiData, setProjectApiData] = useState<
     ApiProjectItemResponse[]
   >([]);
-
   const [projectsLocalData, setProjectsLocalData] = useState<
     LocalProjectItem[]
   >([]);
 
-  const [loading, setLoading] = useState<boolean>(true);
+  // CURRENTLY SELECTED PROJECT (From DB and JSON)
+  const [selectedApiProject, setSelectedApiProject] =
+    useState<ApiProjectItemResponse | null>(null);
+  const [selectedLocalProject, setSelectedLocalProject] =
+    useState<LocalProjectItem | null>(null);
 
-  const modal = useModal();
-
-  // Fetch API projects
+  // FETCH API PROJECTS
   useEffect(() => {
     const fetchProjects = async () => {
       try {
@@ -56,10 +54,9 @@ export default function Projects({ locale, className }: Props) {
     }
   }, [selectedApiProject]);
 
-  // Load local projects
+  // LOAD LOCAL PROJECTS
   useEffect(() => {
-    const projectArray = PROJECT_DATA;
-    const sortedProjects = [...projectArray].sort((a, b) => {
+    const sortedProjects = [...PROJECT_DATA].sort((a, b) => {
       if (a.pinned && !b.pinned) return -1;
       if (!a.pinned && b.pinned) return 1;
       return 0;
@@ -68,7 +65,7 @@ export default function Projects({ locale, className }: Props) {
     setProjectsLocalData(sortedProjects);
   }, [locale]);
 
-  // Filter API project based on local project ID
+  // FILTER API PROJECT
   function filterProjectFromApi(project: any) {
     const projectId: number = JSON.parse(project.projectId);
     const filteredProject = projectsApiData.find(
@@ -77,7 +74,7 @@ export default function Projects({ locale, className }: Props) {
     return filteredProject;
   }
 
-  // Handle comment click to select project
+  // Handle comment click to select project, BOTH LOCALLY AND FETCH FROM DB
   const handleCommentClick = useCallback(
     (filteredProject: ApiProjectItemResponse, project: LocalProjectItem) => {
       setSelectedApiProject(filteredProject);
@@ -108,6 +105,7 @@ export default function Projects({ locale, className }: Props) {
     <div className={`${className} overflow-hidden`}>
       <AnimatePresence mode="wait">
         {selectedApiProject ? (
+          //PROJECT WITH COMMENT SECTION
           <motion.div
             key="comment-view"
             initial={{ opacity: 1, x: 1000 }}
@@ -124,11 +122,13 @@ export default function Projects({ locale, className }: Props) {
             />
             <div>
               <ProjectCommentSection
+                handleGoBack={() => setSelectedApiProject(null)}
                 projectId={selectedApiProject.id}
                 comments={selectedApiProject.comments}></ProjectCommentSection>
             </div>
           </motion.div>
         ) : (
+          // JUST PROJECT
           <motion.div
             key="project-list"
             initial={{ opacity: 1, x: -1000 }}

@@ -13,7 +13,6 @@ import { contents } from "@/data/contents/content";
 import { motion, AnimatePresence } from "framer-motion";
 import { useClickOutside } from "@/hooks";
 import { useModal } from "@/presentation/components/shared/modals/context";
-import { Spinner } from "../../shared/feedback/Spinner";
 import { PrimaryButton } from "../../shared/ui/buttons/Buttons";
 import { signIn } from "@/utils/auth";
 import { accessTokenAtom } from "@/atoms/auth";
@@ -150,7 +149,7 @@ export default function SigninForm({ locale }: Props) {
                 },
               }}
               exit={{ opacity: 0, scale: 0.8, y: -10 }}
-              className="mb-6 p-5 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 text-white rounded-lg shadow-xl text-center relative overflow-hidden">
+              className="mt-1 p-5 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 text-white rounded-lg shadow-xl text-center relative overflow-hidden">
               {/* Glowing background pulse */}
               <motion.div
                 className="absolute inset-0 bg-white opacity-0 rounded-lg"
@@ -257,16 +256,6 @@ export default function SigninForm({ locale }: Props) {
           )}
         </AnimatePresence>
 
-        {/* ERROR MESSAGE */}
-        {error && (
-          <motion.div
-            initial={{ opacity: 0, height: "auto" }}
-            animate={{ opacity: 1, height: "auto" }}
-            className=" p-3 bg-red-100 border border-red-300 text-red-700 rounded-md text-sm line-clamp-1">
-            {error}
-          </motion.div>
-        )}
-
         <form className="grid gap-2" onSubmit={handleSubmit(onSubmit)}>
           {/* Email Field */}
           <FormField
@@ -305,6 +294,16 @@ export default function SigninForm({ locale }: Props) {
               </motion.a>
             }
           />
+
+          {/* ERROR MESSAGE */}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, height: "auto" }}
+              animate={{ opacity: 1, height: "auto" }}
+              className="p-3 mt-1 text-center bg-red-100 border border-red-300 text-red-700 rounded-md text-sm line-clamp-1">
+              {error}!
+            </motion.div>
+          )}
 
           {/* Submit Button */}
           <motion.div

@@ -29,7 +29,7 @@ function CollapsableCalendar({ date }: Props) {
   return (
     <motion.div
       ref={calendarRef}
-      className="flex p-2 items-center overflow-hidden bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full md:p-3 gap-2 cursor-pointer"
+      className="flex p-2 items-center overflow-hidden bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full md:p-3 gap-2"
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
       onClick={handleCalendarClick}

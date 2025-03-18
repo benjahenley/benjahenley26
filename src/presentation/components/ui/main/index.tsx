@@ -6,10 +6,16 @@ import { contents } from "@/data/contents/content";
 import { Locales } from "@/infraestructure/interfaces";
 import { useAtom } from "jotai";
 import { FaCakeCandles } from "react-icons/fa6";
-import { FaCalendarAlt } from "react-icons/fa";
-import { Suspense, useEffect } from "react";
+import {
+  FaCalendarAlt,
+  FaDownload,
+  FaExternalLinkSquareAlt,
+  FaLink,
+} from "react-icons/fa";
+import { Suspense, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { PiLinkSimpleBold } from "react-icons/pi";
+import { IoMdClose } from "react-icons/io";
 import ProfilePic from "@/presentation/components/features/profile/MyProfilePic";
 import { FollowButtonHome } from "@/presentation/components/shared/ui/buttons/FollowButton";
 import { PriceText, TextBase } from "@/presentation/components/shared/ui/Texts";
@@ -18,8 +24,10 @@ import { SpinnerContainer } from "@/presentation/components/shared/feedback/Spin
 import { Footer } from "@/presentation/components/shared/ui/Footer";
 import NavbarMobile from "@/presentation/components/shared/ui/NavbarMobile";
 import { BoxesCore } from "@/presentation/components/shared/ui/Background-boxes";
-import Leftbar from "@/presentation/components/ui/leftbar";
+import Leftbar, { LeftbarRefType } from "@/presentation/components/ui/leftbar";
 import RightBar from "@/presentation/components/ui/rightbar";
+import Link from "next/link";
+import { IoLinkOutline } from "react-icons/io5";
 
 const Feed = dynamic(() => import("./Feed"), { suspense: true, ssr: true });
 const About = dynamic(() => import("./About"), { suspense: true, ssr: false });
@@ -36,14 +44,73 @@ type Props = {
 export default function HomeComp({ locale }: Props) {
   const [section, setSection] = useAtom(feedOptions);
   const home = contents[locale]?.pages?.home || contents["es"].pages.home;
+  const [cvModalOpen, setCvModalOpen] = useState(false);
+  const cvModalRef = useRef<HTMLDivElement>(null);
+  const leftbarRef = useRef<LeftbarRefType>(null);
+
+  // Function to toggle the mobile menu directly through the ref
+  const toggleMobileMenu = () => {
+    if (leftbarRef.current) {
+      leftbarRef.current.toggleMobileMenu();
+    }
+  };
+
+  // CV image URL
+  const cvImageUrl =
+    "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1742247540/Benja_Henley_Fullstack_CV_.pdf_page-0001_akamf0.jpg";
+  // Handle click outside to close modal
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        cvModalRef.current &&
+        !cvModalRef.current.contains(event.target as Node)
+      ) {
+        setCvModalOpen(false);
+      }
+    };
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setCvModalOpen(false);
+      }
+    };
+
+    if (cvModalOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleEscapeKey);
+      // Prevent scrolling when modal is open
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscapeKey);
+      // Restore scrolling when modal is closed
+      document.body.style.overflow = "";
+    };
+  }, [cvModalOpen]);
+
+  const openCvModal = () => {
+    setCvModalOpen(true);
+  };
+
+  const closeCvModal = () => {
+    setCvModalOpen(false);
+  };
 
   return (
     <div className="relative flex flex-col items-center min-h-screen bg-white dark:bg-[#1f2937]">
       <div className="flex w-full h-full max-w-screen-2xl">
         <aside className="relative h-[100vh] hidden md:block md:w-[10vw] xl:w-[20vw] 2xl:w-[15vw] p-0 m-0 bg-white dark:bg-[#1f2937]">
-          <Leftbar locale={locale} />
+          <Leftbar locale={locale} ref={leftbarRef} />
         </aside>
-        <main className="relative m-0 lg:m-0 w-auto  flex-1 border-l min-h-screen border-r border-gray-300 dark:border-gray-600">
+
+        {/* Mobile version of Leftbar - will only display content when mobile menu is open */}
+        <div className="md:hidden">
+          <Leftbar locale={locale} ref={leftbarRef} />
+        </div>
+
+        <main className="relative m-0 lg:m-0 w-auto flex-1 border-l min-h-screen border-r border-gray-300 dark:border-gray-600">
           <header className="border-gray-300 dark:border-gray-600 bg-white dark:bg-[#1f2937] dark:text-white w-full  mx-0 md:mx-auto lg:mx-0">
             <div className=" mx-auto ">
               {/* <FollowerPointerCard> */}
@@ -66,11 +133,11 @@ export default function HomeComp({ locale }: Props) {
                     </h1>
                     <MdVerified className="text-gray-900 dark:text-white text-xl" />
                   </div>
-                  <p className="font-normal text-gray-500 dark:text-gray-500 cursor-pointer">
+                  <p className="font-normal text-lg text-gray-500 dark:text-gray-500 cursor-pointer">
                     <a
                       href="https://www.instagram.com/benjahenley/"
                       target="_blank">
-                      @benja_dev
+                      @benjahenley
                     </a>
                   </p>
                 </div>
@@ -80,18 +147,20 @@ export default function HomeComp({ locale }: Props) {
                 <TextBase className="mb-4">{home.bio.subtitle}</TextBase>
 
                 <div className="flex flex-wrap gap-4 pb-2 ">
-                  <a className="cursor-pointer" href="">
+                  <div
+                    className="cursor-pointer hover:text-blue-500 transition-colors"
+                    onClick={openCvModal}>
                     <div className="flex items-center gap-1">
-                      <PiLinkSimpleBold className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                      <FaLink className="text-sm mb-[1.5px] text-gray-700 dark:text-gray-300" />
                       <p className="text-sm">Curriculum</p>
                     </div>
-                  </a>
+                  </div>
                   <div className="flex items-center gap-1">
-                    <FaCakeCandles className="text-sm text-gray-700 dark:text-gray-300" />
+                    <FaCakeCandles className="text-sm text-gray-700  mb-[2px] dark:text-gray-300" />
                     <p className="text-sm">27/06/2000</p>
                   </div>
                   <div className="flex items-center gap-1">
-                    <FaCalendarAlt className="text-sm text-gray-700 dark:text-gray-300" />
+                    <FaCalendarAlt className="text-sm text-gray-700  mb-[2px] dark:text-gray-300" />
                     <p className="text-sm">
                       {locale === "es" ? "Inicio" : "Joined"} 05/2021
                     </p>
@@ -127,13 +196,81 @@ export default function HomeComp({ locale }: Props) {
             </Suspense>
           </section>
           <Footer />
-          <NavbarMobile locale={locale}></NavbarMobile>
+          <NavbarMobile
+            locale={locale}
+            className="block md:hidden"
+            onToggleMobileMenu={toggleMobileMenu}
+          />
         </main>
 
-        <aside className="relative hidden p-2 md:block md:w-[30vw] lg:w-[25vw] xl:w-[20vw]  bg-white dark:bg-[#1f2937]">
+        <aside className="relative hidden p-2 md:block md:w-[30vw] lg:w-[25vw] xl:w-[20vw] bg-white dark:bg-[#1f2937]">
           <RightBar locale={locale}></RightBar>
         </aside>
       </div>
+
+      {/* CV Modal */}
+      {cvModalOpen && (
+        <div className="fixed inset-0 z-[1000000] flex items-center justify-center backdrop-blur-sm transition-opacity duration-300">
+          <div
+            ref={cvModalRef}
+            className="relative w-fit overflow-hidden transform transition-all duration-300 animate-modal-in flex flex-col">
+            <button
+              onClick={closeCvModal}
+              className="hidden md:block absolute top-3 right-3 z-10 p-2 rounded-full bg-gray-800 bg-opacity-50 hover:bg-opacity-70 text-white transition-all">
+              <IoMdClose size={24} />
+            </button>
+            <button
+              onClick={closeCvModal}
+              className="md:hidden absolute top-3 right-3 z-10 p-2 rounded-full bg-gray-800 bg-opacity-50 hover:bg-opacity-70 text-white transition-all">
+              <IoMdClose size={10} />
+            </button>
+
+            <div className="flex-1 flex items-center justify-center">
+              <img
+                src={cvImageUrl}
+                alt="Benja Henley CV"
+                className="max-h-[80vh] max-w-full object-contain rounded"
+                style={{ aspectRatio: "1 / 1.4" }}
+              />
+            </div>
+
+            <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black to-transparent">
+              <div className="flex justify-between items-center">
+                <div className="text-white">
+                  <h3 className="text-xl font-bold">Benjamin Henley</h3>
+                  <p className="text-sm opacity-80">Curriculum Vitae</p>
+                </div>
+                <Link
+                  href={cvImageUrl}
+                  download={true}
+                  target="_blank"
+                  className="flex items-center gap-2 bg-violet-600 hover:bg-violet-500 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white py-1.5 px-3 rounded-full transition-colors duration-200"
+                  onClick={() => console.log("CV download initiated")}>
+                  <FaDownload size={16} />
+                  <span className="font-medium">Download</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes modalIn {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .animate-modal-in {
+          animation: modalIn 0.3s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 }

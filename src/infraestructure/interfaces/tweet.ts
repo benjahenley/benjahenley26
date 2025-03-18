@@ -16,23 +16,18 @@ export type TweetLocalContentProps = {
 };
 
 export interface TweetApiResponse {
-  id: number;
-  date: string;
-  techStack: string[];
-  category: string;
-  pinned: boolean;
-  link: string;
-  userId: number;
-  createdAt: Date;
-  updatedAt: Date;
+  id: string;
+  content: string;
+  createdAt: string;
+  mediaUrl?: string;
+  likes: number;
+  comments: number;
+  reposts: number;
+  isLiked?: boolean;
+  username: string;
+  userHandle: string;
+  userAvatar: string;
   locale: Locales;
-  description: string;
-  // TODO: CHANGE TYPES:
-  images: any;
-  likes: any;
-  comments: any;
-  reposts: any;
-  saves: any;
 }
 
 export type InteractionItemProps = {

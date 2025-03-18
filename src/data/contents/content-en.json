@@ -3,7 +3,7 @@
     "home": {
       "bio": {
         "title": "Junior Web Developer",
-        "subtitle": "My goal is to create aesthetically pleasing and functional solutions through code and design. With a growing portfolio of successful projects, I am committed to continuously advancing my skills and knowledge. I am eager to bring my expertise and passion to a collaborative team, where I can contribute effectively, learn from others, and grow alongside talented professionals.",
+        "subtitle": "I create aesthetically pleasing and functional solutions through code and design. Passionate about continuous learning, tackling new challenges, and exploring solo entrepreneurship. Currently earning my programming degree while expanding my skills in modern web & app technologies.",
         "followButton": "Follow",
         "followButtonClicked": "Following"
       },
@@ -13,9 +13,9 @@
           "texts": [
             "Hi! I'm Benja, a full-stack developer who loves technology and design. I'm Argentinian, I live in Buenos Aires, and I'm 24 years old. If you took the time to explore and create your account, I sincerely appreciate it. Now I can spam your email until you hire me... nah, just kidding 👀. You can now tweet whatever you want and interact with what I built. Would you say something nice about my projects? I'd really appreciate it. This journey in programming has just begun and i'd love to guide you through the process, but first lets talk about me.",
 
-            "I didn't follow the traditional path. After finishing high school in 2025, I enrolled at the University of Buenos Aires to study Biochemistry. But after two years in the program, I realized that I was NOT going to be the next up-and-coming Walter White... more like a down-and-retreating. No? Hello?",
+            "I didn't follow the traditional path. After finishing high school in 2025, I enrolled at the University of Buenos Aires to study Biochemistry. But after two years in the program, I realized that I was NOT going to be the next up-and-coming Walter White... more like down-and-retreating. No? Hello?",
 
-            "At the same time as studying biochemistry, I started working at my grandfather's office as an accounting assistant, which was repetitive and monotonous work. I didn't like it, but it gave me money and allowed me to pay for my hobbies. What did I learn from this stage? That I hate routines and monotony. I like being in a dynamic environment where I am constantly challenged, forced to learn new things and improve every day. In an place where I can grow — something my grandfather's accounting studio would have never allowed me to do.",
+            "While studying biochemistry, I started working at my grandfather's office as an accounting assistant, which was repetitive and monotonous work. I didn't like it, but it gave me money and allowed me to pay for my hobbies. What did I learn from this stage? That I hate routines and monotony. I like being in a dynamic environment where I am constantly challenged, forced to learn new things and improve every day. In an place where I can grow — something my grandfather's accounting studio would have never allowed me to do.",
 
             "When I dropped out of college I realized I wasn't heading towards the direction I wanted. I felt frustrated and with no purpose. So I decided to take a different path and got into programming. And what an excellent decision. At first, it was difficult to balance work and being a self-taught programer. But my passion for solving errors and learning new technologies pushed me to get out of ruts faster by the day. Nowadays, I feel very happy that I took this path. I feel challenged every day.",
 
@@ -29,7 +29,8 @@
             "Oh yeah, so this is me. In my free time, I like to make electronic music. Yes, scoliosis and shoulder pain till death for me thanks. Specifically, for those who know the scene (real ones, word), I make peak-time techno, a genre that is quite popular nowadays in the world — the one outside my room I've been told about. So yeah, I'm quite the stay-at-home nerd, but I promise I have friends and a girlfriend (at least as of now). But if I didn't have any loved ones you just know I would be straight crushing it in Assembly by now.",
             "So anyways, the pictures below are from a photoshoot I invested in because you can't be a techno artist without going for the casual, kinda-gothic, and cringy Insta feed."
           ],
-          "myMusicTitle": "My Music"
+          "myMusicTitle": "My Music",
+          "myMusicTitleTexts": "If you're an electronic music fan, I encourage you to listen to these bangers! Any feedback would be wonderfull. I hope you enjoy my tunes!"
         },
         "statsSection": {
           "title": "Datos",

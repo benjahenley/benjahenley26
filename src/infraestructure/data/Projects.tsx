@@ -68,7 +68,8 @@ const PROJECT_DATA: LocalProjectItem[] = [
     date: "12 dic 2024",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739882132/portfolio-24/projects/crossup-challenge_af6auh.png",
-      light: "",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739882132/portfolio-24/projects/crossup-challenge_af6auh.png",
     },
     techStack: [
       "React",

@@ -14,7 +14,7 @@ export default function ArtistSection({
 }) {
   return (
     <div className="p-4">
-      <div className="flex flex-row items-center w-full max-w-[100vw] m-auto justify-start mt-16 mb-10 gap-2 md:gap-5 md:max-w-2xl">
+      <div className="flex flex-row items-center w-full max-w-[100vw] m-auto justify-start mt-6 mb-10 gap-2 md:gap-5 md:max-w-2xl">
         <div className="flex flex-col items-end m-auto justify-center gap-2 w-full max-w-[40vw]">
           <div className="dark:bg-white bg-gray-800 w-24 h-4 max-w-[20vw] relative"></div>
           <div className="dark:bg-white bg-gray-800 w-full h-5 md:max-w-36  max-w-[30vw]"></div>

@@ -1,0 +1,58 @@
+# Cursor Rules Configuration
+# This file prevents Cursor AI from editing sensitive files
+
+# Protect environment and secret files
+*.env
+*.env.*
+.env.local
+.env.development
+.env.test
+.env.production
+*.pem
+*.key
+*.cert
+
+# Protect authentication-related files
+**/auth/**/*.ts
+**/auth/**/*.tsx
+**/authentication/**/*.ts
+**/authentication/**/*.tsx
+
+# Protect configuration files
+next.config.js
+tsconfig.json
+package.json
+package-lock.json
+yarn.lock
+*.config.js
+.eslintrc.*
+.prettierrc.*
+
+# Protect database files
+**/prisma/schema.prisma
+**/migrations/**/*
+**/database/**/*.ts
+
+# Protect API credential files
+**/api/credentials/**
+**/credentials/**
+
+# Protect user data and privacy-sensitive files
+**/users/**/*.json
+**/userData/**/*
+
+# Allow editing of common development files
+# These are safe for AI to modify
+!**/components/**/*.tsx
+!**/components/**/*.ts
+!**/pages/**/*.tsx
+!**/pages/**/*.ts
+!**/hooks/**/*.ts
+!**/utils/**/*.ts
+!**/styles/**/*.css
+!**/styles/**/*.scss
+!**/public/**/*.svg
+!**/tests/**/*.ts
+!**/tests/**/*.tsx
+!**/__tests__/**/*.ts
+!**/__tests__/**/*.tsx 

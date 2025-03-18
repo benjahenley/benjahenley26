@@ -58,7 +58,7 @@ export function ProjectCommentInput({ projectId }: Props) {
         {/* Send button */}
         <button
           type="submit"
-          className="p-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition flex items-center justify-center shadow-md">
+          className="p-3 bg-violet-500 hover:bg-violet-600 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-white rounded-full transition flex items-center justify-center shadow-md">
           <FaPaperPlane />
         </button>
       </form>

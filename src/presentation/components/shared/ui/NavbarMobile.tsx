@@ -4,15 +4,21 @@ import { FC, useEffect, useRef, useState } from "react";
 import { HiOutlineMenu } from "react-icons/hi";
 import { FiTrendingUp } from "react-icons/fi";
 import { Locales } from "@/infraestructure/interfaces";
-import { LeftbarMobile } from "@/presentation/components/ui/leftbar/mobile";
+
+// Add TypeScript declaration for the global window property
+declare global {
+  interface Window {
+    toggleLeftbarMobileMenu?: () => void;
+  }
+}
 
 type Props = {
   className?: string;
-  // setMenu: () => void;
   locale: Locales;
+  onToggleMobileMenu?: () => void;
 };
 
-const NavbarMobile: FC<Props> = ({ className, locale }) => {
+const NavbarMobile: FC<Props> = ({ className, locale, onToggleMobileMenu }) => {
   const [menu, setMenu] = useState(false);
   const [trends, setTrends] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -121,16 +127,33 @@ const NavbarMobile: FC<Props> = ({ className, locale }) => {
     };
   }, [menu]);
 
+  // Update the onClick handler for the menu button
+  const handleMenuClick = () => {
+    console.log("Menu button clicked");
+
+    // First, try to use the direct prop if provided
+    if (typeof onToggleMobileMenu === "function") {
+      console.log("Using onToggleMobileMenu prop");
+      onToggleMobileMenu();
+      return;
+    }
+
+    // Always set local menu state to maintain compatibility with old LeftbarMobile
+    setMenu(true);
+
+    // Try to use the global toggle if it exists
+    if (typeof window.toggleLeftbarMobileMenu === "function") {
+      console.log("Using global toggleLeftbarMobileMenu");
+      window.toggleLeftbarMobileMenu();
+    } else {
+      console.log(
+        "toggleLeftbarMobileMenu is not available, falling back to local state"
+      );
+    }
+  };
+
   return (
     <div className={className}>
-      <div ref={menuRef}>
-        <LeftbarMobile
-          handleClose={() => setMenu(false)}
-          locale={locale}
-          isOpen={menu}
-          className={`${!menu && "hidden"}`}
-        />
-      </div>
       <div
         ref={navbarRef}
         className={`z-[9999] fixed md:hidden bottom-0 left-0 right-0 w-full h-20 bg-custom-gradient transition-all duration-500 ease-in-out ${
@@ -144,7 +167,7 @@ const NavbarMobile: FC<Props> = ({ className, locale }) => {
         <div className="w-full h-full flex justify-between items-center text-white px-2">
           <div
             className="flex items-center justify-left text-4xl"
-            onClick={() => setMenu(!menu)}>
+            onClick={handleMenuClick}>
             <HiOutlineMenu className="cursor-pointer" />
           </div>
           <div className="flex items-center justify-center relative">

@@ -12,7 +12,7 @@ export const SoftSkills = ({ textContent }: { textContent: any }) => {
     <TitleWithDescription
       title={textContent.title}
       description={textContent.description}
-      contentClassName="flex flex-col items-center justify-center w-full gap-5 py-6 md:px-4 max-w-4xl mx-auto">
+      contentClassName="flex flex-col items-center justify-center w-full gap-5  md:px-4 max-w-4xl mx-auto">
       {textContent.texts.map((step: any, index: number) => (
         <motion.div
           key={index}
