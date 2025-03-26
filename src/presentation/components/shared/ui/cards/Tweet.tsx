@@ -200,7 +200,7 @@ const Tweet: React.FC<TweetProps> = ({
 
   return (
     <div
-      className={`tweet-container mb-0 bg-white dark:bg-[#1f2937] transition-all duration-300 ${
+      className={` mb-0 bg-white dark:bg-[#1f2937] transition-all duration-300 ${
         showComments ? "rounded-t-lg shadow-md" : ""
       }`}>
       {/* Main Tweet Section */}
@@ -246,7 +246,7 @@ const Tweet: React.FC<TweetProps> = ({
               </div>
             )}
 
-            <ul className="mt-3 flex justify-around w-full max-w-lg mx-auto relative">
+            <ul className="mt-3 flex justify-between w-full max-w-xl mx-auto relative">
               <li
                 className="flex items-center gap-1 cursor-pointer"
                 onClick={handleCommentClick}>
@@ -279,28 +279,30 @@ const Tweet: React.FC<TweetProps> = ({
                 </p>
                 <span>{likeCount}</span>
               </li>
-              <li
-                className="flex items-center gap-1 cursor-pointer"
-                onClick={handleSave}>
-                <p className="p-2 rounded-full hover:bg-purple-100">
-                  {saved ? (
-                    <FaBookmark className="text-purple-500" />
-                  ) : (
-                    <FaRegBookmark className="text-gray-500 dark:text-gray-400" />
+              <li className="flex items-center gap-1 cursor-pointer">
+                <li
+                  className="flex items-center gap-1 cursor-pointer"
+                  onClick={handleSave}>
+                  <p className="p-2 rounded-full hover:bg-purple-100">
+                    {saved ? (
+                      <FaBookmark className="text-purple-500" />
+                    ) : (
+                      <FaRegBookmark className="text-gray-500 dark:text-gray-400" />
+                    )}
+                  </p>
+                </li>
+                <li
+                  className="flex items-center gap-1 cursor-pointer relative"
+                  onClick={handleShare}>
+                  <p className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 hover:bg-blue-100">
+                    <FiShare className="text-gray-500 dark:text-gray-400" />
+                  </p>
+                  {showShareTooltip && (
+                    <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded whitespace-nowrap">
+                      Copied to clipboard
+                    </span>
                   )}
-                </p>
-              </li>
-              <li
-                className="flex items-center gap-1 cursor-pointer relative"
-                onClick={handleShare}>
-                <p className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 hover:bg-blue-100">
-                  <FiShare className="text-gray-500 dark:text-gray-400" />
-                </p>
-                {showShareTooltip && (
-                  <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded whitespace-nowrap">
-                    Copied to clipboard
-                  </span>
-                )}
+                </li>
               </li>
             </ul>
           </div>

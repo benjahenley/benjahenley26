@@ -1,8 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 import { ImageType } from "@/infraestructure/interfaces";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const producerImages: any = [
   {
@@ -28,6 +29,16 @@ const producerImages: any = [
 
 const ProducerGallery = () => {
   const [imageDimensions, setImageDimensions] = useState<ImageType[]>([]);
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: galleryRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Transform values for different scroll speeds
+  const column2Y = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const column3Y = useTransform(scrollYProgress, [0, 1], [0, 240]);
 
   useEffect(() => {
     const loadImages = async () => {
@@ -64,9 +75,27 @@ const ProducerGallery = () => {
   }, []);
 
   return (
-    <div id="my-gallery" className="h-fit relative grid gap-2 grid-cols-3 pt-0">
-      {/* Left Column (Normal Scrolling) */}
-      <div className="space-y-2">
+    <div
+      id="my-gallery"
+      ref={galleryRef}
+      className="h-fit relative grid grid-cols-3 pt-0 mb-[280px]">
+      {/* Grid Background */}
+      <div
+        className="absolute inset-0 w-full z-0 opacity-30 pointer-events-none"
+        style={{ height: "calc(100% + 240px)" }}>
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(120, 120, 120, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(120, 120, 120, 0.3) 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+            backgroundPosition: "-1px -1px",
+          }}
+        />
+      </div>
+
+      {/* Left Column (Fixed Position) */}
+      <div className="relative z-10">
         {imageDimensions
           .filter((_, index) => index % 3 === 0)
           .map((image, index) => (
@@ -80,7 +109,7 @@ const ProducerGallery = () => {
                 <img
                   src={image.src}
                   alt=""
-                  className="w-full h-auto object-cover transition-transform rounded-md transform hover:scale-105"
+                  className="w-full h-auto object-cover transition-transform transform hover:scale-105"
                   style={{ aspectRatio: `${image.width} / ${image.height}` }}
                 />
               </a>
@@ -88,32 +117,55 @@ const ProducerGallery = () => {
           ))}
       </div>
 
-      {/* Middle & Right Column (Sticky Scrolling) */}
-      {[1, 2].map((colIndex) => (
-        <div
-          key={colIndex}
-          className="sticky top-0 flex flex-col gap-2 overflow-hidden">
-          {imageDimensions
-            .filter((_, index) => index % 3 === colIndex)
-            .map((image, index) => (
-              <div key={index} className="w-full overflow-clip">
-                <a
-                  href={image.src}
-                  data-cropped={image.cropped ? "true" : undefined}
-                  data-pswp-width={image.width}
-                  data-pswp-height={image.height}
-                  className="w-full">
-                  <img
-                    src={image.src}
-                    alt=""
-                    className="w-full h-auto object-cover transition-transform transform hover:scale-105 rounded-md"
-                    style={{ aspectRatio: `${image.width} / ${image.height}` }}
-                  />
-                </a>
-              </div>
-            ))}
-        </div>
-      ))}
+      {/* Middle Column (Medium Scroll Speed) */}
+      <motion.div
+        style={{ y: column2Y }}
+        className="flex flex-col overflow-hidden relative z-10">
+        {imageDimensions
+          .filter((_, index) => index % 3 === 1)
+          .map((image, index) => (
+            <div key={index} className="w-full overflow-clip">
+              <a
+                href={image.src}
+                data-cropped={image.cropped ? "true" : undefined}
+                data-pswp-width={image.width}
+                data-pswp-height={image.height}
+                className="w-full">
+                <img
+                  src={image.src}
+                  alt=""
+                  className="w-full h-auto object-cover transition-transform transform hover:scale-105"
+                  style={{ aspectRatio: `${image.width} / ${image.height}` }}
+                />
+              </a>
+            </div>
+          ))}
+      </motion.div>
+
+      {/* Right Column (Fast Scroll Speed) */}
+      <motion.div
+        style={{ y: column3Y }}
+        className="flex flex-col overflow-hidden relative z-10">
+        {imageDimensions
+          .filter((_, index) => index % 3 === 2)
+          .map((image, index) => (
+            <div key={index} className="w-full overflow-clip">
+              <a
+                href={image.src}
+                data-cropped={image.cropped ? "true" : undefined}
+                data-pswp-width={image.width}
+                data-pswp-height={image.height}
+                className="w-full">
+                <img
+                  src={image.src}
+                  alt=""
+                  className="w-full h-auto object-cover transition-transform transform hover:scale-105"
+                  style={{ aspectRatio: `${image.width} / ${image.height}` }}
+                />
+              </a>
+            </div>
+          ))}
+      </motion.div>
     </div>
   );
 };

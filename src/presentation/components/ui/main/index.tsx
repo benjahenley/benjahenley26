@@ -28,6 +28,13 @@ import Leftbar, { LeftbarRefType } from "@/presentation/components/ui/leftbar";
 import RightBar from "@/presentation/components/ui/rightbar";
 import Link from "next/link";
 import { IoLinkOutline } from "react-icons/io5";
+import {
+  isFollowingAtom,
+  followersCountAtom,
+  followingCountAtom,
+} from "@/atoms/following";
+import { HiUserAdd, HiUserRemove } from "react-icons/hi";
+import ScrollToTop from "../../shared/ui/ScrollToTop";
 
 const Feed = dynamic(() => import("./Feed"), { suspense: true, ssr: true });
 const About = dynamic(() => import("./About"), { suspense: true, ssr: false });
@@ -47,6 +54,9 @@ export default function HomeComp({ locale }: Props) {
   const [cvModalOpen, setCvModalOpen] = useState(false);
   const cvModalRef = useRef<HTMLDivElement>(null);
   const leftbarRef = useRef<LeftbarRefType>(null);
+  const [isFollowing, setIsFollowing] = useAtom(isFollowingAtom);
+  const [followersCount, setFollowersCount] = useAtom(followersCountAtom);
+  const [followingCount, setFollowingCount] = useAtom(followingCountAtom);
 
   // Function to toggle the mobile menu directly through the ref
   const toggleMobileMenu = () => {
@@ -98,6 +108,15 @@ export default function HomeComp({ locale }: Props) {
     setCvModalOpen(false);
   };
 
+  const handleFollowClick = () => {
+    setIsFollowing(!isFollowing);
+    if (!isFollowing) {
+      setFollowersCount((prev) => prev + 1);
+    } else {
+      setFollowersCount((prev) => prev - 1);
+    }
+  };
+
   return (
     <div className="relative flex flex-col items-center min-h-screen bg-white dark:bg-[#1f2937]">
       <div className="flex w-full h-full max-w-screen-2xl">
@@ -122,6 +141,7 @@ export default function HomeComp({ locale }: Props) {
                 <div className="flex flex-row overflow-visible justify-between items-end space-y-2 pt-5 md:pt-20 h-[40px]">
                   <ProfilePic className="relative w-20 h-20 sm:w-40 sm:h-40  border-4 border-gray-100 dark:border-gray-500 rounded-full overflow-hidden m-0 p-0 cursor-pointer" />
                   <FollowButtonHome
+                    handleFollowClick={handleFollowClick}
                     locale={locale}
                     className="min-w-[120px] absolute top-2 right-2  text-white rounded-full flex items-center justify-center hover:border-3 hover:border-black"
                   />
@@ -168,11 +188,11 @@ export default function HomeComp({ locale }: Props) {
                 </div>
                 <div className="flex flex-row gap-3 items-center mb-4 mt-2">
                   <div className="flex flex-row gap-1 items-center">
-                    <PriceText>322</PriceText>
+                    <PriceText>{followersCount}</PriceText>
                     <TextBase>Followers</TextBase>
                   </div>
                   <div className="flex flex-row gap-1 items-center">
-                    <PriceText>395</PriceText>
+                    <PriceText>{followingCount}</PriceText>
                     <TextBase>Following</TextBase>
                   </div>
                 </div>
@@ -201,6 +221,7 @@ export default function HomeComp({ locale }: Props) {
             className="block md:hidden"
             onToggleMobileMenu={toggleMobileMenu}
           />
+          <ScrollToTop />
         </main>
 
         <aside className="relative hidden p-2 md:block md:w-[30vw] lg:w-[25vw] xl:w-[20vw] bg-white dark:bg-[#1f2937]">

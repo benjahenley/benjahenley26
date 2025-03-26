@@ -98,9 +98,9 @@ function ProfilePic({ className, small }: Props) {
             items-center 
             justify-center 
             bg-gray-200
-            hover:ring-4
-            hover:ring-opacity-50
-            hover:ring-blue-400
+            hover:ring-1
+            hover:ring-opacity
+            hover:ring-violet-200
             transition-all
             duration-300
             cursor-pointer

@@ -150,13 +150,28 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
   const [isMobileDetailOpen, setIsMobileDetailOpen] = useState<number | null>(
     null
   );
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
-  // Add scroll event listener to close mobile panel
+  // Track scroll position to detect if navbar is visible
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      if (isMobileDetailOpen !== null) {
+      const currentScrollY = window.scrollY;
+
+      // If scrolling down, navbar is likely hidden
+      // If scrolling up, navbar is likely visible
+      setIsNavbarVisible(currentScrollY <= lastScrollY || currentScrollY < 50);
+
+      // Close mobile panel when scrolling
+      if (
+        isMobileDetailOpen !== null &&
+        Math.abs(currentScrollY - lastScrollY) > 10
+      ) {
         setIsMobileDetailOpen(null);
       }
+
+      lastScrollY = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -164,6 +179,17 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, [isMobileDetailOpen]);
+
+  // Add a timeout to auto-dismiss the toast
+  useEffect(() => {
+    if (isMobileDetailOpen !== null) {
+      const timer = setTimeout(() => {
+        setIsMobileDetailOpen(null);
+      }, 6000); // 6 seconds
+
+      return () => clearTimeout(timer);
+    }
   }, [isMobileDetailOpen]);
 
   // Generate different animation properties for each stat dot
@@ -284,7 +310,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
       </div>
 
       {/* Content Container with Gradient Background */}
-      <div className="m-auto xl:m-0 flex flex-col justify-between max-w-md w-full h-full  p-6 bg-gradient-to-br from-purple-100 via-purple-200 to-gray-100  dark:from-slate-950 dark:via-slate-900 dark:to-gray-950 text-white rounded-lg xl:rounded-none xl:rounded-l-lg relative overflow-hidden">
+      <div className="m-auto xl:m-0 flex flex-col justify-between max-w-md w-full h-full  p-6 bg-gradient-to-br from-purple-100 via-purple-200 to-gray-100  dark:from-slate-950 dark:via-slate-900 dark:to-gray-950 text-white rounded-lg xl:rounded-none xl:rounded-l-lg relative ">
         {/* Decorative Elements */}
         <div className="absolute top-5 right-5 w-32 h-32 rounded-full bg-gradient-to-br dark:from-emerald-500/10 dark:to-green-500/5 blur-2xl from-blue-500/30 to-indigo-500/5"></div>
 
@@ -325,7 +351,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
                       }
                     }}>
                     <div className="flex flex-row items-center gap-3">
-                      <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-indigo-200 to-blue-900 dark:from-gray-700 dark:to-gray-800 dark:border border-gray-300/30 dark:border-gray-600/30">
+                      <div className="flex items-center justify-center w-8 h-8 rounded-full ,md:bg-gradient-to-br from-indigo-200 to-blue-900 dark:from-gray-700 dark:to-gray-800 ,md:dark:border md:border-gray-300/30 dark:border-gray-600/30">
                         <span className="text-lg">{stat.emoji}</span>
                       </div>
                       <div>
@@ -391,7 +417,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
           </div>
         </div>
 
-        {/* Mobile Detail Panel */}
+        {/* Toast Notification - Centered in main component with flexbox */}
         <AnimatePresence>
           {stats.map(
             (stat, index) =>
@@ -399,20 +425,29 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
               hoveredStat === index && (
                 <motion.div
                   key={index}
-                  whileInView={{ x: 0 }}
-                  initial={{ x: "100%" }}
-                  exit={{ x: "100%" }}
-                  className="fixed bottom-[83px] right-0 w-[300px] h-fit bg-gradient-to-br from-blue-400 to-indigo-500 dark:from-green-500 dark:to-emerald-600 rounded-lg p-4 shadow-lg z-50">
-                  <button
-                    onClick={() => setIsMobileDetailOpen(null)}
-                    className="absolute top-4 right-4 px-3 py-2 text-gray-100 hover:text-white">
-                    ✕
-                  </button>
-                  <div className="mt-0">
-                    <h3 className="text-xl font-bold mb-4 flex items-center gap-2 ">
-                      {stat.emoji} {stat.name[locale]}
-                    </h3>
-                    <p className="text-base">{stat.message[locale]}</p>
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{
+                    y: 0,
+                    opacity: 1,
+                    transition: { type: "spring", bounce: 0.3 },
+                  }}
+                  exit={{
+                    y: 50,
+                    opacity: 0,
+                    transition: { duration: 0.2 },
+                  }}
+                  className={`fixed bottom-2 z-[100] left-0 right-0 flex justify-center items-center ${
+                    isNavbarVisible ? "mb-[80px] md:mb-[90px]" : "mb-[30px]"
+                  } z-[60]`}>
+                  <div
+                    className="max-w-[90%] px-5 py-3
+                    bg-gradient-to-r from-violet-500/90 to-indigo-600/90 dark:from-green-500/90 dark:to-emerald-600/90 
+                    rounded-full shadow-xl text-white flex items-center gap-4
+                    border border-white/20 ">
+                    <div className="text-2xl">{stat.emoji}</div>
+                    <p className="text-sm font-medium text-white pr-2">
+                      {stat.message[locale]}
+                    </p>
                   </div>
                 </motion.div>
               )

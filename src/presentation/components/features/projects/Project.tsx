@@ -77,10 +77,7 @@ function Project({
         </div>
         <div className="w-full flex justify-center md:justify-end">
           {projectData.techStack.length > 0 && (
-            <div className="flex flex-wrap items-start gap-3 my-4">
-              {/* <p className="hidden md:flex font-bold text-gray-800 dark:text-white">
-                {projectData.techStack.title}:
-              </p> */}
+            <div className="flex flex-wrap justify-center items-center gap-3 my-4 max-w-full">
               {projectData.techStack.map((tech: string, key: number) => {
                 const Icon = iconMapping[tech];
                 if (!Icon) {
@@ -88,10 +85,8 @@ function Project({
                   return null;
                 }
                 return (
-                  <div
-                    key={key}
-                    className="flex items-center gap-2 hover:scale-110">
-                    <Icon className="text-lg text-gray-800 dark:text-white" />
+                  <div key={key} className="flex items-center hover:scale-110">
+                    <Icon className="text-md md:text-lg text-gray-800 dark:text-white" />
                   </div>
                 );
               })}

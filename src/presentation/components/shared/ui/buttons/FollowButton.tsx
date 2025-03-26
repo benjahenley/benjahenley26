@@ -7,9 +7,14 @@ import { isFollowingAtom } from "@/atoms/following";
 type Props = {
   locale: Locales;
   className: string;
+  handleFollowClick: () => void;
 };
 
-export function FollowButtonHome({ className, locale }: Props) {
+export function FollowButtonHome({
+  className,
+  locale,
+  handleFollowClick,
+}: Props) {
   const [isFollowing, setIsFollowing] = useAtom(isFollowingAtom);
 
   const { followButton, followButtonClicked } =
@@ -17,11 +22,11 @@ export function FollowButtonHome({ className, locale }: Props) {
 
   return (
     <button
-      onClick={() => setIsFollowing(!isFollowing)}
+      onClick={handleFollowClick}
       className={`${className} flex gap-2 items-center rounded-full ${
         isFollowing
           ? "bg-gray-400 dark:bg-gray-600"
-          : "bg-purple-700 dark:bg-emerald-500"
+          : "bg-purple-500 hover:bg-purple-600 dark:bg-emerald-500"
       }`}>
       <h5>{isFollowing ? followButtonClicked : followButton}</h5>
       <FaWifi className="text-sm rotate-45" />

@@ -42,9 +42,11 @@ export default function ArtistSection({
 
       <ProducerGallery />
       <div className="flex flex-row items-center w-full m-auto justify-center mt-16 mb-10 gap-5">
-        <SectionTitle className="text-center uppercase tracking-widest">
-          {/* {aboutSection.music.title} */}
-          {artistSection.myMusicTitle}
+        <SectionTitle className="mt-10 mb-10 text-center uppercase tracking-wider font-bold relative">
+          <span
+            className={`bg-clip-text text-4xl md:text-5xl text-gray-800 dark:text-gray-100 `}>
+            {artistSection.myMusicTitle}
+          </span>
         </SectionTitle>
       </div>
       <ExpandableCardDemo locale={locale} />

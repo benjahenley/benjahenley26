@@ -156,7 +156,7 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
                     className="group">
                     <div
                       key={text[locale]}
-                      className="py-4 px-4 rounded-lg text-gray-800 dark:text-white hover:bg-gray-100 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-start md:justify-center xl:justify-start items-center gap-4">
+                      className="py-4 px-4 rounded-lg text-gray-800 dark:text-white hover:bg-gray-200/40 dark:hover:bg-slate-700/30 border-l-2 border-transparent dark:hover:border-green-500/70 hover:border-violet-400/70 transition-all duration-200 cursor-pointer flex flex-row justify-start md:justify-center xl:justify-start items-center gap-4">
                       <div className="transition-transform transform group-hover:scale-110 text-2xl lg:text-3xl xl:text-4xl">
                         {logo}
                       </div>
@@ -233,8 +233,10 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
                       <div className="flex flex-col w-full h-full">
                         {OPTIONS.map(({ logo, text, href }, key) => (
                           <Link href={href} key={key} onClick={closeMobileMenu}>
-                            <div className="py-3 dark:text-white hover:bg-gray-200 dark:hover:bg-slate-700 cursor-pointer flex flex-row justify-start items-center gap-4 px-4">
-                              <div className="text-xl">{logo}</div>
+                            <div className="py-3 dark:text-white hover:bg-gray-100/30 dark:hover:bg-slate-700/30 border-l-2 border-transparent hover:border-green-500/70 dark:hover:border-violet-400/70 transition-all duration-200 cursor-pointer flex flex-row justify-start items-center gap-4 px-4">
+                              <div className="text-xl hover:text-green-600 dark:hover:text-violet-400">
+                                {logo}
+                              </div>
                               <p>{text[locale]}</p>
                             </div>
                           </Link>

@@ -11,24 +11,22 @@ import {
   FaUserPlus,
 } from "react-icons/fa";
 import { useAtom } from "jotai";
-import { isFollowingAtom } from "@/atoms/following";
-import { IoAddOutline } from "react-icons/io5";
-import { HiUserAdd, HiUserRemove } from "react-icons/hi";
-import { useRouter } from "next/navigation";
+import {
+  isFollowingAtom,
+  followersCountAtom,
+  followingCountAtom,
+} from "@/atoms/following";
 
 type Props = {
   userTag: string;
   userName: string;
 };
 
-function UserStatsExpandable({ userTag, userName }: Props) {
+export function UserStatsExpandable({ userTag, userName }: Props) {
   const [hovered, setHovered] = useState(false);
   const [isFollowing, setIsFollowing] = useAtom(isFollowingAtom);
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push("/");
-  };
+  const [followersCount] = useAtom(followersCountAtom);
+  const [followingCount] = useAtom(followingCountAtom);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,11 +45,11 @@ function UserStatsExpandable({ userTag, userName }: Props) {
 
   return (
     <div
-      className="flex items-center gap-0 md:gap-2 bg-white dark:bg-gray-800 w-fit rounded-full py-2 px-2 md:pr-4 max-w-full overflow-hidden"
+      className="flex items-center justify-center gap-0 md:gap-2 bg-white dark:bg-gray-800 w-fit rounded-full pr-2 md:pr-4 max-w-full overflow-hidden"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
-      <ProfilePic small className="cursor-pointer" />
-      <div className="flex flex-col gap-0 pl-2">
+      <ProfilePic small className="cursor-pointer p-1 md:pl-2" />
+      <div className="flex flex-col gap-0 pl-2 h-fit">
         <h5
           className={`text-md font-bold text-gray-800 dark:text-white ${
             hovered ? "hidden md:flex pr-2" : "pr-4"
@@ -79,7 +77,7 @@ function UserStatsExpandable({ userTag, userName }: Props) {
               variants={itemVariants}>
               <FaUserFriends className="text-gray-700 dark:text-white text-lg group-hover:scale-105" />
               <span className="text-sm text-gray-700 dark:text-white group-hover:scale-105">
-                1,234
+                {followersCount}
               </span>
             </motion.div>
             {/* Following */}
@@ -88,7 +86,7 @@ function UserStatsExpandable({ userTag, userName }: Props) {
               variants={itemVariants}>
               <FaUserAlt className="text-gray-700 dark:text-white text-sm group-hover:scale-105" />
               <span className="text-sm text-gray-700 dark:text-white group-hover:scale-105">
-                567
+                {followingCount}
               </span>
             </motion.div>
             {/* Follow Button */}

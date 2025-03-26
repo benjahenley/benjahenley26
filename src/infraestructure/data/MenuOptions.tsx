@@ -28,7 +28,7 @@ function getOptions(locale: Locales) {
       logo: <SiBuymeacoffee />,
       text: {
         en: "Coffee",
-        es: "Cafesito",
+        es: "Cafecito",
       },
       href: "https://www.buymeacoffee.com/benjahenley",
     },
