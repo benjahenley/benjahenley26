@@ -67,7 +67,7 @@ export default function HomeComp({ locale }: Props) {
 
   // CV image URL
   const cvImageUrl =
-    "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1742247540/Benja_Henley_Fullstack_CV_.pdf_page-0001_akamf0.jpg";
+    "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1743039900/Benja_Henley_Fullstack_CV_.pdf_page-0001_akamf0.jpg";
   // Handle click outside to close modal
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
