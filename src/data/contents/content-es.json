@@ -2,8 +2,8 @@
   "pages": {
     "home": {
       "bio": {
-        "title": "FullStack Developer",
-        "subtitle": "Mi objetivo es crear soluciones estéticamente agradables y funcionales a través del código y el diseño. Con una cartera en crecimiento de proyectos exitosos, estoy comprometido a avanzar continuamente en mis habilidades y conocimientos. Estoy ansioso por aportar mi experiencia y pasión a un equipo colaborativo, donde pueda contribuir eficazmente, aprender de otros y crecer junto a profesionales talentosos.",
+        "title": "Desarrollador Web SSR",
+        "subtitle": "Creo soluciones estéticamente agradables y funcionales mediante código y diseño. Me apasiona el aprendizaje continuo, afrontar nuevos retos y emprender de manera independiente. Actualmente estoy en busca de mi título en programación mientras desarrollo mis habilidades en tecnologías web y de aplicaciones modernas.",
         "followButton": "Seguir",
         "followButtonClicked": "Siguiendo"
       },

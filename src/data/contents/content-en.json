@@ -2,7 +2,7 @@
   "pages": {
     "home": {
       "bio": {
-        "title": "Junior Web Developer",
+        "title": "SSR Web Developer",
         "subtitle": "I create aesthetically pleasing and functional solutions through code and design. Passionate about continuous learning, tackling new challenges, and exploring solo entrepreneurship. Currently earning my programming degree while expanding my skills in modern web & app technologies.",
         "followButton": "Follow",
         "followButtonClicked": "Following"
