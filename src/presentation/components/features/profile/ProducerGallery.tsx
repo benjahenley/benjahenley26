@@ -78,7 +78,7 @@ const ProducerGallery = () => {
     <div
       id="my-gallery"
       ref={galleryRef}
-      className="h-fit relative grid grid-cols-3 pt-0 mb-[280px]">
+      className="h-fit relative grid grid-cols-3 pt-0 mb-[280px] mt-20">
       {/* Grid Background */}
       <div
         className="absolute inset-0 w-full z-0 opacity-30 pointer-events-none"

@@ -45,19 +45,20 @@ export function UserStatsExpandable({ userTag, userName }: Props) {
 
   return (
     <div
-      className="flex items-center justify-center gap-0 md:gap-2 bg-white dark:bg-gray-800 w-fit rounded-full pr-2 md:pr-4 max-w-full overflow-hidden"
+      className="flex items-center justify-center gap-0 md:gap-2 bg-white dark:bg-gray-800 w-fit rounded-full py-1 pl-2 pr-4 max-w-full overflow-hidden"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
-      <ProfilePic small className="cursor-pointer p-1 md:pl-2" />
+      <ProfilePic small className="cursor-pointer p-1 md:pl-2 " />
       <div className="flex flex-col gap-0 pl-2 h-fit">
         <h5
-          className={`text-md font-bold text-gray-800 dark:text-white ${
+          style={{ lineHeight: "1.2" }}
+          className={`text-md font-bold text-gray-800 dark:text-white  ${
             hovered ? "hidden md:flex pr-2" : "pr-4"
           } `}>
           {userName}
         </h5>
         <p
-          className={`text-xs text-gray-700 dark:text-white ${
+          className={`text-xs text-gray-700 dark:text-white opacity-70 ${
             hovered && "hidden"
           }`}>
           {userTag}
