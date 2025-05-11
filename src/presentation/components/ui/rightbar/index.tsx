@@ -6,6 +6,26 @@ import { useEffect, useState } from "react";
 import { MdVerified } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 
+const styles = `
+  .hide-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 163, 175, 0.3) transparent;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .hide-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .hide-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.3);
+    border-radius: 20px;
+  }
+  .hide-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(156, 163, 175, 0.5);
+  }
+`;
+
 type Props = {
   locale: Locales;
 };
@@ -120,6 +140,7 @@ export default function RightBar({ locale }: Props) {
 
   return (
     <>
+      <style>{styles}</style>
       <div className="h-full pb-6 pr-2 md:pr-4 fixed dark:text-white flex flex-col gap-4 w-[inherit] max-w-[320px] md:max-w-[300px]">
         {/* Trends Section */}
         <div className="border border-gray-300 dark:border-slate-600 rounded-xl top-2 pt-4">
@@ -164,7 +185,7 @@ export default function RightBar({ locale }: Props) {
           <div className="dark:text-white font-bold w-full text-xl px-3 md:px-4 border-b border-gray-300 dark:border-slate-600 pb-3 pt-4 sticky top-0   z-10">
             {userActivity.title}
           </div>
-          <ul className="flex flex-col w-full overflow-y-auto max-h-[250px] scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700">
+          <ul className="flex flex-col w-full overflow-y-auto max-h-[250px] hide-scrollbar">
             {userActivity.activities.map((activity, index) => (
               <li
                 key={index}

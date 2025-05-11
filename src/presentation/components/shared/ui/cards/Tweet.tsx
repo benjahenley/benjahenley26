@@ -279,30 +279,28 @@ const Tweet: React.FC<TweetProps> = ({
                 </p>
                 <span>{likeCount}</span>
               </li>
-              <li className="flex items-center gap-1 cursor-pointer">
-                <li
-                  className="flex items-center gap-1 cursor-pointer"
-                  onClick={handleSave}>
-                  <p className="p-2 rounded-full hover:bg-purple-100">
-                    {saved ? (
-                      <FaBookmark className="text-purple-500" />
-                    ) : (
-                      <FaRegBookmark className="text-gray-500 dark:text-gray-400" />
-                    )}
-                  </p>
-                </li>
-                <li
-                  className="flex items-center gap-1 cursor-pointer relative"
-                  onClick={handleShare}>
-                  <p className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 hover:bg-blue-100">
-                    <FiShare className="text-gray-500 dark:text-gray-400" />
-                  </p>
-                  {showShareTooltip && (
-                    <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded whitespace-nowrap">
-                      Copied to clipboard
-                    </span>
+              <li
+                className="flex items-center gap-1 cursor-pointer"
+                onClick={handleSave}>
+                <p className="p-2 rounded-full hover:bg-purple-100">
+                  {saved ? (
+                    <FaBookmark className="text-purple-500" />
+                  ) : (
+                    <FaRegBookmark className="text-gray-500 dark:text-gray-400" />
                   )}
-                </li>
+                </p>
+              </li>
+              <li
+                className="flex items-center gap-1 cursor-pointer relative"
+                onClick={handleShare}>
+                <p className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 hover:bg-blue-100">
+                  <FiShare className="text-gray-500 dark:text-gray-400" />
+                </p>
+                {showShareTooltip && (
+                  <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded whitespace-nowrap">
+                    Copied to clipboard
+                  </span>
+                )}
               </li>
             </ul>
           </div>

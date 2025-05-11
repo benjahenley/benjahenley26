@@ -57,25 +57,24 @@ const StatItem = ({
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
-      className={`p-2 border border-gray-200 dark:border-gray-700 rounded-lg transition-all duration-300 cursor-pointer relative overflow-hidden group ${
-        isExpanded ? "shadow-lg" : ""
-      } ${
-        isActive
-          ? "scale-y-[1.05] shadow-[0_0_25px_rgba(255,215,0,0.9)] dark:shadow-[0_0_25px_rgba(255,215,0,0.6)] z-10"
-          : ""
-      }`}
+    <div
+      className={`p-2 border border-gray-200 dark:border-gray-700 rounded-lg transition-all duration-300 cursor-pointer relative overflow-hidden group
+        ${isExpanded ? "shadow-lg" : ""}
+        ${
+          isActive
+            ? "scale-y-[1.05] shadow-[0_0_25px_rgba(255,215,0,0.9)] dark:shadow-[0_0_25px_rgba(255,215,0,0.6)] z-10"
+            : ""
+        }
+        hover:shadow-md hover:scale-[1.01] dark:hover:shadow-slate-700 hover:bg-gray-50 dark:hover:bg-gray-700
+      `}
       onClick={onToggleExpand}
-      data-index={index}>
+      data-index={index}
+      aria-expanded={isExpanded}
+      tabIndex={0}
+      role="button">
       <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-purple-400 dark:from-emerald-700 dark:to-emerald-600 opacity-90 dark:opacity-80"></div>
-
       {/* Rotated rectangle design element */}
       <div className="absolute h-[120%] w-[125%] inset-[-20px] rotate-[25deg] bg-gradient-to-r from-purple-200 to-purple-300 dark:from-emerald-600 dark:to-emerald-500 opacity-50"></div>
-
       {/* Content container - must be positioned relative to appear above the background */}
       <div className="relative z-10">
         <div className="flex items-center justify-between">
@@ -90,7 +89,8 @@ const StatItem = ({
                   ? "shadow-[0_0_20px_rgba(255,215,0,0.9)] scale-125"
                   : ""
               }
-              ${isExpanded ? "animate-spin-once" : ""}`}>
+              ${isExpanded ? "animate-spin-once" : ""}`}
+              style={{ boxShadow: "0 0 0 2px rgba(0,0,0,0.03)" }}>
               <div
                 className={`transition-transform duration-500 ${
                   isExpanded ? "rotate-[360deg]" : "rotate-0"
@@ -98,7 +98,7 @@ const StatItem = ({
                 {icon}
               </div>
             </div>
-            <h3 className="font-semibold text-gray-800 dark:text-white">
+            <h3 className="font-bold text-lg md:text-xl text-gray-900 dark:text-white leading-tight">
               {title}
             </h3>
           </div>
@@ -108,17 +108,16 @@ const StatItem = ({
             }`}
           />
         </div>
-
         <div
           className={`overflow-hidden transition-all duration-300 ${
             isExpanded ? "mt-2 p-2" : "max-h-0"
           }`}>
-          <p className="text-md whitespace-pre-wrap text-gray-800 dark:text-gray-100">
+          <p className="text-base md:text-md whitespace-pre-wrap text-gray-700 dark:text-gray-200 font-normal">
             {content}
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -253,7 +252,7 @@ const StatsDropdowns = ({ statsSection }: { statsSection: StatsSection }) => {
       `}</style>
       <div
         ref={containerRef}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-4"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-4 px-2"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
