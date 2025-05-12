@@ -18,9 +18,15 @@ type Props = {
   sidebar?: boolean;
   locale: Locales;
   isOpen: boolean;
+  onOpen: () => void;
 };
 
-export const LanguageSelect: FC<Props> = ({ sidebar, locale, isOpen }) => {
+export const LanguageSelect: FC<Props> = ({
+  sidebar,
+  locale,
+  isOpen,
+  onOpen,
+}) => {
   const [dropdown, setDropdown] = useState(isOpen);
   const [isMobile, setIsMobile] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -76,14 +82,20 @@ export const LanguageSelect: FC<Props> = ({ sidebar, locale, isOpen }) => {
   // For mobile view - inline dropdown
   const MobileDropdown = () => (
     <div className="h-full overflow-x-hidden w-full">
-      <ul className="w-full" role="none" onClick={() => setDropdown(false)}>
+      <ul
+        className="w-full"
+        role="none"
+        onClick={() => {
+          setDropdown(false);
+          onOpen();
+        }}>
         {LANGUAGES.map(({ code, name, flag }) => (
           <li className="w-full" key={code}>
             <button
               className="w-full"
               onClick={() => changeLanguage(code as Locales)}>
               <div
-                className={`px-4 lg:px-[22px] lg:rounded-lg py-1 w-full dark:text-white hover:bg-gray-100/30 dark:hover:bg-slate-700/30 border-l-2 border-transparent hover:border-violet-500/70 dark:hover:border-green-400/70 transition-all duration-200 cursor-pointer flex flex-row justify-start md:justify-center xl:justify-between items-center gap-4 md:gap-6 ${
+                className={`px-4 lg:px-[22px] lg:rounded-lg py-1 w-full dark:text-white hover:bg-gray-100/30 dark:hover:bg-slate-700/30 dark:hover:border-green-400/70 transition-all duration-200 cursor-pointer flex flex-row justify-start md:justify-center xl:justify-between items-center gap-4 md:gap-6 ${
                   locale === code ? "bg-gray-200/70 dark:bg-slate-600/70" : ""
                 }`}>
                 <div className="flex flex-row justify-center items-center gap-5 lg:gap-6">

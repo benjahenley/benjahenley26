@@ -156,15 +156,21 @@ const NavbarMobile: FC<Props> = ({ className, locale, onToggleMobileMenu }) => {
     <div className={className}>
       <div
         ref={navbarRef}
-        className={`z-[9999] fixed md:hidden bottom-0 left-0 right-0 w-full h-20 bg-custom-gradient transition-all duration-500 ease-in-out ${
-          isVisible
-            ? "translate-y-0 opacity-100"
-            : "translate-y-full opacity-90"
-        }`}
+        className={`z-[9999] fixed md:hidden -bottom-1 -left-1 -right-1 h-20 transition-all duration-500 ease-in-out
+          rounded-t-2xl border-t border-white/20
+          shadow-[0_-4px_24px_0_rgba(124,58,237,0.10)]
+          backdrop-blur-xl
+          bg-navbar-purple-gradient dark:bg-navbar-green-gradient
+          ${
+            isVisible
+              ? "translate-y-0 opacity-100"
+              : "translate-y-full opacity-90"
+          }
+        `}
         style={{
           boxShadow: isVisible ? "0 -4px 6px -1px rgba(0, 0, 0, 0.1)" : "none",
         }}>
-        <div className="w-full h-full flex justify-between items-center text-white px-2">
+        <div className="w-full h-full flex justify-between items-center text-white px-6">
           <div
             className="flex items-center justify-left text-4xl"
             onClick={handleMenuClick}>

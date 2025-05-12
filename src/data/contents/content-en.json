@@ -282,41 +282,6 @@
         ],
         "more": "Show More",
         "less": "Show Less"
-      },
-      "people": {
-        "title": "Relevant people",
-        "list": [
-          {
-            "name": "Elon Musk",
-            "at": "@elonmusk",
-            "url": "https://twitter.com/elonmusk"
-          },
-          {
-            "name": "Sundar Pichai",
-            "at": "@sundarpichai",
-            "url": "https://twitter.com/sundarpichai"
-          },
-          {
-            "name": "Tim Cook",
-            "at": "@tim_cook",
-            "url": "https://twitter.com/tim_cook"
-          },
-          {
-            "name": "Satya Nadella",
-            "at": "@satyanadella",
-            "url": "https://twitter.com/satyanadella"
-          },
-          {
-            "name": "Susan Wojcicki",
-            "at": "@SusanWojcicki",
-            "url": "https://twitter.com/SusanWojcicki"
-          },
-          {
-            "name": "Jeff Bezos",
-            "at": "@JeffBezos",
-            "url": "https://twitter.com/JeffBezos"
-          }
-        ]
       }
     }
   }

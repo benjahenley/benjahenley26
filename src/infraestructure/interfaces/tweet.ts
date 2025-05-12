@@ -17,7 +17,7 @@ export type TweetLocalContentProps = {
 
 export interface TweetApiResponse {
   id: string;
-  content: string;
+  content: string | React.ReactNode;
   createdAt: string;
   mediaUrl?: string;
   likes: number;

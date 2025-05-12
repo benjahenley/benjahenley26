@@ -58,13 +58,15 @@ const config: Config = {
         width: "width",
       },
       backgroundImage: {
-        "custom-gradient":
-          "linear-gradient(45deg, #e85a4f, #d43d37, #bf2622, #aa0f0d)",
         "text-gradient":
           "linear-gradient(45deg, #FFFFFF, #F8F8FF, #FFFAFA, #FFFFF0, #FFF5EE)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "navbar-purple-gradient":
+          "linear-gradient(90deg, #a78bfa 0%, #7c3aed 50%, #6366f1 100%)",
+        "navbar-green-gradient":
+          "linear-gradient(90deg, #065f46 0%, #10b981 60%, #34d399 100%)",
       },
       backgroundClip: {
         text: "text",

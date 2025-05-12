@@ -46,6 +46,7 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
     const [dropdownOption, setDropdownOption] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
     // Expose methods via ref
     useImperativeHandle(ref, () => ({
@@ -209,7 +210,7 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
                   damping: 20,
                   duration: 0.3,
                 }}
-                className="max-h-full fixed pr-0 z-[9999999] top-0 left-0 right-20 bottom-0 max-w-[60%] sm:max-w-[50%] bg-gray-100 dark:bg-slate-700">
+                className="max-h-full fixed pr-0 z-[9999999] top-0 left-0 right-20 bottom-0 max-w-[60%] sm:max-w-[50%] bg-gray-100 dark:bg-slate-700 border-r border-gray-200 dark:border-slate-600">
                 <div className="h-full flex flex-row">
                   <div className="flex flex-col justify-between h-full w-full">
                     <div className="px-4 border-b border-gray-300 dark:border-slate-600 flex items-center gap-2 justify-between py-4">
@@ -233,8 +234,8 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
                       <div className="flex flex-col w-full h-full">
                         {OPTIONS.map(({ logo, text, href }, key) => (
                           <Link href={href} key={key} onClick={closeMobileMenu}>
-                            <div className="py-3 dark:text-white hover:bg-gray-100/30 dark:hover:bg-slate-700/30 border-l-2 border-transparent hover:border-green-500/70 dark:hover:border-violet-400/70 transition-all duration-200 cursor-pointer flex flex-row justify-start items-center gap-4 px-4">
-                              <div className="text-xl hover:text-green-600 dark:hover:text-violet-400">
+                            <div className="py-3 dark:text-white hover:bg-gray-100/30 dark:hover:bg-slate-700/30 border-l-4 border-transparent transition-all duration-200 cursor-pointer flex flex-row justify-start items-center gap-4 px-4 group">
+                              <div className="text-xl group-hover:text-violet-500 dark:group-hover:text-emerald-400 transition-colors">
                                 {logo}
                               </div>
                               <p>{text[locale]}</p>
@@ -243,10 +244,31 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
                         ))}
                         <LanguageSelect
                           locale={locale}
-                          isOpen={dropdownOption}
+                          isOpen={openDropdown === "idioma"}
+                          onOpen={() =>
+                            setOpenDropdown(
+                              openDropdown === "idioma" ? null : "idioma"
+                            )
+                          }
                         />
-                        <ThemeSelect locale={locale} />
-                        <SocialsSelect locale={locale} />
+                        <ThemeSelect
+                          locale={locale}
+                          isOpen={openDropdown === "tema"}
+                          onOpen={() =>
+                            setOpenDropdown(
+                              openDropdown === "tema" ? null : "tema"
+                            )
+                          }
+                        />
+                        <SocialsSelect
+                          locale={locale}
+                          isOpen={openDropdown === "social"}
+                          onOpen={() =>
+                            setOpenDropdown(
+                              openDropdown === "social" ? null : "social"
+                            )
+                          }
+                        />
                       </div>
                     </div>
 

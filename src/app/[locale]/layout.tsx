@@ -36,9 +36,9 @@ export default function RootLayout({
   params: { locale: Locales };
 }>) {
   return (
-    <html lang={locale ? locale : "es"}>
+    <html lang={locale ? locale : "es"} className="no-scrollbar">
       <body
-        className={`${sourceSansPro.className} dark:bg-slate-800 h-full min-h-screen z `}>
+        className={`${sourceSansPro.className} dark:bg-slate-800 h-full min-h-screen no-scrollbar`}>
         <JotaiProvider>
           <ThemeProvider>
             <ModalContainer locale={locale ? locale : "es"}></ModalContainer>

@@ -205,7 +205,7 @@ const Tweet: React.FC<TweetProps> = ({
       }`}>
       {/* Main Tweet Section */}
       <article
-        className={`border-b border-slate-300 dark:border-gray-600 px-4 py-3 ${
+        className={`border-b border-slate-300 dark:border-gray-600 px-4 py-5 ${
           !showComments && "hover:bg-gray-100 dark:hover:bg-slate-700"
         } transition-colors`}>
         <div className="flex space-x-3">
@@ -220,19 +220,21 @@ const Tweet: React.FC<TweetProps> = ({
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex justify-between items-center mb-1">
-              <div className="flex flex-col sm:flex-row sm:items-center">
-                <p className="font-bold text-gray-900 dark:text-white text-sm sm:mr-1">
+              <div className="flex flex-col h-fit">
+                <p className="font-bold text-gray-900 dark:text-white text-base">
                   {username}
                 </p>
                 <p className="text-gray-500 dark:text-gray-400 text-sm">
                   {userHandle}
                 </p>
               </div>
-              <p className="text-gray-500 dark:text-gray-400 text-sm hover:underline cursor-pointer">
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
                 {formattedDate}
               </p>
             </div>
-            <p className="mt-1 text-gray-800 dark:text-gray-200">{content}</p>
+            <p className="mt-1 text-gray-500 dark:text-gray-200 py-2">
+              {content}
+            </p>
 
             {mediaUrl && (
               <div className="mt-3 rounded-lg overflow-hidden">
@@ -250,7 +252,7 @@ const Tweet: React.FC<TweetProps> = ({
               <li
                 className="flex items-center gap-1 cursor-pointer"
                 onClick={handleCommentClick}>
-                <p className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 hover:bg-blue-100">
+                <p className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 hover:bg-blue-100 dark:hover:text-[#1d9bf0] dark:hover:bg-[#1d9bf01a] transition-colors">
                   <FaRegComment />
                 </p>
                 <span>{comments}</span>
@@ -258,43 +260,46 @@ const Tweet: React.FC<TweetProps> = ({
               <li
                 className="flex items-center gap-1 cursor-pointer"
                 onClick={handleRepost}>
-                <p className="p-2 rounded-full hover:bg-green-100">
-                  {reposted ? (
-                    <AiOutlineRetweet className="text-green-500" />
-                  ) : (
-                    <AiOutlineRetweet className="text-gray-500 dark:text-gray-400" />
-                  )}
+                <p
+                  className={`p-2 rounded-full hover:bg-green-100 dark:hover:bg-[#00ba7c1a] transition-colors ${
+                    reposted
+                      ? "text-green-500 dark:text-[#00ba7c]"
+                      : "text-gray-500 dark:text-gray-400"
+                  } dark:hover:text-[#00ba7c]`}>
+                  <AiOutlineRetweet />
                 </p>
                 <span>{repostCount}</span>
               </li>
               <li
                 className="flex items-center gap-1 cursor-pointer"
                 onClick={handleLike}>
-                <p className="p-2 rounded-full hover:bg-pink-100">
-                  {liked ? (
-                    <FaHeart className="text-pink-500" />
-                  ) : (
-                    <FaRegHeart className="text-gray-500 dark:text-gray-400" />
-                  )}
+                <p
+                  className={`p-2 rounded-full hover:bg-pink-100 dark:hover:bg-[#f918801a] transition-colors ${
+                    liked
+                      ? "text-pink-500 dark:text-[#f91880]"
+                      : "text-gray-500 dark:text-gray-400"
+                  } dark:hover:text-[#f91880]`}>
+                  {liked ? <FaHeart /> : <FaRegHeart />}
                 </p>
                 <span>{likeCount}</span>
               </li>
               <li
                 className="flex items-center gap-1 cursor-pointer"
                 onClick={handleSave}>
-                <p className="p-2 rounded-full hover:bg-purple-100">
-                  {saved ? (
-                    <FaBookmark className="text-purple-500" />
-                  ) : (
-                    <FaRegBookmark className="text-gray-500 dark:text-gray-400" />
-                  )}
+                <p
+                  className={`p-2 rounded-full hover:bg-purple-100 dark:hover:bg-[#7856ff1a] transition-colors ${
+                    saved
+                      ? "text-purple-500 dark:text-[#7856ff]"
+                      : "text-gray-500 dark:text-gray-400"
+                  } dark:hover:text-[#7856ff]`}>
+                  {saved ? <FaBookmark /> : <FaRegBookmark />}
                 </p>
               </li>
               <li
                 className="flex items-center gap-1 cursor-pointer relative"
                 onClick={handleShare}>
-                <p className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 hover:bg-blue-100">
-                  <FiShare className="text-gray-500 dark:text-gray-400" />
+                <p className="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:text-blue-500 hover:bg-blue-100 dark:hover:text-[#1d9bf0] dark:hover:bg-[#1d9bf01a] transition-colors">
+                  <FiShare />
                 </p>
                 {showShareTooltip && (
                   <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded whitespace-nowrap">

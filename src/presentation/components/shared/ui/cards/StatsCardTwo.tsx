@@ -318,7 +318,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
 
         <div className="flex flex-col relative z-10">
           {/* Elegant Header */}
-          <div className="flex flex-row items-center justify-between gap-4 mb-0 border-b border-gray-700/30 pb-3">
+          <div className="flex flex-row items-center justify-between gap-4 mb-0 border-b border-purple-700/30 dark:border-emerald-500/30 pb-3">
             <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-700 to-indigo-900 dark:from-emerald-500 dark:to-emerald-700 text-transparent bg-clip-text">
               {title}
             </h2>
@@ -332,7 +332,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
           {/* Stats List with Improved Scrolling */}
           {/* <div className="space-y-2 h-full max-h-[350px] overflow-y-auto group pr-2 custom-scrollbar dark:custom-scrollbar-dark"> */}
           {
-            <div className="space-y-2 h-full max-h-[350px] overflow-y-auto group pr-2 scrollbar-thin scrollbar-thumb-purple-700 scrollbar-track-gray-200 dark:scrollbar-thumb-emerald-400 dark:scrollbar-track-gray-800 ">
+            <div className=" h-full max-h-[350px] overflow-y-auto group scrollbar-thin scrollbar-thumb-purple-700 scrollbar-track-transparent dark:scrollbar-thumb-emerald-400  ">
               {stats.map((stat, statIndex) => {
                 return (
                   <motion.div
@@ -341,7 +341,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
                     viewport={{ once: true }}
                     transition={{ delay: statIndex * 0.05 }}
                     key={statIndex}
-                    className="flex justify-between items-center p-2 transition-all duration-300 hover:bg-indigo-500/10 dark:hover:bg-white/5 rounded-md cursor-pointer"
+                    className="flex justify-between items-center p-2 transition-all duration-300 hover:bg-indigo-500/10 dark:hover:bg-white/5 cursor-pointer  px-3"
                     onMouseEnter={() => setHoveredStat(statIndex)}
                     onMouseLeave={() => setHoveredStat(null)}
                     onClick={() => {
@@ -352,7 +352,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
                     }}>
                     <div className="flex flex-row items-center gap-3">
                       <div className="flex items-center justify-center w-8 h-8 rounded-full ,md:bg-gradient-to-br from-indigo-200 to-blue-900 dark:from-gray-700 dark:to-gray-800 ,md:dark:border md:border-gray-300/30 dark:border-gray-600/30">
-                        <span className="text-lg">{stat.emoji}</span>
+                        <span className="text-xl">{stat.emoji}</span>
                       </div>
                       <div>
                         <span className="text-gray-800 dark:text-gray-200">
@@ -401,7 +401,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
         </div>
 
         {/* Elegant Footer */}
-        <div className="flex flex-row items-center justify-between gap-4 pt-3 border-t border-gray-700/30 relative z-10">
+        <div className="flex flex-row items-center justify-between gap-4 pt-3 border-t border-purple-700/30 dark:border-emerald-500/30 relative z-10">
           <div
             className="text-3xl font-bold bg-gradient-to-r from-purple-700 to-indigo-900 dark:from-emerald-500 dark:to-emerald-700 text-transparent bg-clip-text"
             style={{ animation: "glow 4s ease-in-out infinite" }}>

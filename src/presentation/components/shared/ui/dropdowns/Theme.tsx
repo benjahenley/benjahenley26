@@ -16,10 +16,11 @@ const DropdownPortal = dynamic(() => import("./DropdownPortal"), {
 
 type Props = {
   locale: Locales;
+  isOpen?: boolean;
+  onOpen?: () => void;
 };
 
-export const ThemeSelect = ({ locale }: Props) => {
-  const [dropdown, setDropdown] = useState(false);
+export const ThemeSelect = ({ locale, isOpen, onOpen }: Props) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [isDarkMode, setIsDarkMode] = useAtom(darkModeAtom);
   const [isMobile, setIsMobile] = useState(false);
@@ -38,14 +39,14 @@ export const ThemeSelect = ({ locale }: Props) => {
       setIsDarkMode(shouldBeDark);
       document.documentElement.classList.toggle("dark", shouldBeDark);
     }
-    setDropdown(false);
+    if (onOpen) onOpen();
   };
 
   // Close dropdown when scrolling
   useEffect(() => {
     const handleScroll = () => {
-      if (dropdown) {
-        setDropdown(false);
+      if (isOpen) {
+        onOpen && onOpen();
       }
     };
 
@@ -53,7 +54,7 @@ export const ThemeSelect = ({ locale }: Props) => {
     return () => {
       window.removeEventListener("scroll", handleScroll, true);
     };
-  }, [dropdown]);
+  }, [isOpen, onOpen]);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
@@ -83,7 +84,7 @@ export const ThemeSelect = ({ locale }: Props) => {
         className="w-full"
         role="menu"
         aria-labelledby="theme-menu"
-        onClick={() => setDropdown(false)}>
+        onClick={() => onOpen && onOpen()}>
         {THEMES.map(({ mode, label, icon }) => (
           <li className="w-full" key={mode}>
             <button className="w-full" onClick={() => handleThemeChange(mode)}>
@@ -110,16 +111,12 @@ export const ThemeSelect = ({ locale }: Props) => {
     </div>
   );
 
-  const closeDropdown = () => {
-    setDropdown(false);
-  };
-
   return (
     <div className="flex flex-col items-start relative w-full">
       <button
         ref={buttonRef}
-        onClick={() => setDropdown(!dropdown)}
-        className="group px-4 py-3 md:py-4 rounded-lg text-gray-800 dark:text-white hover:bg-gray-200/40 dark:hover:bg-slate-700/30 border-l-2 border-transparent dark:hover:border-green-500/70 hover:border-violet-400/70 transition-all duration-200 cursor-pointer flex flex-row justify-between md:justify-center xl:justify-between items-center w-full">
+        onClick={onOpen}
+        className="group px-4 py-3 md:py-4 rounded-lg text-gray-800 dark:text-white hover:bg-gray-200/40 dark:hover:bg-slate-700/30 border-l-2 border-transparent dark:hover:border-emerald-400 hover:border-violet-500 transition-all duration-200 cursor-pointer flex flex-row justify-between md:justify-center xl:justify-between items-center w-full">
         <div className="flex flex-row items-center gap-4">
           <div className="text-xl md:text-2xl lg:text-3xl xl:text-4xl transition-transform transform group-hover:scale-105 ">
             {isDarkMode ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
@@ -130,17 +127,14 @@ export const ThemeSelect = ({ locale }: Props) => {
         </div>
         <MdKeyboardArrowDown
           className={`text-2xl transform transition-transform flex md:hidden xl:flex ${
-            dropdown ? "rotate-0" : "-rotate-90"
+            isOpen ? "rotate-0" : "-rotate-90"
           }`}
         />
       </button>
 
       {/* Desktop dropdown with portal - Only render on non-mobile screens */}
-      {!isMobile && dropdown && (
-        <DropdownPortal
-          isOpen={dropdown}
-          triggerRef={buttonRef}
-          onClose={closeDropdown}>
+      {!isMobile && isOpen && (
+        <DropdownPortal isOpen={isOpen} triggerRef={buttonRef} onClose={onOpen}>
           <ul className="w-48" role="menu" aria-labelledby="theme-menu">
             {THEMES.map(({ mode, label, icon }) => (
               <li className="w-full" key={mode}>
@@ -148,7 +142,7 @@ export const ThemeSelect = ({ locale }: Props) => {
                   className="w-full"
                   onClick={() => handleThemeChange(mode)}>
                   <div
-                    className={`px-4 py-2 w-full dark:text-white hover:bg-gray-100/30 dark:hover:bg-slate-700/30 border-l-2 border-transparent dark:hover:border-green-500/70 hover:border-violet-400/70 transition-all duration-200 cursor-pointer flex flex-row items-center gap-4 ${
+                    className={`px-4 py-2 w-full dark:text-white hover:bg-gray-100/30 dark:hover:bg-slate-700/30 border-l-2 border-transparent dark:hover:border-emerald-400 hover:border-violet-500 transition-all duration-200 cursor-pointer flex flex-row items-center gap-4 ${
                       isDarkMode === (mode === "dark")
                         ? "bg-gray-200/70 dark:bg-slate-600/70"
                         : ""
@@ -164,7 +158,7 @@ export const ThemeSelect = ({ locale }: Props) => {
       )}
 
       {/* Mobile dropdown (inline) - only show on mobile */}
-      {isMobile && dropdown && <MobileDropdown />}
+      {isMobile && isOpen && <MobileDropdown />}
     </div>
   );
 };
