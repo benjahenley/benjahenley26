@@ -7,7 +7,7 @@ export default function SpotifyCards(locale: Locales) {
       title: "Alternative Ending",
       src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1741561626/alternative-ending_phmyq4.jpg",
       ctaText: "Play",
-      ctaLink: "https://open.spotify.com/track/your-alternative-ending-id",
+      ctaLink: "https://open.spotify.com/track/5WyztkrPv5Qvlqqqv3PJgi",
       content: () => {
         return (
           <p>
@@ -25,7 +25,7 @@ export default function SpotifyCards(locale: Locales) {
       title: "Make You Forget",
       src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1741561627/make-you-forget_lr2zaa.jpg",
       ctaText: "Play",
-      ctaLink: "https://open.spotify.com/track/your-make-you-forget-id",
+      ctaLink: "https://open.spotify.com/track/0hU8LbLQxyRTE6X3fGpsez",
       content: () => {
         return (
           <p>
@@ -42,7 +42,7 @@ export default function SpotifyCards(locale: Locales) {
       title: "High Stakes",
       src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1741561627/high-stakes_unhgj4.jpg",
       ctaText: "Play",
-      ctaLink: "https://open.spotify.com/track/your-high-stakes-id",
+      ctaLink: "https://open.spotify.com/track/78lWp4Ca7QJbACeYqQOThy",
       content: () => {
         return (
           <p>
@@ -60,7 +60,7 @@ export default function SpotifyCards(locale: Locales) {
       title: "Anomaly",
       src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1741561626/anomaly_tzfteu.jpg",
       ctaText: "Play",
-      ctaLink: "https://open.spotify.com/track/your-anomaly-id",
+      ctaLink: "https://open.spotify.com/track/7MC6fSCNSvQa4m7pQLq7qd",
       content: () => {
         return (
           <p>
@@ -77,7 +77,7 @@ export default function SpotifyCards(locale: Locales) {
       title: "Injection",
       src: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1741561626/injection_czdxsi.jpg",
       ctaText: "Play",
-      ctaLink: "https://open.spotify.com/track/your-injection-id",
+      ctaLink: "https://open.spotify.com/track/6GnVA5dNhXl4YF3NhRhftr",
       content: () => {
         return (
           <p>

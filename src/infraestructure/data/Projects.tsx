@@ -2,29 +2,82 @@ import { LocalProjectItem } from "../interfaces/project";
 
 const PROJECT_DATA: LocalProjectItem[] = [
   {
-    title: "E-commerce Backend",
-    projectId: "1",
+    title: "Kia Argentina",
+    projectId: "10",
+    pinned: true,
     description: {
-      en: "Check out my e-commerce backend, complete with comprehensive Postman documentation.",
-      es: "Consultá mi backend de comercio electrónico, completo con documentación exhaustiva de Postman.",
+      en: "I had the opportunity to work on the official Kia Argentina website. A high-performance site built to showcase their vehicle lineup, featuring a sleek design, smooth transitions, and a premium user experience that reflects the brand's identity.",
+      es: "Tuve la oportunidad de trabajar en el sitio web oficial de Kia Argentina. Un sitio de alto rendimiento construido para mostrar su línea de vehículos, con un diseño elegante, transiciones fluidas y una experiencia de usuario premium que refleja la identidad de la marca.",
     },
-    url: "https://github.com/benjini123/dwf-m9-desafio-final",
-    github: "https://github.com/benjini123/dwf-m9-desafio-final",
-    date: "24 dic 2022",
+    url: "https://www.kia.com.ar/",
+    github: "",
+    date: "13 mar 2025",
     images: {
-      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/POSTMAN_aqufhj.png",
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774299032/Screenshot_2026-03-23_at_5.50.22_PM_duqyd8.png",
       light:
-        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/POSTMAN_aqufhj.png",
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774299062/Screenshot_2026-03-23_at_5.50.56_PM_tpdtni.png",
     },
     techStack: [
       "React",
       "TypeScript",
       "Next.js",
-      "Postman",
       "GitHub",
       "Vercel",
-      "Algolia",
-      "Airtable",
+      "Tailwind",
+      "CSS3",
+      "HTML5",
+    ],
+  },
+  {
+    title: "Dispromed Comercial",
+    projectId: "11",
+    description: {
+      en: "I developed the website for Dispromed Comercial, a leading medical supplies distributor in Argentina. The highlight of this project was engineering a sophisticated product filtering system — a multi-layered search engine with real-time filtering by category, subcategory, brand, and keyword, with instant results and smooth transitions. Combined with a responsive catalog, CMS integration, and a clean UI designed to convey trust in the healthcare industry.",
+      es: "Desarrollé el sitio web de Dispromed Comercial, un distribuidor líder de insumos médicos en Argentina. Lo más destacado de este proyecto fue desarrollar un sofisticado sistema de filtrado de productos — un motor de búsqueda multicapa con filtrado en tiempo real por categoría, subcategoría, marca y palabra clave, con resultados instantáneos y transiciones fluidas. Combinado con un catálogo responsive, integración con CMS y una UI limpia diseñada para transmitir confianza en la industria de la salud.",
+    },
+    url: "https://dispromedcomercial.com.ar/",
+    github: "",
+    date: "13 mar 2025",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303290/Screenshot_2026-03-23_at_7.01.23_PM_uirjcc.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303256/Screenshot_2026-03-23_at_7.00.47_PM_ereij9.png",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "GitHub",
+      "Vercel",
+      "Tailwind",
+      "CSS3",
+      "HTML5",
+    ],
+  },
+  {
+    title: "ADN Producciones",
+    projectId: "9",
+    description: {
+      en: "I built a website for ADN Producciones, an audiovisual production company based in Argentina. The site showcases their portfolio of work and services, featuring a modern design with smooth animations and a clean layout.",
+      es: "Desarrollé un sitio web para ADN Producciones, una productora audiovisual con base en Argentina. El sitio muestra su portafolio de trabajo y servicios, con un diseño moderno, animaciones fluidas y un layout limpio.",
+    },
+    url: "https://www.adnproducciones.com.ar/",
+    github: "",
+    date: "13 mar 2025",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774302951/Screenshot_2026-03-23_at_6.55.43_PM_sllxjo.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774296957/Screenshot_2026-03-23_at_5.14.06_PM_fluzub.png",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "GitHub",
+      "Vercel",
+      "Tailwind",
+      "CSS3",
+      "HTML5",
     ],
   },
   {
@@ -92,10 +145,9 @@ const PROJECT_DATA: LocalProjectItem[] = [
       en: "Post Cosecha was one of those projects undertaken solo. With little information from the client and much room for imagination, this freedom allowed me to express myself and create a unique style. The only expense incurred by the client was a video for the cover.",
       es: "Post Cosecha fue uno de esos proyectos que uno hace en solitario. Con poca información del cliente y mucho lugar a imaginación, esta libertad me permitió expresarme y crear un estilo único. El único gasto a cargo del cliente fue un video para la portada.",
     },
-    pinned: true,
     url: "https://www.postcosechasrl.com.ar/",
     github: "https://github.com/benjahenley/post-cosecha",
-    date: "17 nov 2024",
+    date: "17 nov 2025",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1732111030/portfolio-24/projects/POST_COSECHA_vqctvl.png",
       light:

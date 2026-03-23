@@ -100,7 +100,10 @@ export default function RightBar({ locale }: Props) {
         </div>
 
         {/* User Activity Section */}
-        <RecentActivity title={people.title} locale={locale} />
+        <RecentActivity
+          title={locale === "en" ? "Recent Activity" : "Actividad reciente"}
+          locale={locale}
+        />
       </div>
     </>
   );

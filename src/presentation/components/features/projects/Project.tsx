@@ -40,12 +40,12 @@ function Project({
 
   return (
     <div className={className}>
-      <article className=" transition-all duration-200 border-b border-slate-300 dark:border-gray-600 px-4 py-3  hover:bg-gray-100 dark:hover:bg-slate-700">
+      <article className="transition-all duration-200 border-b px-4 py-3 border-slate-300 dark:border-gray-600">
         {projectData.pinned && (
           <div className="flex items-center gap-2 mb-2">
-            <MdPushPin className="text-xs text-gray-500" />
-            <p className="text-xs">
-              {locale === "es" ? "Proyecto Pinneado" : "Pinned Project"}
+            <MdPushPin className="text-xs text-violet-400 dark:text-emerald-500" />
+            <p className="text-xs text-violet-500 dark:text-emerald-400 font-medium">
+              {locale === "es" ? "Proyecto Destacado" : "Featured Project"}
             </p>
           </div>
         )}
@@ -59,12 +59,29 @@ function Project({
           </div>
         </div>
         <TextBase className="mb-4 ">{projectData.description[locale]}</TextBase>
-        <div className="grid gap-4 group">
-          {projectData.images && (
+        <div className="grid gap-4">
+          {projectData.images && projectData.images.dark !== projectData.images.light ? (
+            <div className="grid grid-cols-2 gap-2">
+              {[projectData.images.dark, projectData.images.light].map((src, i) => (
+                <div key={i} className="relative group overflow-hidden rounded-lg">
+                  <img
+                    src={src}
+                    alt={projectData.title}
+                    className="w-full h-auto transition-transform duration-200 group-hover:scale-105"
+                  />
+                  <ProjectLinkInteractions
+                    url={projectData.url}
+                    github={projectData.github}
+                    imageSrc={src}
+                  />
+                </div>
+              ))}
+            </div>
+          ) : projectData.images && (
             <div className="relative group overflow-hidden rounded-lg">
               <img
                 src={imageUrl}
-                alt={imageUrl}
+                alt={projectData.title}
                 className="w-full h-auto transition-transform duration-200 group-hover:scale-105"
               />
               <ProjectLinkInteractions

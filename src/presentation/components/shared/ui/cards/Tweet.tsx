@@ -232,9 +232,9 @@ const Tweet: React.FC<TweetProps> = ({
                 {formattedDate}
               </p>
             </div>
-            <p className="mt-1 text-gray-500 dark:text-gray-200 py-2">
+            <div className="mt-1 text-gray-500 dark:text-gray-200 py-2">
               {content}
-            </p>
+            </div>
 
             {mediaUrl && (
               <div className="mt-3 rounded-lg overflow-hidden">

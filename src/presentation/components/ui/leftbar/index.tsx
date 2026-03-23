@@ -105,7 +105,7 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
     const toggleMobileMenu = () => {
       console.log(
         "toggleMobileMenu called in Leftbar component",
-        isMobileMenuOpen
+        isMobileMenuOpen,
       );
       setIsMobileMenuOpen(!isMobileMenuOpen);
     };
@@ -141,8 +141,19 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
             <div
               className="relative border-b xl:border-none px-6 2xl:px-4 border-gray-300 dark:border-slate-600 md:flex-col xl:flex-row flex items-center gap-2 justify-start md:py-4 md:pb-8 xl:py-2"
               style={{ width: "inherit" }}>
-              <div className="text-gray-800 dark:text-white text-5xl md:text-5xl lg:text-7xl xl:text-8xl cursor-pointer flex items-center justify-center 2xl:text-8xl">
-                <Link href="/">BH</Link>
+              <div className="cursor-pointer flex items-center justify-center">
+                <Link href="/">
+                  <img
+                    src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303693/Frame_11_4_k0s33i.png"
+                    alt="Benja Henley"
+                    className="h-10 w-auto block xl:hidden"
+                  />
+                  <img
+                    src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303695/Frame_9_1_skjkbz.png"
+                    alt="Benja Henley"
+                    className="h-14 w-auto hidden xl:block"
+                  />
+                </Link>
               </div>
             </div>
             <div
@@ -170,9 +181,25 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
               })}
               <LanguageSelect
                 locale={locale}
-                isOpen={dropdownOption}></LanguageSelect>
-              <ThemeSelect locale={locale} />
-              <SocialsSelect locale={locale} />
+                isOpen={openDropdown === "idioma"}
+                onOpen={() =>
+                  setOpenDropdown(openDropdown === "idioma" ? null : "idioma")
+                }
+              />
+              <ThemeSelect
+                locale={locale}
+                isOpen={openDropdown === "tema"}
+                onOpen={() =>
+                  setOpenDropdown(openDropdown === "tema" ? null : "tema")
+                }
+              />
+              <SocialsSelect
+                locale={locale}
+                isOpen={openDropdown === "social"}
+                onOpen={() =>
+                  setOpenDropdown(openDropdown === "social" ? null : "social")
+                }
+              />
             </div>
             <div ref={containerRef}>
               {options && <AuthOptions setOptions={setOptions}></AuthOptions>}
@@ -215,12 +242,16 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
                   <div className="flex flex-col justify-between h-full w-full">
                     <div className="px-4 border-b border-gray-300 dark:border-slate-600 flex items-center gap-2 justify-between py-4">
                       <span className="dark:text-white text-5xl cursor-pointer py-2 flex flex-row justify-between items-center w-full">
-                        <div className="text-gray-800 dark:text-white flex items-center justify-center">
+                        <div className="flex items-center justify-center">
                           <Link
                             href="/"
-                            className="text-5xl cursor-pointer"
+                            className="cursor-pointer"
                             onClick={closeMobileMenu}>
-                            BH
+                            <img
+                              src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303693/Frame_11_4_k0s33i.png"
+                              alt="Benja Henley"
+                              className="w-14 h-auto"
+                            />
                           </Link>
                         </div>
                         <RxCrossCircled
@@ -247,7 +278,7 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
                           isOpen={openDropdown === "idioma"}
                           onOpen={() =>
                             setOpenDropdown(
-                              openDropdown === "idioma" ? null : "idioma"
+                              openDropdown === "idioma" ? null : "idioma",
                             )
                           }
                         />
@@ -256,7 +287,7 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
                           isOpen={openDropdown === "tema"}
                           onOpen={() =>
                             setOpenDropdown(
-                              openDropdown === "tema" ? null : "tema"
+                              openDropdown === "tema" ? null : "tema",
                             )
                           }
                         />
@@ -265,7 +296,7 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
                           isOpen={openDropdown === "social"}
                           onOpen={() =>
                             setOpenDropdown(
-                              openDropdown === "social" ? null : "social"
+                              openDropdown === "social" ? null : "social",
                             )
                           }
                         />
@@ -289,7 +320,7 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 Leftbar.displayName = "Leftbar";

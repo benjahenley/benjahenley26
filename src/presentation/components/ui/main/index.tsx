@@ -12,7 +12,8 @@ import {
   FaExternalLinkSquareAlt,
   FaLink,
 } from "react-icons/fa";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import dynamic from "next/dynamic";
 import { PiLinkSimpleBold } from "react-icons/pi";
 import { IoMdClose } from "react-icons/io";
@@ -48,6 +49,8 @@ type Props = {
   locale: Locales;
 };
 
+const VALID_TABS = ["feed", "about", "projects", "skills"];
+
 export default function HomeComp({ locale }: Props) {
   const [section, setSection] = useAtom(feedOptions);
   const home = contents[locale]?.pages?.home || contents["es"].pages.home;
@@ -57,6 +60,36 @@ export default function HomeComp({ locale }: Props) {
   const [isFollowing, setIsFollowing] = useAtom(isFollowingAtom);
   const [followersCount, setFollowersCount] = useAtom(followersCountAtom);
   const [followingCount, setFollowingCount] = useAtom(followingCountAtom);
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Sync URL param → state on mount
+  useEffect(() => {
+    const tab = searchParams.get("tab");
+    if (tab && VALID_TABS.includes(tab)) {
+      setSection(tab);
+    }
+  }, []);
+
+  // Update URL when section changes
+  const handleSetSection = useCallback(
+    (newSection: string) => {
+      setSection(newSection);
+      const params = new URLSearchParams(searchParams.toString());
+      if (newSection === "feed") {
+        params.delete("tab");
+      } else {
+        params.set("tab", newSection);
+      }
+      const query = params.toString();
+      router.replace(`${pathname}${query ? `?${query}` : ""}`, {
+        scroll: false,
+      });
+    },
+    [searchParams, pathname, router, setSection]
+  );
 
   // Function to toggle the mobile menu directly through the ref
   const toggleMobileMenu = () => {
@@ -202,7 +235,7 @@ export default function HomeComp({ locale }: Props) {
               locale={locale}
               section={section}
               setSection={(newSection: string) =>
-                setSection(newSection)
+                handleSetSection(newSection)
               }></OptionsMenu>
           </header>
           <section className="bg-white dark:bg-[#1f2937] dark:text-white w-full mx-auto z-0 ">
