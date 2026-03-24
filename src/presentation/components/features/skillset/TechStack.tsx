@@ -50,7 +50,7 @@ export const TechStack = ({ textContent }: { textContent: any }) => {
           <div
             key={index}
             style={tiltStyle}
-            className={`w-full lg:w-1/2 max-w-xs shadow-md p-4 border border-transparent rounded-lg hover:border-white/20 hover:shadow-lg hover:shadow-current/20 bg-gradient-to-br ${
+            className={`w-full lg:w-1/2 lg:max-w-xs shadow-md p-4 border border-transparent rounded-lg hover:border-white/20 hover:shadow-lg hover:shadow-current/20 bg-gradient-to-br ${
               category.gradient
             } opacity-80 hover:opacity-100 transition-all duration-300 transform ${
               isSingleColumn

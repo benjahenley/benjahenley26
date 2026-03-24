@@ -115,10 +115,10 @@ function ProjectLinkInteractions({
       ],
       pswpModule: () => import("photoswipe"),
       // Enhanced options
-      showHideAnimationType: "zoom",
+      showHideAnimationType: "fade",
       initialZoomLevel: "fit", // 'fit' ensures the image fits in the viewport
-      secondaryZoomLevel: 2,
-      maxZoomLevel: 4,
+      secondaryZoomLevel: 1.2,
+      maxZoomLevel: 1.5,
       padding: { top: 20, bottom: 20, left: 20, right: 20 },
       bgOpacity: 0.85,
       wheelToZoom: true,

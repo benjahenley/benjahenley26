@@ -61,13 +61,13 @@ function Project({
         <TextBase className="mb-4 ">{projectData.description[locale]}</TextBase>
         <div className="grid gap-4">
           {projectData.images && projectData.images.dark !== projectData.images.light ? (
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[projectData.images.dark, projectData.images.light].map((src, i) => (
                 <div key={i} className="relative group overflow-hidden rounded-lg">
                   <img
                     src={src}
                     alt={projectData.title}
-                    className="w-full h-auto transition-transform duration-200 group-hover:scale-105"
+                    className="w-full h-auto transition-transform duration-200 md:group-hover:scale-105"
                   />
                   <ProjectLinkInteractions
                     url={projectData.url}
@@ -82,7 +82,7 @@ function Project({
               <img
                 src={imageUrl}
                 alt={projectData.title}
-                className="w-full h-auto transition-transform duration-200 group-hover:scale-105"
+                className="w-full h-auto transition-transform duration-200 md:group-hover:scale-105"
               />
               <ProjectLinkInteractions
                 url={projectData.url}

@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") || "";
+
 export const fetchTweets = async (language: string, category: string) => {
   try {
-    const response = await axios.get("http://localhost:10002/tweets", {
+    const response = await axios.get(`${API_BASE_URL}/api/tweets`, {
       params: {
         language,
         category,

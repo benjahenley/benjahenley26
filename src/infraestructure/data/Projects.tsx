@@ -11,7 +11,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     },
     url: "https://www.kia.com.ar/",
     github: "",
-    date: "13 mar 2025",
+    date: "julio 2025",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774299032/Screenshot_2026-03-23_at_5.50.22_PM_duqyd8.png",
       light:
@@ -36,9 +36,9 @@ const PROJECT_DATA: LocalProjectItem[] = [
       en: "I built a custom backoffice for Bodega Salentein, one of Argentina's most prestigious wineries located in Valle de Uco, Mendoza. The platform gives their team full control to manage and update the content of their public-facing website — including wine collections, events, and editorial sections — without touching a line of code. The focus was on building an intuitive, role-based admin experience that matches the brand's high standards while keeping the workflow simple for non-technical users.",
       es: "Desarrollé un backoffice personalizado para Bodega Salentein, una de las bodegas más prestigiosas de Argentina, ubicada en el Valle de Uco, Mendoza. La plataforma le da a su equipo control total para gestionar y actualizar el contenido de su sitio web público — incluyendo colecciones de vinos, eventos y secciones editoriales — sin tocar una línea de código. El foco estuvo en construir una experiencia de administración intuitiva, con roles y permisos, que esté a la altura de los estándares de la marca y simplifique el flujo de trabajo para usuarios no técnicos.",
     },
-    url: "https://www.bodegasalentein.com/",
+    url: "",
     github: "",
-    date: "24 mar 2026",
+    date: "enero 2026",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774363710/Screenshot_2026-03-24_at_11.48.25_AM_burb4t.png",
       light:
@@ -64,7 +64,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     },
     url: "https://dispromedcomercial.com.ar/",
     github: "",
-    date: "13 mar 2025",
+    date: "febrero 2026",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303290/Screenshot_2026-03-23_at_7.01.23_PM_uirjcc.png",
       light:
@@ -90,7 +90,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     },
     url: "https://www.adnproducciones.com.ar/",
     github: "",
-    date: "13 mar 2025",
+    date: "noviembre 2025",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774302951/Screenshot_2026-03-23_at_6.55.43_PM_sllxjo.png",
       light:
@@ -116,7 +116,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     },
     url: "https://ibijetrent.com/",
     github: "https://github.com/benjahenley/renta-motos-backend",
-    date: "25 jul 2024",
+    date: "abril 2025",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073225/portfolio-24/projects/IBIJET_itywxp.png",
       light:
@@ -145,7 +145,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     },
     url: "https://crossup-challenge.vercel.app/",
     github: "https://github.com/benjahenley/crossup-challenge",
-    date: "12 dic 2024",
+    date: "noviembre 2024",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739882132/portfolio-24/projects/crossup-challenge_af6auh.png",
       light:
@@ -174,7 +174,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     },
     url: "https://www.postcosechasrl.com.ar/",
     github: "https://github.com/benjahenley/post-cosecha",
-    date: "17 nov 2025",
+    date: "octubre 2025",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1732111030/portfolio-24/projects/POST_COSECHA_vqctvl.png",
       light:
@@ -204,7 +204,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     },
     url: "https://exposanjuan.com.ar/",
     github: "",
-    date: "23 mar 2024",
+    date: "agosto 2024",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1741563043/Screenshot_2025-03-09_at_8.28.04_PM_ajedqp.png",
       light:
@@ -234,7 +234,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     },
     url: "",
     github: "",
-    date: "24 jun 2024",
+    date: "enero 2024",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073227/portfolio-24/projects/WIM-2_r9xouw.png",
       light:
@@ -263,7 +263,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     },
     url: "https://oroplataycobre.com.ar/",
     github: "",
-    date: "12 nov 2023",
+    date: "noviembre 2023",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1739294422/portfolio-24/projects/GOLD_ecoxkg.png",
       light:
@@ -291,7 +291,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     },
     url: "https://www.buenosairesvision.tur.ar",
     github: "https://github.com/benjahenley/turismo-ba",
-    date: "06 ago 2023",
+    date: "mayo 2023",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1730073226/portfolio-24/projects/BAV-DARK_ltkj43.png",
       light:
