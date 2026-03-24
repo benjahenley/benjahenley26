@@ -32,7 +32,7 @@ type Props = {
 };
 
 export default function RightBar({ locale }: Props) {
-  const { trends, people } =
+  const { trends } =
     contents[locale]?.ui?.twitter || contents["es"].ui.twitter;
   const [trendsBox, setTrendsBox] = useState(false);
   const [displayedTrends, setDisplayedTrends] = useState<
