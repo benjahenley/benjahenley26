@@ -143,15 +143,29 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
               style={{ width: "inherit" }}>
               <div className="cursor-pointer flex items-center justify-center">
                 <Link href="/">
+                  {/* Small (md): dark logo in light mode */}
+                  <img
+                    src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774301634/Frame_11_2_xn8ofr.png"
+                    alt="Benja Henley"
+                    className="h-10 w-auto block xl:hidden dark:hidden"
+                  />
+                  {/* Small (md): white logo in dark mode */}
                   <img
                     src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303693/Frame_11_4_k0s33i.png"
                     alt="Benja Henley"
-                    className="h-10 w-auto block xl:hidden"
+                    className="h-10 w-auto hidden dark:block xl:dark:hidden"
                   />
+                  {/* Large (xl): dark logo in light mode */}
+                  <img
+                    src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774301869/Frame_9_rtvavr.png"
+                    alt="Benja Henley"
+                    className="h-14 w-auto hidden xl:block xl:dark:hidden"
+                  />
+                  {/* Large (xl): white logo in dark mode */}
                   <img
                     src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303695/Frame_9_1_skjkbz.png"
                     alt="Benja Henley"
-                    className="h-14 w-auto hidden xl:block"
+                    className="h-14 w-auto hidden xl:dark:block"
                   />
                 </Link>
               </div>
@@ -248,9 +262,14 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
                             className="cursor-pointer"
                             onClick={closeMobileMenu}>
                             <img
+                              src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774301634/Frame_11_2_xn8ofr.png"
+                              alt="Benja Henley"
+                              className="w-14 h-auto dark:hidden"
+                            />
+                            <img
                               src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303693/Frame_11_4_k0s33i.png"
                               alt="Benja Henley"
-                              className="w-14 h-auto"
+                              className="w-14 h-auto hidden dark:block"
                             />
                           </Link>
                         </div>

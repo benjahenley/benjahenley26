@@ -116,9 +116,9 @@ export const ThemeSelect = ({ locale, isOpen, onOpen }: Props) => {
       <button
         ref={buttonRef}
         onClick={onOpen}
-        className="group px-4 py-3 md:py-4 rounded-lg text-gray-800 dark:text-white hover:bg-gray-200/40 dark:hover:bg-slate-700/30 border-l-2 border-transparent dark:hover:border-emerald-400 hover:border-violet-500 transition-all duration-200 cursor-pointer flex flex-row justify-between md:justify-center xl:justify-between items-center w-full">
+        className="group px-4 py-3 md:py-4 rounded-lg text-gray-800 dark:text-white hover:bg-gray-200/40 dark:hover:bg-slate-700/30 border-l-2 border-transparent hover:border-violet-400/70 dark:hover:border-green-500/70 transition-all duration-200 cursor-pointer flex flex-row justify-between md:justify-center xl:justify-between items-center w-full">
         <div className="flex flex-row items-center gap-4">
-          <div className="text-xl md:text-2xl lg:text-3xl xl:text-4xl transition-transform transform group-hover:scale-105 ">
+          <div className="text-xl md:text-2xl lg:text-3xl xl:text-4xl transition-transform transform group-hover:scale-110">
             {isDarkMode ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
           </div>
           <p className="uppercase text-md md:hidden xl:block xl:text-lg">

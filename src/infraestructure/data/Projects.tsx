@@ -29,6 +29,33 @@ const PROJECT_DATA: LocalProjectItem[] = [
     ],
   },
   {
+    title: "Salentein Bodega",
+    projectId: "12",
+    pinned: true,
+    description: {
+      en: "I built a custom backoffice for Bodega Salentein, one of Argentina's most prestigious wineries located in Valle de Uco, Mendoza. The platform gives their team full control to manage and update the content of their public-facing website — including wine collections, events, and editorial sections — without touching a line of code. The focus was on building an intuitive, role-based admin experience that matches the brand's high standards while keeping the workflow simple for non-technical users.",
+      es: "Desarrollé un backoffice personalizado para Bodega Salentein, una de las bodegas más prestigiosas de Argentina, ubicada en el Valle de Uco, Mendoza. La plataforma le da a su equipo control total para gestionar y actualizar el contenido de su sitio web público — incluyendo colecciones de vinos, eventos y secciones editoriales — sin tocar una línea de código. El foco estuvo en construir una experiencia de administración intuitiva, con roles y permisos, que esté a la altura de los estándares de la marca y simplifique el flujo de trabajo para usuarios no técnicos.",
+    },
+    url: "https://www.bodegasalentein.com/",
+    github: "",
+    date: "24 mar 2026",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774363710/Screenshot_2026-03-24_at_11.48.25_AM_burb4t.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774363737/Screenshot_2026-03-24_at_11.48.50_AM_emmujr.png",
+    },
+    techStack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "GitHub",
+      "Vercel",
+      "Tailwind",
+      "CSS3",
+      "HTML5",
+    ],
+  },
+  {
     title: "Dispromed Comercial",
     projectId: "11",
     description: {
