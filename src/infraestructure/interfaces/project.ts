@@ -27,6 +27,8 @@ export interface ApiProjectItemResponse {
 
 export interface LocalProjectItem {
   pinned?: boolean;
+  /** When true, shows a single image that switches with the theme (light/dark) instead of the side-by-side grid. */
+  themeImage?: boolean;
   title: string;
   projectId: string;
   description: {

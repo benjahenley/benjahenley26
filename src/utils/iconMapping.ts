@@ -6,8 +6,19 @@ import {
   FaGithub,
   FaAlgolia,
   FaDocker,
+  FaPhp,
 } from "react-icons/fa";
-import { SiTypescript, SiPostman, SiStrapi, SiAirtable } from "react-icons/si";
+import {
+  SiTypescript,
+  SiPostman,
+  SiStrapi,
+  SiAirtable,
+  SiAstro,
+  SiGreensock,
+  SiClaude,
+  SiWordpress,
+  SiWoocommerce,
+} from "react-icons/si";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoFirebase, IoLogoVercel } from "react-icons/io5";
 import { BsBootstrapFill } from "react-icons/bs";
@@ -24,11 +35,17 @@ const iconMapping: any = {
   Postman: SiPostman,
   Strapi: SiStrapi,
   Airtable: SiAirtable,
+  Astro: SiAstro,
+  GSAP: SiGreensock,
   "Next.js": RiNextjsFill,
   Tailwind: RiTailwindCssFill,
   Firebase: IoLogoFirebase,
   Vercel: IoLogoVercel,
   Bootstrap: BsBootstrapFill,
+  Claude: SiClaude,
+  WordPress: SiWordpress,
+  WooCommerce: SiWoocommerce,
+  PHP: FaPhp,
 };
 
 export default iconMapping;

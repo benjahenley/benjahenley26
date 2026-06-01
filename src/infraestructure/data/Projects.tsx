@@ -2,6 +2,59 @@ import { LocalProjectItem } from "../interfaces/project";
 
 const PROJECT_DATA: LocalProjectItem[] = [
   {
+    title: "Rubric",
+    projectId: "14",
+    description: {
+      en: "I designed and developed the website for Rubric, a collaborative advertising agency that assembles senior talent specifically for each client project. The site reflects their bold creative identity, with striking visuals and a clean presentation of their six core services — advertising, branding, strategy, design, activations, and content. Built with React and Tailwind CSS, and crafted with Claude as a development partner for a fast, polished result.",
+      es: "Diseñé y desarrollé el sitio web de Rubric, una agencia de publicidad colaborativa que arma equipos de talento senior específicamente para cada proyecto de sus clientes. El sitio refleja su identidad creativa audaz, con una estética impactante y una presentación limpia de sus seis servicios principales — publicidad, branding, estrategia, diseño, activaciones y contenido. Construido con React y Tailwind CSS, y desarrollado con Claude como partner de desarrollo para lograr un resultado rápido y pulido.",
+    },
+    url: "https://www.rubric.com.ar/",
+    github: "",
+    date: "junio 2026",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780333837/Screenshot_2026-06-01_at_2.10.04_PM_r9jogw.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780333837/Screenshot_2026-06-01_at_2.10.04_PM_r9jogw.png",
+    },
+    techStack: ["Claude", "React", "Tailwind"],
+  },
+  {
+    title: "Red Tachyon Helios",
+    projectId: "15",
+    themeImage: true,
+    description: {
+      en: "I developed the website and online store for Red Tachyon Helios, a wellness brand specializing in tachyon energy products and services. The project was built on WordPress with a fully integrated WooCommerce store, allowing them to sell their catalog of tachyon-infused products — pendants, spheres, and energy devices — and manage everything through an easy-to-use admin panel.",
+      es: "Desarrollé el sitio web y la tienda online de Red Tachyon Helios, una marca de bienestar especializada en productos y servicios de energía taquiónica. El proyecto se construyó sobre WordPress con una tienda WooCommerce totalmente integrada, permitiéndoles vender su catálogo de productos taquiónicos — colgantes, esferas y dispositivos energéticos — y gestionar todo desde un panel de administración fácil de usar.",
+    },
+    url: "https://redtachyonhelios.com/",
+    github: "",
+    date: "junio 2026",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780334002/Screenshot_2026-06-01_at_2.13.16_PM_bvgejq.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780334206/Screenshot_2026-06-01_at_2.16.42_PM_ecuuhq.png",
+    },
+    techStack: ["WordPress", "WooCommerce", "PHP"],
+  },
+  {
+    title: "GrowForce",
+    projectId: "13",
+    pinned: true,
+    description: {
+      en: "I designed and developed the website for GrowForce, a marketing and digital design agency that helps ambitious brands scale through precision strategy and creative mastery. The site features bold editorial typography, fluid GSAP-powered animations and transitions, and a high-performance build using Astro for near-instant load times. The result is a striking, conversion-focused experience that reflects the agency's premium positioning.",
+      es: "Diseñé y desarrollé el sitio web de GrowForce, una agencia de marketing y diseño digital que ayuda a marcas ambiciosas a escalar a través de estrategia de precisión y maestría creativa. El sitio se destaca por su tipografía editorial audaz, animaciones y transiciones fluidas impulsadas por GSAP, y un build de alto rendimiento con Astro para tiempos de carga casi instantáneos. El resultado es una experiencia impactante y orientada a la conversión que refleja el posicionamiento premium de la agencia.",
+    },
+    url: "https://www.growforce.agency/",
+    github: "https://github.com/benjahenley/grow-force",
+    date: "mayo 2026",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780332596/Screenshot_2026-05-29_at_2.16.47_PM_qtq3eo.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780332596/Screenshot_2026-05-29_at_2.16.47_PM_qtq3eo.png",
+    },
+    techStack: ["Astro", "GSAP", "GitHub", "CSS3", "HTML5"],
+  },
+  {
     title: "Kia Argentina",
     projectId: "10",
     pinned: true,

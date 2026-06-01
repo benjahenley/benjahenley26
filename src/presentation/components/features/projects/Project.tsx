@@ -60,7 +60,9 @@ function Project({
         </div>
         <TextBase className="mb-4 ">{projectData.description[locale]}</TextBase>
         <div className="grid gap-4">
-          {projectData.images && projectData.images.dark !== projectData.images.light ? (
+          {projectData.images &&
+          !projectData.themeImage &&
+          projectData.images.dark !== projectData.images.light ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {[projectData.images.dark, projectData.images.light].map((src, i) => (
                 <div key={i} className="relative group overflow-hidden rounded-lg">
