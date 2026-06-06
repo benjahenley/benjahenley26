@@ -37,7 +37,7 @@ export const SoftSkills = ({ textContent }: { textContent: any }) => {
                 className={`flex-shrink-0 w-14 h-14 inline-flex items-center justify-center rounded-xl transition-all cursor-pointer shadow-md
                     ${
                       activeIndex === index
-                        ? "bg-gradient-to-br from-blue-500 to-indigo-500 dark:from-emerald-500 dark:to-emerald-700"
+                        ? "bg-gradient-to-br from-indigo-500 to-indigo-700 dark:from-emerald-500 dark:to-emerald-700"
                         : "bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
                     }`}>
                 <span

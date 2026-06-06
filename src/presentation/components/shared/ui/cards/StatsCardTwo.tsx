@@ -150,18 +150,13 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
   const [isMobileDetailOpen, setIsMobileDetailOpen] = useState<number | null>(
     null
   );
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
-  // Track scroll position to detect if navbar is visible
+  // Close the open toast/panel while the user scrolls
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // If scrolling down, navbar is likely hidden
-      // If scrolling up, navbar is likely visible
-      setIsNavbarVisible(currentScrollY <= lastScrollY || currentScrollY < 50);
 
       // Close mobile panel when scrolling
       if (
@@ -192,68 +187,11 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
     }
   }, [isMobileDetailOpen]);
 
-  // Generate different animation properties for each stat dot
-  const getAnimationProps = (statIndex: number, dotIndex: number) => {
-    // Create deterministic but varied animation properties
-    const seed = statIndex * 10 + dotIndex;
-
-    // Duration between 1.5s and 2.5s
-    const duration = 1.5 + (seed % 11) / 10;
-
-    // Delay between 3s and 15s (long recharge times)
-    const delay = 10 + (seed % 13) * 0.9;
-
-    // Different animation names based on position
-    const animation =
-      seed % 3 === 0
-        ? "pulse-expand"
-        : seed % 3 === 1
-        ? "pulse-contract"
-        : "pulse-both";
-
-    return `${animation} ${duration}s ease-in-out ${delay}s infinite`;
-  };
-
   const title = "DEV STATS";
 
   return (
-    <div className="p-4 relative m-auto max-w-4xl mt-10 flex flex-col justify-center items-end xl:flex-row-reverse text-gray-800 dark:text-gray-200 rounded-xl">
+    <div className="p-4 relative m-auto max-w-4xl mt-10 text-gray-800 dark:text-gray-200">
       <style jsx global>{`
-        @keyframes pulse-expand {
-          0%,
-          100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.15);
-          }
-        }
-
-        @keyframes pulse-contract {
-          0%,
-          100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(0.9);
-          }
-        }
-
-        @keyframes pulse-both {
-          0% {
-            transform: scale(1);
-          }
-          30% {
-            transform: scale(1.12);
-          }
-          60% {
-            transform: scale(0.94);
-          }
-          100% {
-            transform: scale(1);
-          }
-        }
-
         @keyframes float {
           0%,
           100% {
@@ -295,22 +233,25 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
         }
         isVisible={hoveredStat !== null && window.innerWidth >= 1280}
       />
-      <div
-        className="m-auto xl:m-0 relative h-full w-full max-w-md md:h-auto  overflow-hidden flex items-end"
-        style={{
-          height: "calc(14rem + 30vw)",
-          maxHeight: "450px",
-        }}>
-        <Image
-          src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1740863854/Adobe_Express_-_file_hiawno.png"
-          alt="Profile Picture"
-          layout="fill"
-          className="md:rounded-r-xl xl:scale-105 md:rounded-none rounded-b-xl object-cover transition-transform duration-700 hover:scale-105"
-        />
-      </div>
+      {/* Unified split card: one surface owns the rounding, border, shadow
+          and overflow clip so the photo and the stats read as a single object. */}
+      <div className="relative flex flex-col w-full xl:flex-row-reverse overflow-hidden rounded-2xl border border-purple-300/50 dark:border-emerald-500/20 shadow-2xl shadow-purple-400/20 dark:shadow-emerald-900/30">
+        <div
+          className="relative w-full xl:w-1/2 md:h-auto overflow-hidden flex items-end"
+          style={{
+            height: "calc(14rem + 30vw)",
+            maxHeight: "450px",
+          }}>
+          <Image
+            src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1740863854/Adobe_Express_-_file_hiawno.png"
+            alt="Profile Picture"
+            layout="fill"
+            className="object-cover transition-transform duration-700 hover:scale-105"
+          />
+        </div>
 
       {/* Content Container with Gradient Background */}
-      <div className="m-auto xl:m-0 flex flex-col justify-between max-w-md w-full h-full  p-6 bg-gradient-to-br from-purple-100 via-purple-200 to-gray-100  dark:from-slate-950 dark:via-slate-900 dark:to-gray-950 text-white rounded-lg xl:rounded-none xl:rounded-l-lg relative ">
+      <div className="flex flex-col justify-between w-full xl:w-1/2 h-full p-6 bg-gradient-to-br from-purple-100 via-purple-200 to-gray-100 dark:from-slate-950 dark:via-slate-900 dark:to-gray-950 text-white relative">
         {/* Decorative Elements */}
         <div className="absolute top-5 right-5 w-32 h-32 rounded-full bg-gradient-to-br dark:from-emerald-500/10 dark:to-green-500/5 blur-2xl from-blue-500/30 to-indigo-500/5"></div>
 
@@ -380,16 +321,10 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
                         w-3 h-3 rounded-sm
                         ${
                           dotIndex < stat.score
-                            ? "bg-gradient-to-br from-indigo-700 to-blue-900 dark:from-green-300 dark:to-emerald-500 group-hover:scale-110 group-hover:rotate-[360deg] dark:shadow-[0_0_8px_rgba(52,211,153,0.5)] shadow-[0_0_8px_rgba(192,38,211,0.5)]"
+                            ? "bg-gradient-to-br from-indigo-700 to-blue-900 dark:from-green-300 dark:to-emerald-500 dark:shadow-[0_0_8px_rgba(52,211,153,0.5)] shadow-[0_0_8px_rgba(192,38,211,0.5)]"
                             : "bg-blue-300 dark:bg-gray-700/50"
                         }
                       `}
-                          style={{
-                            animation:
-                              dotIndex < stat.score
-                                ? getAnimationProps(statIndex, dotIndex)
-                                : "none",
-                          }}
                         />
                       ))}
                     </div>
@@ -436,9 +371,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
                     opacity: 0,
                     transition: { duration: 0.2 },
                   }}
-                  className={`fixed bottom-2 z-[100] left-0 right-0 flex justify-center items-center ${
-                    isNavbarVisible ? "mb-[80px] md:mb-[90px]" : "mb-[30px]"
-                  } z-[60]`}>
+                  className="fixed bottom-2 z-[100] left-0 right-0 flex justify-center items-center mb-[80px] md:mb-[90px]">
                   <div
                     className="max-w-[90%] px-5 py-3
                     bg-gradient-to-r from-violet-500/90 to-indigo-600/90 dark:from-green-500/90 dark:to-emerald-600/90 
@@ -453,6 +386,7 @@ const StatsCardTwo = ({ aboutSection, locale }: Props) => {
               )
           )}
         </AnimatePresence>
+      </div>
       </div>
     </div>
   );

@@ -19,8 +19,8 @@ export default function Skillset({ className, locale }: SkillsetProps) {
       className={`${className ?? ""} flex flex-row max-w-full overflow-hidden`}>
       <div className="w-full relative">
         {/* Decorative Elements */}
-        <div className="hidden md:block absolute -top-10 -left-10 w-40 h-40 bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-3xl z-0"></div>
-        <div className="hidden md:block absolute top-1/3 -right-10 w-60 h-60 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-3xl z-0"></div>
+        <div className="hidden md:block absolute -top-10 -left-10 w-40 h-40 bg-indigo-500/10 dark:bg-emerald-500/5 rounded-full blur-3xl z-0"></div>
+        <div className="hidden md:block absolute top-1/3 -right-10 w-60 h-60 bg-indigo-500/10 dark:bg-emerald-500/5 rounded-full blur-3xl z-0"></div>
 
         <SoftSkills textContent={textContent.softSkills} />
 

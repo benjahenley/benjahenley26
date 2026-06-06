@@ -6,23 +6,11 @@ import { FiArrowUp } from "react-icons/fi";
 
 export const ScrollToTop = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
-  // Update the scroll listener to detect navbar visibility
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
       // Show scroll button when scrolled down enough
-      setShowScrollButton(currentScrollY > 300);
-
-      // If scrolling down, navbar is likely hidden
-      // If scrolling up, navbar is likely visible
-      setIsNavbarVisible(currentScrollY <= lastScrollY || currentScrollY < 50);
-
-      lastScrollY = currentScrollY;
+      setShowScrollButton(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -46,9 +34,7 @@ export const ScrollToTop = () => {
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3 }}
           onClick={scrollToTop}
-          className={`fixed ${
-            isNavbarVisible ? "bottom-24 md:bottom-6" : "bottom-6"
-          } right-6 h-12 w-12 rounded-full 
+          className={`fixed bottom-24 md:bottom-6 right-6 h-12 w-12 rounded-full
           bg-gray-300 dark:bg-gray-600 
           shadow-lg dark:shadow-gray-900/30 
           flex items-center justify-center

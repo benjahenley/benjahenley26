@@ -2,6 +2,36 @@ import { LocalProjectItem } from "../interfaces/project";
 
 const PROJECT_DATA: LocalProjectItem[] = [
   {
+    title: "Connta",
+    projectId: "16",
+    pinned: true,
+    themeImage: true,
+    description: {
+      en: "Connta is an accounting SaaS I designed, built and shipped entirely on my own. It lets Argentine businesses issue their AFIP/ARCA electronic invoices in bulk: upload an Excel or CSV, review and edit everything in a live table, and Connta emits the whole batch against AFIP's web services, returning a valid CAE for each invoice.\n\nThe hardest part was the AFIP integration — a custom WSAA + WSFEv1 layer over AfipSDK, with encrypted per-CUIT certificate storage and full CAE generation.\n\nBuilt solo, end to end:\n• Next.js 15 frontend\n• NestJS + Prisma backend on Supabase\n• Multi-tenant certificate handling\n• MercadoPago subscriptions",
+      es: "Connta es un SaaS de contabilidad que diseñé, desarrollé y lancé completamente solo. Permite a empresas argentinas emitir sus facturas electrónicas de AFIP/ARCA por lote: subís un Excel o CSV, revisás y editás todo en una tabla en vivo, y Connta emite el lote completo contra los web services de AFIP, devolviendo un CAE válido por cada factura.\n\nLo más difícil fue la integración con AFIP — una capa propia de WSAA + WSFEv1 sobre AfipSDK, con almacenamiento encriptado de certificados por CUIT y generación completa de CAE.\n\nHecho solo, de punta a punta:\n• Frontend en Next.js 15\n• Backend en NestJS + Prisma sobre Supabase\n• Manejo multi-tenant de certificados\n• Suscripciones con MercadoPago",
+    },
+    url: "",
+    github: "https://github.com/benjahenley/connta-frontend",
+    date: "mayo 2026",
+    images: {
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780773012/Screenshot_2026-05-29_at_2.28.55_PM_tjqyzs.png",
+      light:
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780773010/Screenshot_2026-05-29_at_2.28.28_PM_ekgjc4.png",
+    },
+    techStack: [
+      "Next.js",
+      "Nest.js",
+      "TypeScript",
+      "Prisma",
+      "Supabase",
+      "PostgreSQL",
+      "AfipSDK",
+      "MercadoPago",
+      "Tailwind",
+      "Docker",
+    ],
+  },
+  {
     title: "Rubric",
     projectId: "14",
     description: {
@@ -9,7 +39,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
       es: "Diseñé y desarrollé el sitio web de Rubric, una agencia de publicidad colaborativa que arma equipos de talento senior específicamente para cada proyecto de sus clientes. El sitio refleja su identidad creativa audaz, con una estética impactante y una presentación limpia de sus seis servicios principales — publicidad, branding, estrategia, diseño, activaciones y contenido. Construido con React y Tailwind CSS, y desarrollado con Claude como partner de desarrollo para lograr un resultado rápido y pulido.",
     },
     url: "https://www.rubric.com.ar/",
-    github: "",
+    github: "https://github.com/benjahenley/rubric",
     date: "junio 2026",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780333837/Screenshot_2026-06-01_at_2.10.04_PM_r9jogw.png",
@@ -58,6 +88,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     title: "Kia Argentina",
     projectId: "10",
     pinned: true,
+    themeImage: true,
     description: {
       en: "I had the opportunity to work on the official Kia Argentina website. A high-performance site built to showcase their vehicle lineup, featuring a sleek design, smooth transitions, and a premium user experience that reflects the brand's identity.",
       es: "Tuve la oportunidad de trabajar en el sitio web oficial de Kia Argentina. Un sitio de alto rendimiento construido para mostrar su línea de vehículos, con un diseño elegante, transiciones fluidas y una experiencia de usuario premium que refleja la identidad de la marca.",
@@ -66,9 +97,9 @@ const PROJECT_DATA: LocalProjectItem[] = [
     github: "",
     date: "julio 2025",
     images: {
-      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774299032/Screenshot_2026-03-23_at_5.50.22_PM_duqyd8.png",
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780777671/Screenshot_2026-06-06_at_5.27.37_PM_wiw7rg.png",
       light:
-        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774299062/Screenshot_2026-03-23_at_5.50.56_PM_tpdtni.png",
+        "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1780777961/Screenshot_2026-06-06_at_5.32.32_PM_ugtsox.png",
     },
     techStack: [
       "React",
@@ -85,6 +116,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     title: "Salentein Bodega",
     projectId: "12",
     pinned: true,
+    themeImage: true,
     description: {
       en: "I built a custom backoffice for Bodega Salentein, one of Argentina's most prestigious wineries located in Valle de Uco, Mendoza. The platform gives their team full control to manage and update the content of their public-facing website — including wine collections, events, and editorial sections — without touching a line of code. The focus was on building an intuitive, role-based admin experience that matches the brand's high standards while keeping the workflow simple for non-technical users.",
       es: "Desarrollé un backoffice personalizado para Bodega Salentein, una de las bodegas más prestigiosas de Argentina, ubicada en el Valle de Uco, Mendoza. La plataforma le da a su equipo control total para gestionar y actualizar el contenido de su sitio web público — incluyendo colecciones de vinos, eventos y secciones editoriales — sin tocar una línea de código. El foco estuvo en construir una experiencia de administración intuitiva, con roles y permisos, que esté a la altura de los estándares de la marca y simplifique el flujo de trabajo para usuarios no técnicos.",
@@ -93,7 +125,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     github: "",
     date: "enero 2026",
     images: {
-      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774363710/Screenshot_2026-03-24_at_11.48.25_AM_burb4t.png",
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774363737/Screenshot_2026-03-24_at_11.48.50_AM_emmujr.png",
       light:
         "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774363737/Screenshot_2026-03-24_at_11.48.50_AM_emmujr.png",
     },
@@ -116,7 +148,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
       es: "Desarrollé el sitio web de Dispromed Comercial, un distribuidor líder de insumos médicos en Argentina. Lo más destacado de este proyecto fue desarrollar un sofisticado sistema de filtrado de productos — un motor de búsqueda multicapa con filtrado en tiempo real por categoría, subcategoría, marca y palabra clave, con resultados instantáneos y transiciones fluidas. Combinado con un catálogo responsive, integración con CMS y una UI limpia diseñada para transmitir confianza en la industria de la salud.",
     },
     url: "https://dispromedcomercial.com.ar/",
-    github: "",
+    github: "https://github.com/benjahenley/dispromed-comercial",
     date: "febrero 2026",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303290/Screenshot_2026-03-23_at_7.01.23_PM_uirjcc.png",
@@ -137,6 +169,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
   {
     title: "ADN Producciones",
     projectId: "9",
+    themeImage: true,
     description: {
       en: "I built a website for ADN Producciones, an audiovisual production company based in Argentina. The site showcases their portfolio of work and services, featuring a modern design with smooth animations and a clean layout.",
       es: "Desarrollé un sitio web para ADN Producciones, una productora audiovisual con base en Argentina. El sitio muestra su portafolio de trabajo y servicios, con un diseño moderno, animaciones fluidas y un layout limpio.",
@@ -145,7 +178,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
     github: "",
     date: "noviembre 2025",
     images: {
-      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774302951/Screenshot_2026-03-23_at_6.55.43_PM_sllxjo.png",
+      dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774296957/Screenshot_2026-03-23_at_5.14.06_PM_fluzub.png",
       light:
         "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774296957/Screenshot_2026-03-23_at_5.14.06_PM_fluzub.png",
     },

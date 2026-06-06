@@ -37,7 +37,7 @@ import { TbBrandReactNative } from "react-icons/tb";
 export const TECH_CATEGORIES = [
   {
     title: "Frontend",
-    gradient: "from-blue-500/80 via-cyan-500/80 to-indigo-600/80",
+    gradient: "from-indigo-400/80 via-indigo-500/80 to-indigo-700/80 dark:from-emerald-400/80 dark:via-emerald-500/80 dark:to-emerald-700/80",
     icons: [
       { icon: <FaReact />, name: "React" },
       { icon: <RiNextjsFill />, name: "Next.js" },
@@ -50,7 +50,7 @@ export const TECH_CATEGORIES = [
   },
   {
     title: "Backend & Databases",
-    gradient: "from-emerald-500/80 via-green-500/80 to-teal-600/80",
+    gradient: "from-indigo-400/80 via-indigo-500/80 to-indigo-700/80 dark:from-emerald-400/80 dark:via-emerald-500/80 dark:to-emerald-700/80",
     icons: [
       { icon: <SiPrisma />, name: "Prisma" },
       { icon: <DiPostgresql />, name: "PostgreSQL" },
@@ -64,7 +64,7 @@ export const TECH_CATEGORIES = [
   },
   {
     title: "APIs & Tools",
-    gradient: "from-purple-500/80 via-fuchsia-500/80 to-violet-600/80",
+    gradient: "from-indigo-400/80 via-indigo-500/80 to-indigo-700/80 dark:from-emerald-400/80 dark:via-emerald-500/80 dark:to-emerald-700/80",
     icons: [
       { icon: <SiPostman />, name: "Postman" },
       { icon: <SiGraphql />, name: "GraphQL" },
@@ -74,7 +74,7 @@ export const TECH_CATEGORIES = [
   },
   {
     title: "Styling",
-    gradient: "from-pink-400/80 via-rose-400/80 to-red-500/80",
+    gradient: "from-indigo-400/80 via-indigo-500/80 to-indigo-700/80 dark:from-emerald-400/80 dark:via-emerald-500/80 dark:to-emerald-700/80",
     icons: [
       { icon: <SiSass />, name: "Sass" },
       { icon: <FaCss3 />, name: "CSS3" },
@@ -84,7 +84,7 @@ export const TECH_CATEGORIES = [
   },
   {
     title: "Containerization",
-    gradient: "from-orange-400/80 via-amber-500/80 to-red-500/80",
+    gradient: "from-indigo-400/80 via-indigo-500/80 to-indigo-700/80 dark:from-emerald-400/80 dark:via-emerald-500/80 dark:to-emerald-700/80",
     icons: [
       { icon: <FaDocker />, name: "Docker" },
       { icon: <FaAws />, name: "AWS" },
@@ -93,7 +93,7 @@ export const TECH_CATEGORIES = [
   },
   {
     title: "AI Tools",
-    gradient: "from-purple-600/80 via-indigo-500/80 to-blue-500/80",
+    gradient: "from-indigo-400/80 via-indigo-500/80 to-indigo-700/80 dark:from-emerald-400/80 dark:via-emerald-500/80 dark:to-emerald-700/80",
     icons: [
       {
         icon: (
@@ -188,7 +188,7 @@ export const TECH_CATEGORIES = [
   },
   {
     title: "Mobile Development",
-    gradient: "from-teal-400/80 via-cyan-500/80 to-blue-600/80",
+    gradient: "from-indigo-400/80 via-indigo-500/80 to-indigo-700/80 dark:from-emerald-400/80 dark:via-emerald-500/80 dark:to-emerald-700/80",
     icons: [
       { icon: <TbBrandReactNative />, name: "React Native" },
       { icon: <FaSwift />, name: "Swift" },
@@ -196,7 +196,7 @@ export const TECH_CATEGORIES = [
   },
   {
     title: "Other Tools",
-    gradient: "from-gray-500/80 via-slate-500/80 to-gray-700/80",
+    gradient: "from-indigo-400/80 via-indigo-500/80 to-indigo-700/80 dark:from-emerald-400/80 dark:via-emerald-500/80 dark:to-emerald-700/80",
     icons: [
       { icon: <FaCcPaypal />, name: "PayPal" },
       { icon: <SiStrapi />, name: "Strapi" },

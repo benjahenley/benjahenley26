@@ -23,7 +23,6 @@ import { PriceText, TextBase } from "@/presentation/components/shared/ui/Texts";
 import { OptionsMenu } from "@/presentation/components/shared/ui/SectionMenu";
 import { SpinnerContainer } from "@/presentation/components/shared/feedback/SpinnerContainer";
 import { Footer } from "@/presentation/components/shared/ui/Footer";
-import NavbarMobile from "@/presentation/components/shared/ui/NavbarMobile";
 import { BoxesCore } from "@/presentation/components/shared/ui/Background-boxes";
 import Leftbar, { LeftbarRefType } from "@/presentation/components/ui/leftbar";
 import RightBar from "@/presentation/components/ui/rightbar";
@@ -90,13 +89,6 @@ export default function HomeComp({ locale }: Props) {
     },
     [searchParams, pathname, router, setSection]
   );
-
-  // Function to toggle the mobile menu directly through the ref
-  const toggleMobileMenu = () => {
-    if (leftbarRef.current) {
-      leftbarRef.current.toggleMobileMenu();
-    }
-  };
 
   // CV image URL
   const cvImageUrl =
@@ -231,13 +223,13 @@ export default function HomeComp({ locale }: Props) {
                 </div>
               </div>
             </div>
-            <OptionsMenu
-              locale={locale}
-              section={section}
-              setSection={(newSection: string) =>
-                handleSetSection(newSection)
-              }></OptionsMenu>
           </header>
+          <OptionsMenu
+            locale={locale}
+            section={section}
+            setSection={(newSection: string) =>
+              handleSetSection(newSection)
+            }></OptionsMenu>
           <section className="bg-white dark:bg-[#1f2937] dark:text-white w-full mx-auto z-0 ">
             <Suspense fallback={<SpinnerContainer />}>
               <div className="grid gap-4">
@@ -249,11 +241,6 @@ export default function HomeComp({ locale }: Props) {
             </Suspense>
           </section>
           <Footer />
-          <NavbarMobile
-            locale={locale}
-            className="block md:hidden"
-            onToggleMobileMenu={toggleMobileMenu}
-          />
           <ScrollToTop />
         </main>
 

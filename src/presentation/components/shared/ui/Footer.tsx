@@ -8,7 +8,7 @@ import {
 export function Footer({ className }: any) {
   return (
     <div
-      className={`${className} w-full py-8 dark:bg-slate-700 dark:text-white`}>
+      className={`${className} w-full pt-8 pb-28 md:pb-8 dark:bg-slate-700 dark:text-white`}>
       <div className="grid place-items-center gap-2.5">
         <div className="flex space-x-2.5">
           <a

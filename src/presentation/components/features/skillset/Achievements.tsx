@@ -5,38 +5,38 @@ const achievements = [
   {
     key: "clientSatisfaction",
     gradient:
-      "from-gray-100 via-purple-50 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900",
-    glow: "bg-purple-300/20",
-    badge: "from-purple-500 to-indigo-500",
+      "from-gray-100 via-indigo-50 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900",
+    glow: "bg-indigo-300/20 dark:bg-emerald-400/20",
+    badge: "from-indigo-500 to-indigo-700 dark:from-emerald-500 dark:to-emerald-700",
   },
   {
     key: "projectsDelivered",
     gradient:
       "from-gray-100 via-indigo-50 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900",
-    glow: "bg-indigo-300/20",
-    badge: "from-indigo-500 to-violet-500",
+    glow: "bg-indigo-300/20 dark:bg-emerald-400/20",
+    badge: "from-indigo-500 to-indigo-700 dark:from-emerald-500 dark:to-emerald-700",
   },
   {
     key: "codeEfficiency",
     gradient:
-      "from-gray-100 via-violet-50 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900",
-    glow: "bg-violet-300/20",
-    badge: "from-violet-500 to-indigo-500",
+      "from-gray-100 via-indigo-50 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900",
+    glow: "bg-indigo-300/20 dark:bg-emerald-400/20",
+    badge: "from-indigo-500 to-indigo-700 dark:from-emerald-500 dark:to-emerald-700",
   },
   {
     key: "education",
     gradient:
-      "from-gray-100 via-gray-50 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900",
-    glow: "bg-gray-300/20",
-    badge: "from-gray-600 to-gray-700",
+      "from-gray-100 via-indigo-50 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900",
+    glow: "bg-indigo-300/20 dark:bg-emerald-400/20",
+    badge: "from-indigo-500 to-indigo-700 dark:from-emerald-500 dark:to-emerald-700",
     fullWidth: true,
   },
   {
     key: "careerMilestone",
     gradient:
-      "from-gray-100 via-emerald-50 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900",
-    glow: "bg-emerald-300/20",
-    badge: "from-emerald-500 to-teal-500",
+      "from-gray-100 via-indigo-50 to-gray-200 dark:from-gray-800 dark:via-gray-850 dark:to-gray-900",
+    glow: "bg-indigo-300/20 dark:bg-emerald-400/20",
+    badge: "from-indigo-500 to-indigo-700 dark:from-emerald-500 dark:to-emerald-700",
     fullWidth: true,
   },
 ];

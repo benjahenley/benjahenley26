@@ -58,7 +58,9 @@ function Project({
             <CollapsableCalendar date={projectData.date} />
           </div>
         </div>
-        <TextBase className="mb-4 ">{projectData.description[locale]}</TextBase>
+        <TextBase className="mb-4 whitespace-pre-line">
+          {projectData.description[locale]}
+        </TextBase>
         <div className="grid gap-4">
           {projectData.images &&
           !projectData.themeImage &&

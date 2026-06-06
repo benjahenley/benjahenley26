@@ -7,8 +7,20 @@ import Options from "@/presentation/components/features/auth/AuthOptions";
 import UserSession from "@/presentation/components/features/auth/UserSession";
 import { LanguageSelect } from "../../shared/ui/dropdowns/Language";
 import ThemeSelect from "../../shared/ui/dropdowns/Theme";
-import { FaCoffee } from "react-icons/fa";
-import { SiBuymeacoffee } from "react-icons/si";
+import { HiOutlineMenu } from "react-icons/hi";
+import {
+  FaInstagram,
+  FaLinkedin,
+  FaGithub,
+  FaWhatsapp,
+  FaSpotify,
+} from "react-icons/fa";
+import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
+import { CgProfile } from "react-icons/cg";
+import { useRouter } from "next/navigation";
+import { useAtom } from "jotai";
+import { darkModeAtom } from "@/atoms/darkmode";
+import { contents } from "@/data/contents/content";
 import {
   useEffect,
   useRef,
@@ -47,6 +59,61 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
     const containerRef = useRef<HTMLDivElement>(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    // Measure the panel content so that, when closed, the whole thing sits
+    // translated down with only the bar peeking at the bottom of the screen.
+    const contentRef = useRef<HTMLDivElement>(null);
+    const [contentHeight, setContentHeight] = useState(0);
+    const [barReady, setBarReady] = useState(false);
+    // Once the user has toggled, animate with a spring; before that the bar
+    // just snaps to its closed position (no slide on first load).
+    const [interacted, setInteracted] = useState(false);
+
+    const router = useRouter();
+    const [isDarkMode, setIsDarkMode] = useAtom(darkModeAtom);
+
+    const SOCIALS = [
+      {
+        name: "LinkedIn",
+        icon: <FaLinkedin />,
+        href: "https://www.linkedin.com/in/benjamin-h-579b88146/",
+      },
+      {
+        name: "Github",
+        icon: <FaGithub />,
+        href: "https://github.com/benjahenley",
+      },
+      {
+        name: "Instagram",
+        icon: <FaInstagram />,
+        href: "https://www.instagram.com/benjahenley/",
+      },
+      {
+        name: "Whatsapp",
+        icon: <FaWhatsapp />,
+        href: "https://wa.link/6qupmc",
+      },
+      {
+        name: "Music",
+        icon: <FaSpotify />,
+        href: "https://open.spotify.com/artist/6BzP9m9BqegCaCajUA4IEg",
+      },
+    ];
+
+    const LANGUAGES = [
+      { code: "es", flag: "🇦🇷" },
+      { code: "en", flag: "🇬🇧" },
+    ];
+
+    const changeLanguage = (newLocale: Locales) => {
+      if (newLocale === locale) return;
+      const url = window.location.pathname.split("/").slice(2).join("/");
+      router.push(`/${newLocale}/${url}`);
+    };
+
+    const setTheme = (dark: boolean) => {
+      setIsDarkMode(dark);
+      document.documentElement.classList.toggle("dark", dark);
+    };
 
     // Expose methods via ref
     useImperativeHandle(ref, () => ({
@@ -101,19 +168,47 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
       return () => window.removeEventListener("resize", handleResize);
     }, [isMobileMenuOpen]);
 
-    // Toggle mobile menu (will be triggered from NavbarMobile)
+    // Toggle mobile menu
     const toggleMobileMenu = () => {
-      console.log(
-        "toggleMobileMenu called in Leftbar component",
-        isMobileMenuOpen,
-      );
-      setIsMobileMenuOpen(!isMobileMenuOpen);
+      setInteracted(true);
+      setIsMobileMenuOpen((prev) => !prev);
+      setOpenDropdown(null);
     };
 
     // Close mobile menu
     const closeMobileMenu = () => {
+      setInteracted(true);
       setIsMobileMenuOpen(false);
+      setOpenDropdown(null);
     };
+
+    // Measure the panel content height (everything below the bar) so the
+    // closed state can translate exactly that far down.
+    useEffect(() => {
+      const measure = () => {
+        if (contentRef.current) {
+          setContentHeight(contentRef.current.offsetHeight);
+        }
+        setBarReady(true);
+      };
+      measure();
+      window.addEventListener("resize", measure);
+      return () => window.removeEventListener("resize", measure);
+    }, [openDropdown, options, locale]);
+
+    // Offset the page so content isn't hidden behind the fixed bar (mobile only).
+    useEffect(() => {
+      const apply = () => {
+        // Footer owns the bottom clearance for the fixed mobile bar (see Footer.tsx).
+        document.body.style.paddingBottom = "0px";
+      };
+      apply();
+      window.addEventListener("resize", apply);
+      return () => {
+        window.removeEventListener("resize", apply);
+        document.body.style.paddingBottom = "0px";
+      };
+    }, []);
 
     // Make toggleMobileMenu function available to parent components
     useEffect(() => {
@@ -223,9 +318,11 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
           </div>
         </div>
 
-        {/* Mobile Leftbar - Using AnimatePresence for animations */}
+        {/* Mobile bottom nav — ONE component: the bar is the top edge, the
+            panel slides up out of it. Closed → only the bar peeks at the
+            bottom; open → the bar rises and reveals the menu below it. */}
         <div className="md:hidden">
-          {/* Backdrop with Blur */}
+          {/* Backdrop with blur */}
           <AnimatePresence>
             {isMobileMenuOpen && (
               <motion.div
@@ -238,104 +335,122 @@ const Leftbar = forwardRef<LeftbarRefType, Props>(
             )}
           </AnimatePresence>
 
-          {/* Sidebar */}
-          <AnimatePresence>
-            {isMobileMenuOpen && (
-              <motion.div
-                initial={{ x: "-100%", opacity: 0.7 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: "-100%", opacity: 0 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 120,
-                  damping: 20,
-                  duration: 0.3,
-                }}
-                className="max-h-full fixed pr-0 z-[9999999] top-0 left-0 right-20 bottom-0 max-w-[60%] sm:max-w-[50%] bg-gray-100 dark:bg-slate-700 border-r border-gray-200 dark:border-slate-600">
-                <div className="h-full flex flex-row">
-                  <div className="flex flex-col justify-between h-full w-full">
-                    <div className="px-4 border-b border-gray-300 dark:border-slate-600 flex items-center gap-2 justify-between py-4">
-                      <span className="dark:text-white text-5xl cursor-pointer py-2 flex flex-row justify-between items-center w-full">
-                        <div className="flex items-center justify-center">
-                          <Link
-                            href="/"
-                            className="cursor-pointer"
-                            onClick={closeMobileMenu}>
-                            <img
-                              src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774301634/Frame_11_2_xn8ofr.png"
-                              alt="Benja Henley"
-                              className="w-14 h-auto dark:hidden"
-                            />
-                            <img
-                              src="https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774303693/Frame_11_4_k0s33i.png"
-                              alt="Benja Henley"
-                              className="w-14 h-auto hidden dark:block"
-                            />
-                          </Link>
-                        </div>
-                        <RxCrossCircled
-                          className="text-xl text-gray-800 dark:text-white cursor-pointer"
-                          onClick={closeMobileMenu}
-                        />
-                      </span>
-                    </div>
+          <motion.div
+            initial={false}
+            animate={{ y: isMobileMenuOpen ? 0 : contentHeight }}
+            transition={
+              interacted
+                ? { type: "spring", stiffness: 260, damping: 30 }
+                : { duration: 0 }
+            }
+            className={`fixed z-[9999999] left-0 right-0 bottom-0 flex flex-col rounded-t-2xl bg-gray-100 dark:bg-slate-700 border-t border-gray-200 dark:border-slate-600 shadow-[0_-4px_24px_0_rgba(124,58,237,0.10)] ${
+              barReady ? "" : "invisible"
+            }`}>
+            {/* Bar — always visible, the top edge of the whole thing */}
+            <div className="rounded-t-2xl bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-slate-600 shrink-0">
+              <div className="h-20 px-6 flex justify-between items-center text-gray-800 dark:text-white">
+                <Link
+                  href={`/${locale}`}
+                  onClick={closeMobileMenu}
+                  className="text-4xl flex items-center justify-start ml-2 cursor-pointer">
+                  <CgProfile />
+                </Link>
 
-                    <div className="flex flex-col h-full overflow-auto">
-                      <div className="flex flex-col w-full h-full">
-                        {OPTIONS.map(({ logo, text, href }, key) => (
-                          <Link href={href} key={key} onClick={closeMobileMenu}>
-                            <div className="py-3 dark:text-white hover:bg-gray-100/30 dark:hover:bg-slate-700/30 border-l-4 border-transparent transition-all duration-200 cursor-pointer flex flex-row justify-start items-center gap-4 px-4 group">
-                              <div className="text-xl group-hover:text-violet-500 dark:group-hover:text-emerald-400 transition-colors">
-                                {logo}
-                              </div>
-                              <p>{text[locale]}</p>
-                            </div>
-                          </Link>
-                        ))}
-                        <LanguageSelect
-                          locale={locale}
-                          isOpen={openDropdown === "idioma"}
-                          onOpen={() =>
-                            setOpenDropdown(
-                              openDropdown === "idioma" ? null : "idioma",
-                            )
-                          }
-                        />
-                        <ThemeSelect
-                          locale={locale}
-                          isOpen={openDropdown === "tema"}
-                          onOpen={() =>
-                            setOpenDropdown(
-                              openDropdown === "tema" ? null : "tema",
-                            )
-                          }
-                        />
-                        <SocialsSelect
-                          locale={locale}
-                          isOpen={openDropdown === "social"}
-                          onOpen={() =>
-                            setOpenDropdown(
-                              openDropdown === "social" ? null : "social",
-                            )
-                          }
-                        />
-                      </div>
-                    </div>
+                <Link
+                  href="/"
+                  onClick={closeMobileMenu}
+                  className="relative z-10 text-4xl font-bold"
+                  style={{
+                    fontFamily: "Helvetica, sans-serif",
+                    lineHeight: "normal",
+                  }}>
+                  BH
+                </Link>
 
-                    <div className="mt-auto">
-                      {options && (
-                        <AuthOptions setOptions={setOptions}></AuthOptions>
-                      )}
-                      <UserSession
-                        toggleOptions={() =>
-                          setOptions(!options)
-                        }></UserSession>
-                    </div>
-                  </div>
+                <div
+                  className="text-4xl flex items-center justify-end cursor-pointer"
+                  onClick={toggleMobileMenu}>
+                  {isMobileMenuOpen ? <RxCrossCircled /> : <HiOutlineMenu />}
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              </div>
+            </div>
+
+            {/* Panel content — sits below the bar, revealed when it rises */}
+            <div ref={contentRef} className="overflow-y-auto max-h-[70vh]">
+              {/* Language — flags only, neutral selection */}
+              <div className="px-5 py-3 flex items-center justify-between gap-4">
+                <p className="uppercase text-sm font-medium text-gray-700 dark:text-gray-300">
+                  {contents[locale].ui.leftbar.itemsWithDropdown[0]}
+                </p>
+                <button
+                  onClick={() =>
+                    changeLanguage((locale === "en" ? "es" : "en") as Locales)
+                  }
+                  aria-label="Toggle language"
+                  className="relative flex items-center w-16 h-8 rounded-full p-1 bg-gray-200 dark:bg-slate-600 transition-colors">
+                  {/* Language codes on both sides */}
+                  <span className="absolute left-2 text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-300">
+                    {LANGUAGES[0].code}
+                  </span>
+                  <span className="absolute right-2 text-[10px] font-semibold uppercase text-gray-500 dark:text-gray-300">
+                    {LANGUAGES[1].code}
+                  </span>
+                  {/* Sliding knob */}
+                  <span
+                    className={`relative z-10 w-6 h-6 rounded-full bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-[10px] font-bold uppercase text-gray-700 dark:text-gray-200 transition-transform duration-300 ${
+                      locale === "en" ? "translate-x-8" : "translate-x-0"
+                    }`}>
+                    {locale === "en" ? LANGUAGES[1].code : LANGUAGES[0].code}
+                  </span>
+                </button>
+              </div>
+
+              {/* Theme — neutral switch with sun / moon on each side */}
+              <div className="px-5 py-3 border-t border-gray-300 dark:border-slate-600 flex items-center justify-between gap-4">
+                <p className="uppercase text-sm font-medium text-gray-700 dark:text-gray-300">
+                  {contents[locale].ui.leftbar.theme.themeTitle}
+                </p>
+                <button
+                  onClick={() => setTheme(!isDarkMode)}
+                  aria-label="Toggle theme"
+                  className="relative flex items-center w-16 h-8 rounded-full p-1 bg-gray-200 dark:bg-slate-600 transition-colors">
+                  {/* Icons on both sides */}
+                  <span className="absolute left-1.5 text-gray-500 dark:text-gray-300 text-sm">
+                    <MdOutlineLightMode />
+                  </span>
+                  <span className="absolute right-1.5 text-gray-500 dark:text-gray-300 text-sm">
+                    <MdOutlineDarkMode />
+                  </span>
+                  {/* Sliding knob */}
+                  <span
+                    className={`relative z-10 w-6 h-6 rounded-full bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-xs text-gray-700 dark:text-gray-200 transition-transform duration-300 ${
+                      isDarkMode ? "translate-x-8" : "translate-x-0"
+                    }`}>
+                    {isDarkMode ? (
+                      <MdOutlineDarkMode />
+                    ) : (
+                      <MdOutlineLightMode />
+                    )}
+                  </span>
+                </button>
+              </div>
+
+              {/* Socials — all networks + music, where the session block used to be */}
+              <div className="px-5 py-4 border-t border-gray-300 dark:border-slate-600 flex items-center justify-center gap-7">
+                {SOCIALS.map(({ name, icon, href }) => (
+                  <Link
+                    key={name}
+                    href={href}
+                    target="_blank"
+                    aria-label={name}
+                    onClick={closeMobileMenu}
+                    className="text-2xl text-gray-700 dark:text-gray-200 hover:text-violet-500 dark:hover:text-emerald-400 hover:scale-110 transition-all">
+                    {icon}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     );

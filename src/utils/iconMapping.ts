@@ -18,6 +18,11 @@ import {
   SiClaude,
   SiWordpress,
   SiWoocommerce,
+  SiNestjs,
+  SiPrisma,
+  SiSupabase,
+  SiPostgresql,
+  SiMercadopago,
 } from "react-icons/si";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoFirebase, IoLogoVercel } from "react-icons/io5";
@@ -46,6 +51,11 @@ const iconMapping: any = {
   WordPress: SiWordpress,
   WooCommerce: SiWoocommerce,
   PHP: FaPhp,
+  "Nest.js": SiNestjs,
+  Prisma: SiPrisma,
+  Supabase: SiSupabase,
+  PostgreSQL: SiPostgresql,
+  MercadoPago: SiMercadopago,
 };
 
 export default iconMapping;
