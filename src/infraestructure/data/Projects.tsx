@@ -10,7 +10,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
       en: "Connta is an accounting SaaS I designed, built and shipped entirely on my own. It lets Argentine businesses issue their AFIP/ARCA electronic invoices in bulk: upload an Excel or CSV, review and edit everything in a live table, and Connta emits the whole batch against AFIP's web services, returning a valid CAE for each invoice.\n\nThe hardest part was the AFIP integration — a custom WSAA + WSFEv1 layer over AfipSDK, with encrypted per-CUIT certificate storage and full CAE generation.\n\nBuilt solo, end to end:\n• Next.js 15 frontend\n• NestJS + Prisma backend on Supabase\n• Multi-tenant certificate handling\n• MercadoPago subscriptions",
       es: "Connta es un SaaS de contabilidad que diseñé, desarrollé y lancé completamente solo. Permite a empresas argentinas emitir sus facturas electrónicas de AFIP/ARCA por lote: subís un Excel o CSV, revisás y editás todo en una tabla en vivo, y Connta emite el lote completo contra los web services de AFIP, devolviendo un CAE válido por cada factura.\n\nLo más difícil fue la integración con AFIP — una capa propia de WSAA + WSFEv1 sobre AfipSDK, con almacenamiento encriptado de certificados por CUIT y generación completa de CAE.\n\nHecho solo, de punta a punta:\n• Frontend en Next.js 15\n• Backend en NestJS + Prisma sobre Supabase\n• Manejo multi-tenant de certificados\n• Suscripciones con MercadoPago",
     },
-    url: "",
+    url: "https://www.connta.ar/",
     github: "https://github.com/benjahenley/connta-frontend",
     date: "mayo 2026",
     images: {
