@@ -175,7 +175,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
       es: "Desarrollé un sitio web para ADN Producciones, una productora audiovisual con base en Argentina. El sitio muestra su portafolio de trabajo y servicios, con un diseño moderno, animaciones fluidas y un layout limpio.",
     },
     url: "https://www.adnproducciones.com.ar/",
-    github: "",
+    github: "https://github.com/benjahenley/productora-adn",
     date: "noviembre 2025",
     images: {
       dark: "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774296957/Screenshot_2026-03-23_at_5.14.06_PM_fluzub.png",
