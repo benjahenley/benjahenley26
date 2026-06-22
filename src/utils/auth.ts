@@ -2,7 +2,9 @@ type sendCodeToEmailProps = {
   email: string;
   userFirstName: string;
   userLastName: string;
-  twitterTag: string;
+  // The handle is collected later (in the create-account step), so it's
+  // optional here — the send-code step only needs email + name.
+  twitterTag?: string;
 };
 
 type verifyCodeInDatabaseProps = {
@@ -223,4 +225,39 @@ export const logOut = async () => {
     console.error("Request Failed:", error.message);
     throw new Error(error.message || "An unknown error occurred");
   }
+};
+
+/**
+ * Restores the session on page load. Sends the httpOnly refresh cookie
+ * (credentials: "include") to the backend, which returns a fresh short-lived
+ * access token plus the user's public data. Throws if there is no valid
+ * session so callers can present the logged-out state.
+ */
+export const refreshSession = async (): Promise<{
+  accessToken: string;
+  userData: {
+    userId: number;
+    userFirstName: string;
+    userLastName: string;
+    handle: string;
+    profileImg: string | null;
+    role: string;
+  };
+}> => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/auth/refresh`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`No active session (status ${response.status})`);
+  }
+
+  return response.json();
 };

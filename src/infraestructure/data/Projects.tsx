@@ -129,16 +129,7 @@ const PROJECT_DATA: LocalProjectItem[] = [
       light:
         "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1774363737/Screenshot_2026-03-24_at_11.48.50_AM_emmujr.png",
     },
-    techStack: [
-      "React",
-      "TypeScript",
-      "Next.js",
-      "GitHub",
-      "Vercel",
-      "Tailwind",
-      "CSS3",
-      "HTML5",
-    ],
+    techStack: ["PHP", "CodeIgniter", "CSS3", "HTML5"],
   },
   {
     title: "Dispromed Comercial",

@@ -73,7 +73,7 @@ export default function SigninForm({ locale }: Props) {
 
       setSuccessMessage(SignInResponse.message);
 
-      const { userFirstName, userLastName, handle, profileImg, userId } =
+      const { userFirstName, userLastName, handle, profileImg, userId, role } =
         SignInResponse.userData;
 
       setUserData({
@@ -82,6 +82,7 @@ export default function SigninForm({ locale }: Props) {
         userLastName,
         handle,
         profileImg,
+        role: role ?? "",
         isLoggedIn: true,
       });
 

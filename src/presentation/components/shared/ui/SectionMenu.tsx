@@ -16,10 +16,10 @@ export function OptionsMenu({ locale, section, setSection }: Props) {
         <li
           key={id}
           onClick={() => setSection(id)}
-          className={`text-sm md:text-base w-full flex items-center justify-center hover:bg-gray-100 cursor-pointer dark:hover:bg-slate-700 border-b-2 ${
+          className={`text-sm md:text-base tracking-[0.01em] w-full flex items-center justify-center hover:bg-gray-100 cursor-pointer dark:hover:bg-slate-700 border-b-2 transition-colors ${
             section === id
-              ? "border-purple-700 dark:border-emerald-500"
-              : "border-transparent"
+              ? "border-purple-700 dark:border-emerald-500 text-gray-900 dark:text-white"
+              : "border-transparent text-gray-600 dark:text-gray-300"
           }`}>
           {option}
         </li>

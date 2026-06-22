@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { useModal } from "../../shared/modals/context";
 import { useSetAtom } from "jotai";
 import { accessTokenAtom } from "@/atoms/auth";
+import { userSession } from "@/atoms/session";
 import { logOut } from "@/utils/auth";
 
 type Props = {
@@ -13,6 +14,28 @@ type Props = {
 
 export default function LogOut({ className }: Props) {
   const { closeModal } = useModal();
+  const setAccessToken = useSetAtom(accessTokenAtom);
+  const setUserData = useSetAtom(userSession);
+
+  const handleLogout = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      // Even if the server call fails, clear local state so the UI logs out.
+      console.error(error);
+    }
+    setAccessToken(null);
+    setUserData({
+      userId: "",
+      userFirstName: "",
+      userLastName: "",
+      handle: "",
+      profileImg: "",
+      role: "",
+      isLoggedIn: false,
+    });
+    closeModal();
+  };
 
   return (
     <motion.div
@@ -41,10 +64,7 @@ export default function LogOut({ className }: Props) {
             Cancel
           </button>
           <button
-            onClick={() => {
-              logOut();
-              closeModal();
-            }}
+            onClick={handleLogout}
             className="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition">
             Log Out
           </button>

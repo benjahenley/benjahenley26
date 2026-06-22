@@ -72,6 +72,190 @@ export const getUserFromStorage = () => {
   }
 };
 
+// ---------------------------------------------------------------------------
+// Real feed + comment API (backed by NestJS /api/tweets)
+// ---------------------------------------------------------------------------
+
+const API = process.env.NEXT_PUBLIC_API_URL;
+
+const formatHandle = (handle?: string) =>
+  handle ? (handle.startsWith("@") ? handle : `@${handle}`) : "";
+
+const fullName = (u: {
+  userFirstName?: string;
+  userLastName?: string;
+  handle?: string;
+}) =>
+  `${u.userFirstName ?? ""} ${u.userLastName ?? ""}`.trim() ||
+  u.handle ||
+  "User";
+
+// Choose the translation matching the UI locale, falling back to en then any.
+const pickContent = (
+  translations: { language: string; content: string }[],
+  locale: string
+) => {
+  if (!translations?.length) return "";
+  return (
+    translations.find((t) => t.language === locale)?.content ??
+    translations.find((t) => t.language === "en")?.content ??
+    translations[0].content
+  );
+};
+
+export interface FeedComment {
+  id: string;
+  content: string;
+  createdAt: string;
+  username: string;
+  userHandle: string;
+  userAvatar: string;
+}
+
+export interface FeedTweet {
+  id: string;
+  content: string;
+  createdAt: string;
+  likes: number;
+  comments: number;
+  reposts: number;
+  username: string;
+  userHandle: string;
+  userAvatar: string;
+  tweetComments: FeedComment[];
+  isLiked: boolean;
+  isReposted: boolean;
+  isSaved: boolean;
+}
+
+const mapComment = (c: any): FeedComment => ({
+  id: String(c.id),
+  content: c.content,
+  createdAt: c.createdAt,
+  username: fullName(c.user ?? {}),
+  userHandle: formatHandle(c.user?.handle),
+  userAvatar: c.user?.profileImage ?? "",
+});
+
+/** Load the feed from the database, localised, with comments attached. */
+export const getFeedTweets = async (locale: string): Promise<FeedTweet[]> => {
+  const res = await fetch(`${API}/api/tweets`, { credentials: "include" });
+  if (!res.ok) throw new Error(`Failed to load tweets (${res.status})`);
+
+  const data = await res.json();
+  return data.map((t: any) => ({
+    id: String(t.id),
+    content: pickContent(t.translations, locale),
+    createdAt: t.date ?? t.createdAt,
+    likes: t._count?.likes ?? 0,
+    comments: t._count?.comments ?? 0,
+    reposts: t._count?.reposts ?? 0,
+    username: fullName(t.user ?? {}),
+    userHandle: formatHandle(t.user?.handle),
+    userAvatar: t.user?.profileImage ?? "",
+    tweetComments: (t.comments ?? []).map(mapComment),
+    isLiked: false,
+    isReposted: false,
+    isSaved: false,
+  }));
+};
+
+/**
+ * Create a tweet (owner-only; the backend AdminGuard enforces this and takes
+ * the author from the JWT). `translations` carry the per-language HTML from the
+ * editor (the composer requires both en and es).
+ */
+export const postTweet = async (
+  translations: { language: string; content: string }[],
+  accessToken: string
+): Promise<void> => {
+  const res = await fetch(`${API}/api/tweets`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken}`,
+    },
+    credentials: "include",
+    body: JSON.stringify({
+      category: "FEED",
+      techStack: [],
+      // userId is ignored server-side (taken from the token), sent for shape.
+      userId: 0,
+      translations,
+    }),
+  });
+  if (!res.ok) throw new Error(`Failed to post tweet (${res.status})`);
+};
+
+const authedPost = async (path: string, accessToken: string) => {
+  const res = await fetch(`${API}${path}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken}`,
+    },
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error(`Request failed (${res.status})`);
+  return res.json();
+};
+
+/** Toggle like. Returns the new liked state and the tweet's like count. */
+export const toggleTweetLike = (
+  tweetId: string,
+  accessToken: string
+): Promise<{ liked: boolean; count: number }> =>
+  authedPost(`/api/tweets/${tweetId}/like`, accessToken);
+
+/** Toggle repost. Returns the new reposted state and repost count. */
+export const toggleTweetRepost = (
+  tweetId: string,
+  accessToken: string
+): Promise<{ reposted: boolean; count: number }> =>
+  authedPost(`/api/tweets/${tweetId}/repost`, accessToken);
+
+/** Toggle save/bookmark (private). Returns the new saved state. */
+export const toggleTweetSave = (
+  tweetId: string,
+  accessToken: string
+): Promise<{ saved: boolean }> =>
+  authedPost(`/api/tweets/${tweetId}/save`, accessToken);
+
+/** The current user's liked / reposted / saved tweet ids. */
+export const getMyInteractions = async (
+  accessToken: string
+): Promise<{
+  likedTweetIds: number[];
+  repostedTweetIds: number[];
+  savedTweetIds: number[];
+}> => {
+  const res = await fetch(`${API}/api/tweets/my-interactions`, {
+    headers: { Authorization: `Bearer ${accessToken}` },
+    credentials: "include",
+  });
+  if (!res.ok) throw new Error(`Failed to load interactions (${res.status})`);
+  return res.json();
+};
+
+/** Persist a comment on a tweet. Returns the created comment (with author). */
+export const postTweetComment = async (
+  tweetId: string,
+  content: string,
+  accessToken: string
+): Promise<FeedComment> => {
+  const res = await fetch(`${API}/api/tweets/${tweetId}/add-comment`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken}`,
+    },
+    credentials: "include",
+    body: JSON.stringify({ content }),
+  });
+  if (!res.ok) throw new Error(`Failed to post comment (${res.status})`);
+  return mapComment(await res.json());
+};
+
 // Submit a new project comment
 export const submitProjectComment = async (
   data: CommentSubmission

@@ -33,7 +33,7 @@ type FormData = {
   confirmPassword: string;
   userFirstName: string;
   userLastName: string;
-  twitterTag: string;
+  handle: string;
 };
 
 const SignUp = () => {
@@ -42,6 +42,8 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
     watch,
+    getValues,
+    trigger,
   } = useForm<FormData>();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -103,12 +105,24 @@ const SignUp = () => {
     }
   };
 
-  const setPassword = async (formData: any) => {
-    if (formData.password !== formData.confirmPassword) {
+  const setPassword = async () => {
+    // Validate ONLY this step's fields — the email/name fields from step 1 are
+    // no longer mounted, so validating them here would silently block submit.
+    const valid = await trigger(["handle", "password", "confirmPassword"]);
+    if (!valid) return;
+
+    const { handle, password, confirmPassword } = getValues();
+
+    if (password !== confirmPassword) {
       return setError("Passwords do not match");
     }
 
-    const { handle, password } = formData;
+    // The email comes from the step where the code was sent (signupEmailAtom),
+    // not from an input on this step.
+    if (!email) {
+      return setError("Missing email — please restart the sign-up.");
+    }
+
     try {
       setLoading(true);
       await verifyHandleAndCreateUser({ email, handle, password });
@@ -234,7 +248,10 @@ const SignUp = () => {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 20 }}
       transition={{ duration: 0.3 }}
-      onSubmit={handleSubmit(setPassword)}>
+      onSubmit={(e) => {
+        e.preventDefault();
+        setPassword();
+      }}>
       <FormField
         label={content.inputLabels.userTag}
         register={register}
@@ -251,7 +268,7 @@ const SignUp = () => {
               "Twitter Tag must contain only letters, numbers, or underscores",
           },
         }}
-        error={errors.twitterTag}
+        error={errors.handle}
         placeholder="yourhandle"
         icon={AtSignIcon}
       />

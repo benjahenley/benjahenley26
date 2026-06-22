@@ -3,10 +3,12 @@ import "photoswipe/style.css";
 import { Provider as JotaiProvider } from "jotai";
 import { Source_Sans_3 } from "next/font/google";
 import { ThemeProvider } from "../../presentation/components/providers/Theme";
+import { ApolloProvider } from "../../presentation/components/providers/Apollo";
 import { Locales } from "@/infraestructure/interfaces";
 import { locales } from "@/middleware";
 import { Metadata } from "next";
 import ModalContainer from "@/presentation/components/shared/modals/view";
+import SessionRestore from "@/presentation/components/features/auth/SessionRestore";
 
 const sourceSansPro = Source_Sans_3({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
@@ -39,12 +41,15 @@ export default function RootLayout({
     <html lang={locale ? locale : "es"} className="no-scrollbar">
       <body
         className={`${sourceSansPro.className} dark:bg-slate-800 h-full min-h-screen no-scrollbar`}>
-        <JotaiProvider>
-          <ThemeProvider>
-            <ModalContainer locale={locale ? locale : "es"}></ModalContainer>
-            <div className="h-full min-h-screen relative">{children}</div>
-          </ThemeProvider>
-        </JotaiProvider>
+        <ApolloProvider>
+          <JotaiProvider>
+            <ThemeProvider>
+              <SessionRestore />
+              <ModalContainer locale={locale ? locale : "es"}></ModalContainer>
+              <div className="h-full min-h-screen relative">{children}</div>
+            </ThemeProvider>
+          </JotaiProvider>
+        </ApolloProvider>
       </body>
     </html>
   );

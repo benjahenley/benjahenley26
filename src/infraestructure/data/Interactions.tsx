@@ -16,7 +16,7 @@ const INTERACTIONS: InteractionItemProps[] = [
   {
     icon: <FaRegComment />,
     clicked: <FaComment />,
-    text: "Comments",
+    text: "Replies",
     key: "comments",
     color: "rgba(26, 155, 240, 0.5)",
     colorText: "rgba(26, 155, 240)",

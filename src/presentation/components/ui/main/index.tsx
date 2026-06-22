@@ -64,19 +64,28 @@ export default function HomeComp({ locale }: Props) {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Sync URL param → state on mount
+  // Sync URL param → state
   useEffect(() => {
     const tab = searchParams.get("tab");
+    const tweetId = searchParams.get("tweet");
+
     if (tab && VALID_TABS.includes(tab)) {
       setSection(tab);
+      return;
     }
-  }, []);
+
+    if (tweetId) {
+      setSection("feed");
+    }
+  }, [searchParams, setSection]);
 
   // Update URL when section changes
   const handleSetSection = useCallback(
     (newSection: string) => {
       setSection(newSection);
       const params = new URLSearchParams(searchParams.toString());
+      params.delete("tweet");
+
       if (newSection === "feed") {
         params.delete("tab");
       } else {
@@ -92,7 +101,7 @@ export default function HomeComp({ locale }: Props) {
 
   // CV image URL
   const cvImageUrl =
-    "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1743039900/Benja_Henley_Fullstack_CV_.pdf_page-0001_akamf0.jpg";
+    "https://res.cloudinary.com/dfcfi3ozi/image/upload/v1781807791/Benjamin_Henley_FullStack_Developer_C.V._ryfa80.jpg";
   // Handle click outside to close modal
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

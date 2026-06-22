@@ -7,5 +7,6 @@ export const userSession = atomWithStorage("userSession", {
   userLastName: "",
   handle: "",
   profileImg: "",
+  role: "",
   isLoggedIn: false,
 });
